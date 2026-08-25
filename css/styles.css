@@ -1,0 +1,103 @@
+/* Ajustes puntuales que Tailwind (vía CDN) no resuelve solo */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Foco visible para accesibilidad de teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== Hero carrusel ===== */
+.hero-slide {
+  transition: opacity 0.8s ease;
+}
+
+.hero-badge {
+  position: relative;
+  color: #fff;
+  clip-path: polygon(0% 0%, 93% 0%, 100% 50%, 93% 100%, 0% 100%);
+  opacity: 0;
+  transform: translateX(-50px) scale(0.95);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.hero-badge::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 22px;
+  height: 12px;
+  background: var(--badge-fold, rgba(0,0,0,0.25));
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.hero-badge.is-visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.hero-badge.is-leaving {
+  opacity: 0;
+  transform: translateX(50px) scale(0.95);
+  transition: opacity 0.35s ease-in, transform 0.35s ease-in;
+}
+
+/* Color por categoría */
+.hero-badge.badge-agro {
+  background: linear-gradient(100deg, #15803d, #22c55e);
+  --badge-fold: #0f5c2c;
+}
+.hero-badge.badge-autopropulsadas {
+  background: linear-gradient(100deg, #0e6b73, #14b8bd);
+  --badge-fold: #0a4b50;
+}
+.hero-badge.badge-remolques {
+  background: linear-gradient(100deg, #c2410c, #f97316);
+  --badge-fold: #8a2e0a;
+}
+.hero-badge.badge-higiene-urbana {
+  background: linear-gradient(100deg, #0369a1, #38bdf8);
+  --badge-fold: #024a73;
+}
+
+.hero-tab.is-active {
+  color: #fff !important;
+  border-top-color: #22c55e;
+}
+
+.hero-progress {
+  transition: width linear;
+}
+
+/* ===== Header con scroll ===== */
+#siteHeader.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#siteHeader.is-scrolled nav,
+#siteHeader.is-scrolled button:not(.cta-btn),
+#siteHeader.is-scrolled #menuBtn {
+  color: #171717;
+}
+
+#siteHeader.is-scrolled .search-btn {
+  border-color: #d4d4d4;
+}
+
+#siteHeader.is-scrolled .search-btn:hover {
+  border-color: #a3a3a3;
+}
