@@ -5,6 +5,89 @@ menuBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
+/* ===== Animaciones al hacer scroll (aparecen al entrar en pantalla) ===== */
+(function () {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  items.forEach((el) => observer.observe(el));
+})();
+
+/* ===== Números que cuentan hacia arriba al entrar en pantalla ===== */
+(function () {
+  const counters = document.querySelectorAll('[data-count-to]');
+  if (!counters.length) return;
+
+  function animateCount(el) {
+    const target = parseInt(el.dataset.countTo, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out
+      const value = Math.round(target * eased);
+      el.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    counters.forEach(animateCount);
+    return;
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach((el) => counterObserver.observe(el));
+})();
+
+/* ===== Tarjeta de ubicación: se inclina en 3D siguiendo el mouse ===== */
+(function () {
+  const card = document.getElementById('ubicacionCard');
+  if (!card) return;
+
+  const MAX_TILT = 8; // grados máximos de inclinación
+
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;  // 0 a 1
+    const y = (e.clientY - rect.top) / rect.height;   // 0 a 1
+
+    const rotateY = (x - 0.5) * MAX_TILT * 2;
+    const rotateX = (0.5 - y) * MAX_TILT * 2;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+  });
+})();
+
 /* ===== Botón flotante "Solicitar presupuesto": mantener apretado en mobile muestra el cartel ===== */
 (function () {
   const fab = document.getElementById('quoteFab');
@@ -31,6 +114,10 @@ menuBtn.addEventListener('click', () => {
 (function () {
   const header = document.getElementById('siteHeader');
   if (!header) return;
+
+  // Páginas sin foto detrás del header (ej: productos.html) lo marcan así
+  // para que quede siempre blanco, sin la animación de transparencia.
+  if (header.dataset.staticLight === 'true') return;
 
   const SCROLL_THRESHOLD = 60; // px que hay que bajar para que cambie
 

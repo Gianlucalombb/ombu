@@ -1,0 +1,108 @@
+[
+  {
+    "id": "crv-26",
+    "name": "Tolva Autodescargable CRV 26",
+    "category": "agro",
+    "categoryLabel": "Agro",
+    "image": "img/producto1.jpg",
+    "description": "Gran capacidad y velocidad de descarga. Capacidad 32.500 L.",
+    "specs": [
+      "Capacidad: 32.500 L",
+      "Potencia requerida: 150 HP",
+      "Descarga: tubo de 480mm"
+    ],
+    "destacado": true
+  },
+  {
+    "id": "crv-22",
+    "name": "Tolva Autodescargable CRV 22",
+    "category": "agro",
+    "categoryLabel": "Agro",
+    "image": "img/producto1.jpg",
+    "description": "Capacidad de 27.500 L, ideal para explotaciones medianas.",
+    "specs": [
+      "Capacidad: 27.500 L",
+      "Potencia mínima: 118 HP",
+      "Rodado estándar 23.1x30"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "pao-3500",
+    "name": "Pulverizadora Autopropulsada PAO 3500",
+    "category": "autopropulsadas",
+    "categoryLabel": "Autopropulsadas",
+    "image": "img/producto2.jpg",
+    "description": "Mejores prestaciones. Mejores resultados en cada aplicación.",
+    "specs": [
+      "Tanque: 3.500 L",
+      "Botalón adaptable",
+      "Cabina con aire acondicionado"
+    ],
+    "destacado": true
+  },
+  {
+    "id": "batea-50",
+    "name": "Batea 50 m³",
+    "category": "remolques",
+    "categoryLabel": "Remolques",
+    "image": "img/producto3.jpg",
+    "description": "Un verdadero ícono de la marca, para transporte de granos a gran escala.",
+    "specs": [
+      "Capacidad: 50 m³",
+      "Chasis reforzado",
+      "Sistema de descarga hidráulico"
+    ],
+    "destacado": true
+  },
+  {
+    "id": "cr-16-18-21",
+    "name": "Compactadores de Residuos CR 16 - CR 18 - CR 21",
+    "category": "higiene-urbana",
+    "categoryLabel": "Higiene urbana",
+    "image": "img/producto4.jpg",
+    "description": "Adaptables a cualquier tipo y modelo de camión.",
+    "specs": [
+      "Capacidades 16, 18 y 21 m³",
+      "Sistema de compactación de alta eficiencia",
+      "Adaptable a chasis existente"
+    ],
+    "destacado": true
+  },
+  {
+    "id": "camion-serie-1",
+    "name": "Camión Serie 1",
+    "category": "camiones",
+    "categoryLabel": "Camiones",
+    "image": "img/header2.jpg",
+    "description": "Robustez y confiabilidad para trabajo pesado.",
+    "specs": [
+      "Consultar configuración disponible"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "tractor-serie-1",
+    "name": "Tractor Serie 1",
+    "category": "tractores",
+    "categoryLabel": "Tractores",
+    "image": "img/header5.jpg",
+    "description": "Potencia y versatilidad para el trabajo agrícola diario.",
+    "specs": [
+      "Consultar configuración disponible"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "neumatico-serie-1",
+    "name": "Neumáticos y Llantas — Línea Agrícola",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos y Llantas",
+    "image": "img/header4.jpg",
+    "description": "Amplia gama de medidas para todo tipo de maquinaria.",
+    "specs": [
+      "Consultar medidas disponibles"
+    ],
+    "destacado": false
+  }
+]

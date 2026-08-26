@@ -245,10 +245,347 @@ input:focus-visible {
 .destacado-badge.badge-remolques { background: linear-gradient(100deg, #c2410c, #f97316); }
 .destacado-badge.badge-higiene-urbana { background: linear-gradient(100deg, #0369a1, #38bdf8); }
 
+/* ===== Carrusel infinito "Nuestros productos" ===== */
+.showcase-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+.showcase-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: showcaseScroll 40s linear infinite;
+}
+
+.showcase-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes showcaseScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.showcase-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 340px;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+.showcase-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.showcase-card:hover img {
+  transform: scale(1.06);
+}
+
+.showcase-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.05) 55%);
+}
+
+.showcase-card-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.showcase-card-name {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  color: #fff;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+/* Banner Plan de Ahorro */
+.plan-banner {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 1;
+  transition: box-shadow 0.3s ease;
+}
+
+.plan-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.plan-banner:hover img {
+  transform: scale(1.05);
+}
+
+.plan-banner:hover {
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+/* Íconos de la sección Usados */
+.usados-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: #171717;
+  color: #fff;
+}
+
+.usados-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Botón CTA de usados */
+.usados-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #171717;
+  color: #fff;
+  font-weight: 700;
+  padding: 16px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease, gap 0.25s ease;
+}
+
+.usados-cta svg {
+  width: 18px;
+  height: 18px;
+}
+
+.usados-cta:hover {
+  background: #dc2626;
+  gap: 16px;
+}
+
+/* Foto grande + tarjeta flotante */
+.usados-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+}
+
+.usados-photo-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  background: #dc2626;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(220,38,38,0.4);
+}
+
+.usados-float-card {
+  position: absolute;
+  left: -24px;
+  bottom: -24px;
+  z-index: 2;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 16px;
+  padding: 22px 28px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.usados-stat-number {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #dc2626;
+  line-height: 1;
+}
+
+.usados-stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #525252;
+  margin-top: 4px;
+  max-width: 160px;
+}
+
+.usados-stat-number-lg {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  color: #dc2626;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .usados-float-card {
+    left: 12px;
+    bottom: -20px;
+    padding: 16px 20px;
+  }
+  .usados-stat-number {
+    font-size: 1.75rem;
+  }
+}
+
+/* Sección "Nuestra presencia" */
+.presencia-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px 20px 28px;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.presencia-row:hover {
+  border-color: #171717;
+  transform: translateX(4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.presencia-row-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: #dc2626;
+}
+
+.presencia-row-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #a3a3a3;
+  margin-bottom: 4px;
+}
+
+.presencia-row-value {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 1.75rem;
+  color: #171717;
+  line-height: 1;
+}
+
+.presencia-row-unit {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #a3a3a3;
+}
+
+/* Tarjeta de "ubicación" con mapa real */
+.ubicacion-tilt {
+  height: 100%;
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.ubicacion-map-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border-radius: 16px;
+  border: 1px solid #e5e5e5;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.ubicacion-map {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.15);
+}
+
+/* ===== Animaciones al hacer scroll ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ===== Header con scroll ===== */
+#siteHeader {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 #siteHeader.is-scrolled {
   background-color: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+#headerRow {
+  transition: height 0.3s ease;
+}
+
+#siteHeader.is-scrolled #headerRow {
+  height: 7.5rem;
+}
+
+#headerLogos {
+  transition: transform 0.3s ease;
+}
+
+#siteHeader.is-scrolled #headerLogos {
+  transform: scale(0.85);
+  transform-origin: left center;
 }
 
 #siteHeader.is-scrolled nav,
@@ -364,6 +701,98 @@ input:focus-visible {
 .promo-bar:hover .promo-cta {
   transform: scale(1.05);
 }
+/* ===== Footer oscuro ===== */
+.footer-dark {
+  position: relative;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.footer-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 14px);
+  pointer-events: none;
+}
+
+.footer-logo-invert {
+  filter: brightness(0) invert(1);
+}
+
+.footer-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: #d4d4d4;
+}
+
+.footer-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.footer-whatsapp-card {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.footer-whatsapp-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #22c55e;
+  color: #fff;
+  margin: 14px auto 0;
+  transition: transform 0.2s ease;
+}
+
+.footer-whatsapp-circle svg {
+  width: 26px;
+  height: 26px;
+}
+
+.footer-whatsapp-circle:hover {
+  transform: scale(1.08);
+}
+
+.footer-bottom-bar {
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #171717;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.footer-social-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-social-icon:hover {
+  background: #dc2626;
+}
 </style>
 </head>
 <body class="bg-white text-neutral-900" style="font-family:'Inter',sans-serif;">
@@ -380,7 +809,7 @@ input:focus-visible {
 </a>
 
 <header id="siteHeader" class="fixed top-9 left-0 right-0 z-50 transition-colors duration-300">
-  <div class="max-w-[1600px] mx-auto px-2 grid grid-cols-[1fr_auto_1fr] items-center h-44">
+  <div id="headerRow" class="max-w-[1600px] mx-auto px-2 grid grid-cols-[1fr_auto_1fr] items-center h-44">
     <div id="headerLogos" class="flex items-center gap-0">
       <a href="index.html" class="flex items-center -mr-6">
         <img src="img/logo.jpg" alt="Grupozzetto" class="h-[160px] w-auto">
@@ -531,155 +960,195 @@ input:focus-visible {
 </a>
 
 
-<!-- ===== DESTACADOS ===== -->
-<section class="max-w-6xl mx-auto px-6 py-16">
-
-  <!-- Botones de acción -->
-  <div class="flex flex-col md:flex-row gap-4 mb-10">
-    <a href="usados.html" class="flex-1 flex items-center justify-between border border-neutral-300 rounded-md px-6 py-4 font-bold text-sm uppercase tracking-wide hover:border-neutral-900 transition">
-      Ver oportunidades
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-    </a>
-    <a href="contacto.html" class="flex-1 flex items-center justify-between border border-neutral-300 rounded-md px-6 py-4 font-bold text-sm uppercase tracking-wide hover:border-neutral-900 transition">
-      Encontrá tu concesionario
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-    </a>
+<!-- ===== NUESTROS PRODUCTOS (carrusel infinito) ===== -->
+<section class="py-16 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+    <div>
+      <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-2">Catálogo completo</p>
+      <h2 class="text-2xl md:text-3xl font-extrabold" style="font-family:'Archivo',sans-serif;">Nuestros destacados</h2>
+    </div>
+    <div class="flex flex-col md:flex-row gap-3">
+      <a href="usados.html" class="flex items-center justify-between gap-4 border border-neutral-300 rounded-md px-5 py-3 font-bold text-xs uppercase tracking-wide hover:border-neutral-900 transition">
+        Ver oportunidades
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="productos.html" class="flex items-center justify-between gap-4 bg-red-600 hover:bg-red-700 text-white rounded-md px-5 py-3 font-bold text-xs uppercase tracking-wide transition">
+        Ver catálogo completo
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
   </div>
 
-  <!-- Grid de productos destacados -->
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+  <div class="max-w-6xl mx-auto px-6 showcase-wrap">
+    <div id="showcaseTrack" class="showcase-track"></div>
+  </div>
 
-    <article class="relative rounded-lg overflow-hidden aspect-[564/600] border-t-4 border-green-500">
-      <img src="img/producto1.jpg" alt="Tolva Autodescargable CRV 26" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
-
-      <span class="destacado-badge badge-agro absolute top-6 left-0 font-extrabold text-sm px-6 py-2">AGR</span>
-
-      <div class="absolute bottom-0 left-0 right-0 p-8">
-        <h3 class="text-white font-extrabold text-2xl md:text-3xl leading-tight" style="font-family:'Archivo',sans-serif;">Tolva Autodescargable CRV 26</h3>
-        <p class="text-neutral-300 text-sm mt-2">Gran capacidad y velocidad de descarga.</p>
-        <div class="flex gap-3 mt-5">
-          <a href="productos.html?cat=agro" class="flex items-center gap-2 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wide px-4 py-2.5 rounded-md hover:bg-neutral-200 transition">
-            Descubrí la gama
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="#" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-2.5 rounded-md transition">Ver +</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="relative rounded-lg overflow-hidden aspect-[564/600] border-t-4 border-teal-600">
-      <img src="img/producto2.jpg" alt="Pulverizadora Autopropulsada PAO 3500" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
-
-      <span class="destacado-badge badge-autopropulsadas absolute top-6 left-0 font-extrabold text-sm px-6 py-2">AP</span>
-
-      <div class="absolute bottom-0 left-0 right-0 p-8">
-        <h3 class="text-white font-extrabold text-2xl md:text-3xl leading-tight" style="font-family:'Archivo',sans-serif;">Pulverizadora Autopropulsada PAO 3500</h3>
-        <p class="text-neutral-300 text-sm mt-2">Mejores prestaciones. Mejores resultados.</p>
-        <div class="flex gap-3 mt-5">
-          <a href="productos.html?cat=autopropulsadas" class="flex items-center gap-2 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wide px-4 py-2.5 rounded-md hover:bg-neutral-200 transition">
-            Descubrí la gama
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="#" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-2.5 rounded-md transition">Ver +</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="relative rounded-lg overflow-hidden aspect-[564/600] border-t-4 border-orange-500">
-      <img src="img/producto3.jpg" alt="Batea 50 m3" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
-
-      <span class="destacado-badge badge-remolques absolute top-6 left-0 font-extrabold text-sm px-6 py-2">RMQ</span>
-
-      <div class="absolute bottom-0 left-0 right-0 p-8">
-        <h3 class="text-white font-extrabold text-2xl md:text-3xl leading-tight" style="font-family:'Archivo',sans-serif;">Batea 50 m3</h3>
-        <p class="text-neutral-300 text-sm mt-2">Un verdadero icono de la marca.</p>
-        <div class="flex gap-3 mt-5">
-          <a href="productos.html?cat=remolques" class="flex items-center gap-2 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wide px-4 py-2.5 rounded-md hover:bg-neutral-200 transition">
-            Descubrí la gama
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="#" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-2.5 rounded-md transition">Ver +</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="relative rounded-lg overflow-hidden aspect-[564/600] border-t-4 border-sky-500">
-      <img src="img/producto4.jpg" alt="Compactadores de residuos" class="absolute inset-0 w-full h-full object-cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
-
-      <span class="destacado-badge badge-higiene-urbana absolute top-6 left-0 font-extrabold text-sm px-6 py-2">URB</span>
-
-      <div class="absolute bottom-0 left-0 right-0 p-8">
-        <h3 class="text-white font-extrabold text-2xl md:text-3xl leading-tight" style="font-family:'Archivo',sans-serif;">Compactadores de residuos</h3>
-        <p class="text-neutral-300 text-sm mt-2">Adaptables a cualquier tipo y modelo de camión.</p>
-        <div class="flex gap-3 mt-5">
-          <a href="productos.html?cat=higiene-urbana" class="flex items-center gap-2 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wide px-4 py-2.5 rounded-md hover:bg-neutral-200 transition">
-            Descubrí la gama
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="#" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-2.5 rounded-md transition">Ver +</a>
-        </div>
-      </div>
-    </article>
-
+  <!-- Banner Plan de Ahorro: se monta sobre el límite con la siguiente sección -->
+  <div class="max-w-6xl mx-auto px-6 mt-12 mb-[-60px] relative z-10">
+    <a href="https://agroplansa.github.io/CalculadorCuota/" target="_blank" rel="noopener" class="plan-banner block rounded-lg overflow-hidden shadow-xl">
+      <img src="img/banner-plan-ahorro.png" alt="Plan de ahorro — Entrega asegurada en cuota 10">
+    </a>
   </div>
 </section>
 
 <!-- ===== USADOS ===== -->
-<section class="bg-neutral-50 py-20">
+<section class="bg-neutral-50 py-24 overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
-    <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Calidad certificada OMBU</p>
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-4" style="font-family:'Archivo',sans-serif;">Maquinaria usada</h2>
-    <p class="text-neutral-600 max-w-2xl mb-12">
-      Equipos seleccionados, revisados y certificados por nuestros técnicos. La confianza OMBU aplicada a cada máquina usada.
-    </p>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14">
-      <div>
-        <p class="text-4xl font-extrabold text-red-600">50+</p>
-        <p class="text-sm text-neutral-500 mt-1">Máquinas disponibles</p>
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Columna de texto -->
+      <div class="reveal">
+        <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Calidad certificada OMBU</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-5 leading-tight" style="font-family:'Archivo',sans-serif;">Maquinaria usada</h2>
+        <p class="text-neutral-600 max-w-md mb-10">
+          Equipos seleccionados, revisados y certificados por nuestros técnicos. La confianza OMBU aplicada a cada máquina usada.
+        </p>
+
+        <div class="space-y-6 mb-10">
+          <div class="flex gap-4 reveal" style="--reveal-delay:0s">
+            <span class="usados-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 8l2.5-5h13L21 8"/><path d="M9 12h6"/></svg>
+            </span>
+            <div>
+              <h3 class="font-bold text-neutral-900">Stock de usados certificados</h3>
+              <p class="text-sm text-neutral-500 mt-1">Equipos disponibles y listos para trabajar.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 reveal" style="--reveal-delay:0.1s">
+            <span class="usados-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.2 3.4 9.6 8 11 4.6-1.4 8-5.8 8-11V5l-8-3z"/><path d="m9.5 12 1.8 1.8L15 10"/></svg>
+            </span>
+            <div>
+              <h3 class="font-bold text-neutral-900">Garantía OMBU</h3>
+              <p class="text-sm text-neutral-500 mt-1">Revisión técnica y certificación bajo estándares de la marca.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 reveal" style="--reveal-delay:0.2s">
+            <span class="usados-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a8 8 0 0 1 16 0v4a2 2 0 0 1-2 2h-1v-6h3M3 15v-4h3v6H5a2 2 0 0 1-2-2z"/><path d="M18 19a2 2 0 0 1-2 2h-2"/></svg>
+            </span>
+            <div>
+              <h3 class="font-bold text-neutral-900">Respaldo de posventa</h3>
+              <p class="text-sm text-neutral-500 mt-1">Soporte técnico, asesoramiento y repuestos originales.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 reveal" style="--reveal-delay:0.3s">
+            <span class="usados-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.6 12.6 20.6a2 2 0 0 1-2.8 0l-7.4-7.4a2 2 0 0 1 0-2.8L10.4 2.4a2 2 0 0 1 1.4-.6H19a2 2 0 0 1 2 2v7.2a2 2 0 0 1-.6 1.4z"/><circle cx="15.5" cy="7.5" r="1.5"/></svg>
+            </span>
+            <div>
+              <h3 class="font-bold text-neutral-900">Mejor relación precio-producto</h3>
+              <p class="text-sm text-neutral-500 mt-1">Accedé a una OMBU con menor inversión, sin resignar confiabilidad.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="usados.html" class="usados-cta reveal">
+          Ver maquinaria usada disponible
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
-      <div>
-        <p class="text-4xl font-extrabold text-red-600">100%</p>
+
+      <!-- Columna de foto con tarjeta flotante -->
+      <div class="relative reveal" style="--reveal-delay:0.15s">
+        <span class="usados-photo-badge">Certificado OMBU</span>
+        <img src="img/header3.jpg" alt="Maquinaria usada certificada OMBU" class="usados-photo">
+
+        <div class="usados-float-card">
+          <p class="usados-stat-number" data-count-to="50" data-suffix="+">0</p>
+          <p class="usados-stat-label">Máquinas disponibles ahora</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fila de números animados -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-20 pt-14 border-t border-neutral-200 text-center">
+      <div class="reveal" style="--reveal-delay:0s">
+        <p class="usados-stat-number-lg"><span data-count-to="100" data-suffix="%">0</span></p>
         <p class="text-sm text-neutral-500 mt-1">Garantía de calidad</p>
       </div>
-      <div>
-        <p class="text-4xl font-extrabold text-red-600">24/7</p>
+      <div class="reveal" style="--reveal-delay:0.1s">
+        <p class="usados-stat-number-lg">24<span class="text-neutral-300">/</span>7</p>
         <p class="text-sm text-neutral-500 mt-1">Soporte técnico</p>
       </div>
-      <div>
-        <p class="text-4xl font-extrabold text-red-600">-40%</p>
+      <div class="reveal" style="--reveal-delay:0.2s">
+        <p class="usados-stat-number-lg">-<span data-count-to="40" data-suffix="%">0</span></p>
         <p class="text-sm text-neutral-500 mt-1">Ahorro promedio</p>
       </div>
     </div>
 
-    <a href="usados.html" class="inline-block bg-neutral-950 text-white font-bold px-6 py-3 rounded-md hover:bg-neutral-800 transition">
-      Ver maquinaria usada disponible
-    </a>
   </div>
 </section>
 
-<!-- ===== PRESENCIA / SEDE ===== -->
-<section class="max-w-7xl mx-auto px-6 py-20">
-  <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Nuestra presencia</p>
-  <h2 class="text-3xl md:text-4xl font-extrabold mb-10" style="font-family:'Archivo',sans-serif;">Desde 1990 desarrollando confianza</h2>
+<!-- ===== PRESENCIA ===== -->
+<section class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-stretch">
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="border-t-4 border-red-600 pt-4">
-      <p class="text-2xl font-bold">[SEDE]</p>
-      <p class="text-neutral-500 text-sm mt-1">Dirección de esta sucursal</p>
+    <!-- Columna de texto -->
+    <div class="reveal">
+      <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Nuestra presencia</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-3" style="font-family:'Archivo',sans-serif;">Desde 1990 desarrollando confianza</h2>
+      <p class="text-neutral-500 mb-10">Origen argentino, alcance global.</p>
+
+      <div class="space-y-5">
+        <div class="presencia-row reveal" style="--reveal-delay:0s">
+          <span class="presencia-row-bar"></span>
+          <div>
+            <p class="presencia-row-label">Origen argentino</p>
+            <p class="presencia-row-value">Tapiales</p>
+          </div>
+        </div>
+        <div class="presencia-row reveal" style="--reveal-delay:0.1s">
+          <span class="presencia-row-bar"></span>
+          <div>
+            <p class="presencia-row-label">Alcance global</p>
+            <p class="presencia-row-value"><span data-count-to="40" data-suffix="">0</span> <span class="presencia-row-unit">países</span></p>
+          </div>
+        </div>
+        <div class="presencia-row reveal" style="--reveal-delay:0.2s">
+          <span class="presencia-row-bar"></span>
+          <div>
+            <p class="presencia-row-label">De trayectoria</p>
+            <p class="presencia-row-value"><span data-count-to="35" data-suffix="">0</span> <span class="presencia-row-unit">años</span></p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="border-t-4 border-red-600 pt-4">
-      <p class="text-2xl font-bold">[HORARIO]</p>
-      <p class="text-neutral-500 text-sm mt-1">Días y horario de atención</p>
+
+    <!-- Columna de ubicación: mapa real + tarjeta 3D al mover el mouse -->
+    <div id="ubicacionCard" class="relative reveal ubicacion-tilt" style="--reveal-delay:0.15s">
+      <div class="ubicacion-map-wrap">
+        <iframe
+          class="ubicacion-map"
+          src="https://www.google.com/maps?q=OMBU+Maquinas+Agricolas,+Tapiales&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de OMBU en Tapiales">
+        </iframe>
+      </div>
     </div>
-    <div class="border-t-4 border-red-600 pt-4">
-      <p class="text-2xl font-bold">[TELÉFONO / WHATSAPP]</p>
-      <p class="text-neutral-500 text-sm mt-1">Contacto directo de la sede</p>
-    </div>
+
+  </div>
+</section>
+
+<!-- ===== FRASE INSTITUCIONAL ===== -->
+<section class="py-24 px-6 text-center">
+  <div class="max-w-3xl mx-auto reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold" style="font-family:'Archivo',sans-serif;">
+      <span class="text-neutral-900">OMBU.</span>
+      <span class="text-red-600">Unidos por la confianza</span>
+    </h2>
+    <p class="text-neutral-600 italic text-lg mt-8">
+      "La que impulsa a seguir, a innovar y a decir <em>vamos para adelante</em>".
+    </p>
+    <p class="text-neutral-600 italic text-lg mt-4">
+      Una confianza ganada con trabajo y nobleza, que honramos todos los días.
+    </p>
   </div>
 </section>
 
@@ -698,58 +1167,102 @@ input:focus-visible {
 </section>
 
 <!-- ===== FOOTER ===== -->
-<footer class="bg-white border-t border-neutral-200 py-14">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+<footer class="footer-dark py-16">
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-    <div>
-      <img src="img/logo-ombu.png" alt="OMBU" class="h-8 mb-4">
-      <p class="text-sm text-neutral-500">
-        Tecnología y soluciones para el agro. Sede [SEDE].
-      </p>
-      <p class="text-sm text-neutral-500 mt-3">[EMAIL]</p>
-      <p class="text-sm text-neutral-500">[TELÉFONO]</p>
-      <p class="text-sm text-neutral-500">[DIRECCIÓN], [SEDE]</p>
-    </div>
+      <div>
+        <img src="img/logo-ombu.png" alt="OMBU" class="h-8 mb-5 footer-logo-invert">
+        <p class="text-sm text-neutral-400 max-w-xs">
+          Tecnología y soluciones para el agro desde [SEDE] al mundo. Más de 35 años impulsando el desarrollo del campo.
+        </p>
 
-    <div>
-      <h4 class="font-bold text-sm mb-3">Productos</h4>
-      <ul class="text-sm text-neutral-500 space-y-2">
-        <li><a href="productos.html?cat=agro" class="hover:text-red-600">Agro</a></li>
-        <li><a href="productos.html?cat=autopropulsadas" class="hover:text-red-600">Autopropulsadas</a></li>
-        <li><a href="productos.html?cat=remolques" class="hover:text-red-600">Remolques</a></li>
-        <li><a href="#" class="hover:text-red-600">Higiene urbana</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4 class="font-bold text-sm mb-3">Empresa</h4>
-      <ul class="text-sm text-neutral-500 space-y-2">
-        <li><a href="empresa.html" class="hover:text-red-600">Empresa</a></li>
-        <li><a href="#" class="hover:text-red-600">Repuestos</a></li>
-        <li><a href="usados.html" class="hover:text-red-600">Usados</a></li>
-        <li><a href="contacto.html" class="hover:text-red-600">Contacto</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4 class="font-bold text-sm mb-3">Contacto directo</h4>
-      <a href="https://wa.me/54[NUMERO]" class="inline-flex items-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700">
-        WhatsApp — [TELÉFONO]
-      </a>
-      <div class="flex gap-4 mt-5">
-        <a href="#" aria-label="Facebook" class="text-neutral-400 hover:text-red-600">FB</a>
-        <a href="#" aria-label="Instagram" class="text-neutral-400 hover:text-red-600">IG</a>
-        <a href="#" aria-label="YouTube" class="text-neutral-400 hover:text-red-600">YT</a>
+        <ul class="mt-6 space-y-3 text-sm text-neutral-300">
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></span>
+            [EMAIL]
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2.2z"/></svg></span>
+            [TELÉFONO]
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            [HORARIO]
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            [DIRECCIÓN], [SEDE]
+          </li>
+        </ul>
       </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4 text-white tracking-wide uppercase">Productos</h4>
+        <ul class="text-sm text-neutral-400 space-y-3">
+          <li><a href="productos.html?cat=agro" class="hover:text-white transition">Agro</a></li>
+          <li><a href="productos.html?cat=autopropulsadas" class="hover:text-white transition">Autopropulsadas</a></li>
+          <li><a href="productos.html?cat=remolques" class="hover:text-white transition">Remolques</a></li>
+          <li><a href="productos.html?cat=higiene-urbana" class="hover:text-white transition">Higiene urbana</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4 text-white tracking-wide uppercase">Empresa</h4>
+        <ul class="text-sm text-neutral-400 space-y-3">
+          <li><a href="empresa.html" class="hover:text-white transition">Empresa</a></li>
+          <li><a href="#" class="hover:text-white transition">Repuestos</a></li>
+          <li><a href="usados.html" class="hover:text-white transition">Usados</a></li>
+          <li><a href="contacto.html" class="hover:text-white transition">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-whatsapp-card">
+        <p class="text-xs font-bold text-neutral-300 uppercase tracking-wide">Contacto directo</p>
+        <a href="https://wa.me/54[NUMERO]" class="footer-whatsapp-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.85 9.85 0 004.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0012.04 2m0 1.67c2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 012.43 5.88c0 4.59-3.73 8.32-8.32 8.32a8.3 8.3 0 01-4.22-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.28 8.28 0 01-1.27-4.42c0-4.59 3.74-8.32 8.32-8.32"/></svg>
+        </a>
+        <p class="text-xs text-neutral-400 uppercase tracking-wide mt-4">WhatsApp</p>
+        <p class="text-lg font-bold text-white">[TELÉFONO]</p>
+        <a href="https://wa.me/54[NUMERO]" class="inline-flex items-center gap-1 text-sm font-semibold text-white mt-3 hover:gap-2 transition-all">
+          Enviar mensaje
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
     </div>
 
-  </div>
-
-  <div class="max-w-7xl mx-auto px-6 mt-10 pt-6 border-t border-neutral-200 text-xs text-neutral-400">
-    © 2026 OMBU [SEDE]. Todos los derechos reservados.
   </div>
 </footer>
 
+<!-- Barra final: copyright + legales + redes -->
+<div class="footer-bottom-bar">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+    <p class="text-neutral-500">© 2026 OMBU [SEDE]. Todos los derechos reservados.</p>
+
+    <div class="flex items-center gap-5 text-neutral-500">
+      <a href="#" class="hover:text-red-600 transition">Política de privacidad</a>
+      <span class="text-neutral-300">|</span>
+      <a href="#" class="hover:text-red-600 transition">Términos y condiciones</a>
+      <span class="text-neutral-300">|</span>
+      <a href="#" class="hover:text-red-600 transition">Política de cookies</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a href="#" aria-label="Facebook" class="footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram" class="footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube" class="footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.5-5.3c-.3-1-1-1.7-2-2C18.9 4.2 12 4.2 12 4.2s-6.9 0-8.5.5c-1 .3-1.7 1-2 2C1 8.4 1 12 1 12s0 3.6.5 5.3c.3 1 1 1.7 2 2 1.6.5 8.5.5 8.5.5s6.9 0 8.5-.5c1-.3 1.7-1 2-2 .5-1.7.5-5.3.5-5.3zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
+<script src="js/destacados.js"></script>
 </body>
 </html>

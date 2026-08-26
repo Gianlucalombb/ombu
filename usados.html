@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usados — OMBU [SEDE]</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; }
+.construccion-bg {
+  background: radial-gradient(circle at 30% 20%, rgba(220,38,38,0.08), transparent 55%),
+              radial-gradient(circle at 80% 80%, rgba(220,38,38,0.06), transparent 55%);
+}
+.construccion-icon {
+  animation: gearSpin 6s linear infinite;
+}
+@keyframes gearSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.construccion-dot {
+  animation: dotBounce 1.4s ease-in-out infinite;
+}
+.construccion-dot:nth-child(2) { animation-delay: 0.15s; }
+.construccion-dot:nth-child(3) { animation-delay: 0.3s; }
+@keyframes dotBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+.construccion-btn {
+  transition: gap 0.25s ease, background 0.25s ease;
+}
+.construccion-btn:hover { gap: 14px; background: #171717; }
+</style>
+</head>
+<body class="construccion-bg min-h-screen flex flex-col items-center justify-center text-center px-6">
+
+  <a href="index.html" class="mb-10">
+    <img src="img/logo.jpg" alt="OMBU" class="h-16 w-auto mx-auto">
+  </a>
+
+  <div class="construccion-icon mb-8 text-red-600">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>
+  </div>
+
+  <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-4">Sección en construcción</p>
+
+  <h1 class="text-3xl md:text-5xl font-extrabold mb-5 leading-tight" style="font-family:'Archivo',sans-serif;">
+    Estamos armando<br>la sección de Usados
+  </h1>
+
+  <p class="text-neutral-500 max-w-md mb-2">
+    Muy pronto vas a poder ver acá toda la maquinaria usada certificada, con fotos y detalles de cada equipo.
+  </p>
+
+  <div class="flex items-center justify-center gap-1.5 mb-10 mt-2">
+    <span class="construccion-dot h-2 w-2 rounded-full bg-red-600"></span>
+    <span class="construccion-dot h-2 w-2 rounded-full bg-red-600"></span>
+    <span class="construccion-dot h-2 w-2 rounded-full bg-red-600"></span>
+  </div>
+
+  <a href="index.html" class="construccion-btn inline-flex items-center gap-2 bg-red-600 text-white font-bold px-7 py-3.5 rounded-md">
+    Volver al inicio
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+  </a>
+
+</body>
+</html>
