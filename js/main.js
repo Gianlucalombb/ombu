@@ -5,6 +5,27 @@ menuBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
+/* ===== Menú desplegable de Productos (clic, para táctiles) ===== */
+(function () {
+  const menu = document.getElementById('productosMenu');
+  if (!menu) return;
+
+  const trigger = menu.querySelector('.productos-menu-trigger');
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.toggle('is-open');
+    trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target)) {
+      menu.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+
 /* ===== Animaciones al hacer scroll (aparecen al entrar en pantalla) ===== */
 (function () {
   const items = document.querySelectorAll('.reveal');
@@ -115,9 +136,9 @@ menuBtn.addEventListener('click', () => {
   const header = document.getElementById('siteHeader');
   if (!header) return;
 
-  // Páginas sin foto detrás del header (ej: productos.html) lo marcan así
-  // para que quede siempre blanco, sin la animación de transparencia.
-  if (header.dataset.staticLight === 'true') return;
+  // productos.html maneja su propio header (tiene 2 vistas con
+  // comportamientos distintos), así que este script no se mete ahí.
+  if (document.getElementById('catLanding')) return;
 
   const SCROLL_THRESHOLD = 60; // px que hay que bajar para que cambie
 
@@ -150,7 +171,7 @@ menuBtn.addEventListener('click', () => {
   const SLIDE_DURATION = 3500;   // tiempo total por slide (ms)
   const BADGE_DURATION = 2200;   // cuánto se ve la palabra de categoría (ms)
 
-  const names = ['Agro', 'Camiones', 'Remolques', 'Tractores', 'Autopropulsadas', 'Higiene urbana', 'Neumáticos y Llantas'];
+  const names = ['Agro', 'Camiones', 'Remolques', 'Tractores', 'Autopropulsadas', 'Higiene urbana', 'Neumáticos'];
   const slugs = ['agro', 'camiones', 'remolques', 'tractores', 'autopropulsadas', 'higiene-urbana', 'neumaticos-y-llantas'];
   const catClasses = ['cat-agro', 'cat-camiones', 'cat-remolques', 'cat-tractores', 'cat-autopropulsadas', 'cat-higiene-urbana', 'cat-neumaticos-llantas'];
 

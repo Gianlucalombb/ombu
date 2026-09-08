@@ -793,6 +793,124 @@ input:focus-visible {
 .footer-social-icon:hover {
   background: #dc2626;
 }
+
+/* ===== Menú desplegable de Productos ===== */
+.productos-menu {
+  position: relative;
+}
+
+.productos-menu-trigger {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.productos-menu-panel {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 480px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 40;
+}
+
+.productos-menu.is-open .productos-menu-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.productos-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #171717;
+  transition: background 0.2s ease;
+}
+
+.productos-menu-item:hover {
+  background: #f5f5f5;
+}
+
+.productos-menu-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cat-color) 14%, white);
+  color: var(--cat-color);
+}
+
+.productos-menu-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Acordeón de Productos en el menú mobile */
+.mobile-productos summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-productos summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-productos summary::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.mobile-productos[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.productos-menu-viewall {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 12px;
+  border-top: 1px solid #e5e5e5;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #dc2626;
+}
 </style>
 </head>
 <body class="bg-white text-neutral-900" style="font-family:'Inter',sans-serif;">
@@ -810,23 +928,17 @@ input:focus-visible {
 
 <header id="siteHeader" class="fixed top-9 left-0 right-0 z-50 transition-colors duration-300">
   <div id="headerRow" class="max-w-[1600px] mx-auto px-2 grid grid-cols-[1fr_auto_1fr] items-center h-44">
-    <div id="headerLogos" class="flex items-center gap-0">
-      <a href="index.html" class="flex items-center -mr-6">
-        <img src="img/logo.jpg" alt="Grupozzetto" class="h-[160px] w-auto">
+    <div id="headerLogos" class="flex items-center gap-0 h-full overflow-hidden">
+      <a href="index.html" class="inline-flex items-center gap-0">
+        <img src="img/logo-ombu.png" alt="Ombu" class="h-10 w-auto rounded -mr-4">
+        <img src="img/logo.jpg" alt="Grupozzetto" class="h-[140px] w-auto rounded -mr-4">
+        <img src="img/logo-traxor.png" alt="Traxor" class="h-14 w-auto rounded">
       </a>
-
-      <!-- Marcas representadas -->
-      <div class="hidden md:flex items-center gap-2 pl-2 border-l border-white/25">
-        <img src="img/logo-ombu.png" alt="Ombu" class="h-8 w-auto rounded">
-        <img src="img/logo-traxor.png" alt="Traxor" class="h-12 w-auto rounded">
-      </div>
     </div>
 
     <nav class="hidden lg:flex items-center gap-10 text-sm font-bold tracking-wide text-white uppercase justify-self-center">
-      <a href="productos.html" class="flex items-center gap-1 hover:text-neutral-300 transition">
-        Productos
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/></svg>
-      </a>
+      <a href="productos.html" class="hover:text-neutral-300 transition">Productos</a>
+
       <a href="usados.html" class="hover:text-neutral-300 transition">Usados</a>
       <a href="empresa.html" class="hover:text-neutral-300 transition">Empresa</a>
       <a href="contacto.html" class="hover:text-neutral-300 transition">Contacto</a>
@@ -883,7 +995,7 @@ input:focus-visible {
       <img src="img/header7.jpg" alt="Higiene urbana" class="hero-slide-img w-full h-full object-cover">
     </div>
     <div class="hero-slide absolute inset-0 opacity-0" data-cat="neumaticos-llantas">
-      <img src="img/header4.jpg" alt="Neumáticos y Llantas" class="hero-slide-img w-full h-full object-cover">
+      <img src="img/header4.jpg" alt="Neumáticos" class="hero-slide-img w-full h-full object-cover">
     </div>
   </div>
 
@@ -937,7 +1049,7 @@ input:focus-visible {
         Higiene urbana
       </button>
       <button class="hero-tab px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="6">
-        Neumáticos y Llantas
+        Neumáticos
       </button>
       <span id="tabIndicator" class="tab-indicator"></span>
     </div>

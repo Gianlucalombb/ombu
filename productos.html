@@ -4,70 +4,1468 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Productos — OMBU [SEDE]</title>
+<meta name="description" content="Catálogo completo de maquinaria agrícola, camiones, remolques, tractores y más — OMBU [SEDE].">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; }
-.construccion-bg {
-  background: radial-gradient(circle at 30% 20%, rgba(220,38,38,0.08), transparent 55%),
-              radial-gradient(circle at 80% 80%, rgba(220,38,38,0.06), transparent 55%);
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #dc2626; outline-offset: 2px; }
+
+/* ===== Header (igual que index.html) ===== */
+.promo-bar {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #7f1d1d, #dc2626 45%, #b91c1c);
 }
-.construccion-icon {
-  animation: gearSpin 6s linear infinite;
+.promo-bar::after {
+  content: '';
+  position: absolute; top: 0; left: -40%;
+  width: 30%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: skewX(-20deg);
+  animation: promoShine 4.5s ease-in-out infinite;
 }
-@keyframes gearSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes promoShine { 0% { left:-40%; } 55% { left:130%; } 100% { left:130%; } }
+.promo-icon {
+  display:flex; align-items:center; justify-content:center;
+  width:20px; height:20px; border-radius:999px;
+  background:#fff; color:#b91c1c; font-weight:800; font-size:.7rem;
+  animation: promoPulse 1.8s ease-in-out infinite;
 }
-.construccion-dot {
-  animation: dotBounce 1.4s ease-in-out infinite;
+@keyframes promoPulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.15);} }
+.promo-cta { background:#fff; color:#b91c1c; font-weight:800; padding:4px 12px; border-radius:999px; white-space:nowrap; }
+
+#headerLogos img { transition: filter .3s ease; }
+#siteHeader.is-scrolled #headerLogos img { filter: brightness(0); }
+
+/* Header: transparente arriba (sobre foto del hero), blanco al bajar o en landing */
+#siteHeader {
+  background: transparent;
+  transition: background-color .3s ease, border-color .3s ease;
 }
-.construccion-dot:nth-child(2) { animation-delay: 0.15s; }
-.construccion-dot:nth-child(3) { animation-delay: 0.3s; }
-@keyframes dotBounce {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-  30% { transform: translateY(-6px); opacity: 1; }
+#siteHeader nav a,
+#siteHeader .productos-menu-trigger:not(.text-red-600),
+#siteHeader #menuBtn {
+  color: #fff;
+  transition: color .3s ease;
 }
-.construccion-btn {
-  transition: gap 0.25s ease, background 0.25s ease;
+#siteHeader.is-scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid #e5e5e5;
 }
-.construccion-btn:hover { gap: 14px; background: #171717; }
+#siteHeader.is-scrolled nav a,
+#siteHeader.is-scrolled .productos-menu-trigger:not(.text-red-600),
+#siteHeader.is-scrolled #menuBtn {
+  color: #171717;
+}
+#siteHeader .header-search-btn {
+  border-color: rgba(255,255,255,.4);
+  color: #fff;
+  transition: color .3s ease, border-color .3s ease;
+}
+#siteHeader.is-scrolled .header-search-btn {
+  border-color: #d4d4d4;
+  color: #171717;
+}
+
+.productos-menu { position: relative; }
+.productos-menu-trigger { cursor:pointer; background:none; border:none; font:inherit; color:inherit; letter-spacing:inherit; text-transform:inherit; }
+.productos-menu-panel {
+  position:absolute; top:calc(100% + 18px); left:50%;
+  transform:translateX(-50%) translateY(8px);
+  width:480px; background:#fff; border-radius:16px;
+  box-shadow:0 25px 50px rgba(0,0,0,.18); padding:16px;
+  display:grid; grid-template-columns:1fr 1fr; gap:4px;
+  opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease; z-index:40;
+}
+.productos-menu.is-open .productos-menu-panel { opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+.productos-menu-item { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:10px; font-size:.8rem; font-weight:700; text-transform:none; letter-spacing:normal; color:#171717; transition:background .2s ease; }
+.productos-menu-item:hover { background:#f5f5f5; }
+.productos-menu-icon { flex-shrink:0; display:flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:999px; background:color-mix(in srgb, var(--cat-color) 14%, white); color:var(--cat-color); }
+.productos-menu-icon svg { width:15px; height:15px; }
+.productos-menu-viewall { grid-column:1/-1; display:flex; align-items:center; justify-content:center; gap:8px; margin-top:6px; padding:12px; border-top:1px solid #e5e5e5; font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.4px; color:#dc2626; }
+
+.fab-quote { position: fixed; }
+.fab-tooltip {
+  position:absolute; right:64px; top:50%;
+  transform:translateY(-50%) translateX(6px) scale(.95);
+  background:#171717; color:#fff; font-size:.8rem; font-weight:700;
+  padding:8px 14px; border-radius:8px; white-space:nowrap;
+  opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease;
+}
+.fab-quote:hover .fab-tooltip, .fab-quote.is-pressed .fab-tooltip { opacity:1; transform:translateY(-50%) translateX(0) scale(1); }
+
+/* ===== Fade-in genérico para contenido cargado por JS ===== */
+.fade-item {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeItemIn .5s ease forwards;
+}
+@keyframes fadeItemIn { to { opacity: 1; transform: translateY(0); } }
+
+/* ===== Landing de categorías ===== */
+.cat-landing-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3/4;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+  transition: transform .35s ease, box-shadow .35s ease;
+  --cat-color: #22c55e;
+}
+.cat-landing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 55px rgba(0,0,0,.22);
+}
+.cat-landing-card img {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  transition: transform .6s ease;
+}
+.cat-landing-card:hover img { transform: scale(1.08); }
+
+/* Halo de color de la categoría al pasar el mouse */
+.cat-landing-card::before {
+  content:'';
+  position:absolute; inset:0; z-index:1;
+  background: var(--cat-color);
+  mix-blend-mode: color;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.cat-landing-card:hover::before { opacity: .35; }
+
+.cat-landing-overlay {
+  position:absolute; inset:0; z-index:1;
+  background: linear-gradient(to top, rgba(0,0,0,.92) 5%, rgba(0,0,0,.15) 55%, rgba(0,0,0,.05));
+}
+
+/* Borde de color abajo, marca de identidad por categoría */
+.cat-landing-card::after {
+  content:'';
+  position:absolute; left:0; right:0; bottom:0; z-index:2;
+  height:5px;
+  background: var(--cat-color);
+}
+
+.cat-landing-body { position:absolute; left:0; right:0; bottom:0; z-index:3; padding:26px 22px 30px; }
+
+.cat-landing-underline {
+  display:block;
+  width: 34px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--cat-color);
+  margin-bottom: 12px;
+  transition: width .35s ease;
+}
+.cat-landing-card:hover .cat-landing-underline { width: 56px; }
+
+.cat-landing-body h3 {
+  font-family:'Archivo',sans-serif;
+  font-weight:800;
+  font-style: italic;
+  font-size:1.65rem;
+  line-height: 1.1;
+  color:#fff;
+  margin-bottom:8px;
+  text-shadow: 0 2px 12px rgba(0,0,0,.4);
+}
+.cat-landing-body p {
+  color:#e5e5e5;
+  font-size:.82rem;
+  line-height: 1.4;
+  margin-bottom:18px;
+  min-height: 2.4em;
+}
+
+.cat-landing-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.35);
+  color:#fff; font-weight:800; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.5px;
+  padding:10px 18px; border-radius:999px;
+  transition: gap .25s ease, background .25s ease, border-color .25s ease;
+}
+.cat-landing-card:hover .cat-landing-btn {
+  gap:12px;
+  background: var(--cat-color);
+  border-color: transparent;
+}
+.cat-landing-btn svg { width:13px; height:13px; flex-shrink:0; }
+
+/* ===== Hero de categoría ===== */
+.cat-hero {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  color: #fff;
+}
+.cat-hero img {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  filter: grayscale(.1);
+  animation: catHeroZoom 9s ease-out forwards;
+}
+@keyframes catHeroZoom {
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
+}
+.cat-hero::after {
+  content:'';
+  position:absolute; inset:0;
+  background: var(--cat-color);
+  mix-blend-mode: color;
+  opacity: .3;
+}
+.cat-hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.2) 30%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.92) 100%);
+  z-index: 1;
+}
+
+/* Formas de color flotando de fondo, para darle profundidad */
+.cat-hero-blob {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--cat-color);
+  filter: blur(70px);
+  opacity: .45;
+  z-index: 1;
+  animation: catHeroBlobFloat 12s ease-in-out infinite alternate;
+}
+.cat-hero-blob-1 { width: 260px; height: 260px; top: -80px; right: 8%; }
+.cat-hero-blob-2 { width: 200px; height: 200px; bottom: -60px; left: 12%; animation-delay: -6s; }
+@keyframes catHeroBlobFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-20px, 25px) scale(1.15); }
+}
+
+.cat-hero-content {
+  position:relative; z-index:2;
+}
+
+/* Título: aparece con un revelado tipo "cortina" además del fade */
+.cat-hero-title {
+  clip-path: inset(0 0 0 0);
+  animation: catHeroTitleReveal .8s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes catHeroTitleReveal {
+  from { clip-path: inset(0 100% 0 0); opacity: 0; transform: translateX(-12px); }
+  to   { clip-path: inset(0 0 0 0); opacity: 1; transform: translateX(0); }
+}
+
+.cat-hero-underline {
+  display:block;
+  width: 0;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--cat-color);
+  margin-bottom: 14px;
+  animation: catHeroUnderlineGrow .6s ease .5s forwards;
+}
+@keyframes catHeroUnderlineGrow {
+  to { width: 44px; }
+}
+
+#catHeroDesc {
+  opacity: 0;
+  animation: catHeroFadeUp .6s ease .65s forwards;
+}
+@keyframes catHeroFadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Breadcrumb sobre fondo blanco (debajo del hero) */
+.breadcrumb-light a { color: #a3a3a3; font-weight: 600; transition: color .2s ease; }
+.breadcrumb-light a:hover { color: #dc2626; }
+
+.cat-breadcrumb-underline {
+  display: block;
+  width: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--cat-color, #dc2626);
+  margin-top: 8px;
+  animation: catBreadcrumbGrow .5s ease .1s forwards;
+}
+@keyframes catBreadcrumbGrow { to { width: 64px; } }
+
+.cat-tag-badge {
+  display:inline-flex; align-items:center;
+  font-weight:800; font-size:.8rem; letter-spacing:.5px;
+  color:#fff; padding:8px 24px 8px 18px;
+  clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%);
+  background: linear-gradient(100deg, var(--cat-color), color-mix(in srgb, var(--cat-color) 65%, black));
+}
+
+/* Formas de color de fondo, sutiles, detrás de todo el contenido */
+.cat-content-wrap { position: relative; }
+.cat-content-blob {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--cat-color, #dc2626);
+  filter: blur(90px);
+  opacity: .12;
+  z-index: -1;
+  pointer-events: none;
+}
+.cat-content-blob-1 { width: 420px; height: 420px; top: -100px; right: -120px; }
+.cat-content-blob-2 { width: 320px; height: 320px; bottom: 10%; left: -140px; }
+
+/* Tarjeta "Consultanos" al final de la grilla */
+.prod-card-cta-tile {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  min-height: 280px;
+  border: 2px dashed #e5e5e5;
+  border-radius: 18px;
+  padding: 30px 24px;
+  text-decoration: none;
+  transition: border-color .25s ease, background .25s ease, transform .25s ease;
+}
+.prod-card-cta-tile:hover {
+  border-color: var(--cat-color, #dc2626);
+  background: color-mix(in srgb, var(--cat-color, #dc2626) 5%, white);
+  transform: translateY(-4px);
+}
+.prod-card-cta-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 54px; height: 54px; border-radius: 999px;
+  background: color-mix(in srgb, var(--cat-color, #dc2626) 12%, white);
+  color: var(--cat-color, #dc2626);
+  margin-bottom: 18px;
+}
+.prod-card-cta-icon svg { width: 24px; height: 24px; }
+.prod-card-cta-tile h3 {
+  font-family: 'Archivo', sans-serif; font-weight: 800; font-style: italic;
+  font-size: 1.1rem; margin-bottom: 6px; color: #171717;
+}
+.prod-card-cta-tile p { font-size: .82rem; color: #737373; margin-bottom: 18px; }
+.prod-card-cta-tile span {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .4px;
+  color: var(--cat-color, #dc2626);
+}
+.prod-card-cta-tile span svg { width: 13px; height: 13px; transition: transform .2s ease; }
+.prod-card-cta-tile:hover span svg { transform: translateX(4px); }
+
+/* ===== Filtros sidebar ===== */
+.filtros-panel {
+  border: 1px solid #ececec;
+  border-radius: 18px;
+  padding: 22px 20px 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.04);
+}
+.filtros-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.filtros-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: #171717;
+}
+.filtros-panel-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cat-color, #dc2626) 14%, white);
+}
+.filtros-panel-icon svg { width: 15px; height: 15px; color: var(--cat-color, #dc2626); }
+.filtros-clear {
+  font-size: .7rem;
+  font-weight: 700;
+  color: #a3a3a3;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, color .2s ease;
+}
+.filtros-clear.is-visible { opacity: 1; pointer-events: auto; }
+.filtros-clear:hover { color: #dc2626; }
+
+.filtros-sublabel {
+  font-size: .68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: #b5b5b5;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 4px;
+}
+
+.filtro-check {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  margin: 0 -10px;
+  border-radius: 10px;
+  font-size: .87rem;
+  color: #525252;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+.filtro-check:hover { background: #fafafa; color: #171717; }
+
+.filtro-check.is-empty {
+  opacity: .4;
+  cursor: not-allowed;
+}
+.filtro-check.is-empty:hover { background: transparent; color: #525252; }
+
+.filtro-check input { display: none; }
+.filtro-check-box {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  border-radius: 7px;
+  border: 1.5px solid #d9d9d9;
+  transition: all .2s ease;
+}
+.filtro-check-box svg {
+  width: 12px; height: 12px;
+  stroke: #fff;
+  opacity: 0;
+  transform: scale(.5);
+  transition: all .2s ease;
+}
+.filtro-check input:checked + .filtro-check-box {
+  background: var(--cat-color, #dc2626);
+  border-color: var(--cat-color, #dc2626);
+  transform: scale(1.05);
+}
+.filtro-check input:checked + .filtro-check-box svg { opacity: 1; transform: scale(1); }
+.filtro-check input:checked ~ .filtro-check-label { color: #171717; font-weight: 700; }
+
+.filtro-check-count {
+  margin-left: auto;
+  min-width: 22px;
+  text-align: center;
+  font-size: .68rem;
+  font-weight: 800;
+  color: #a3a3a3;
+  background: #f5f5f5;
+  border-radius: 999px;
+  padding: 3px 7px;
+}
+.filtro-check:hover .filtro-check-count { background: #fff; }
+.filtro-check input:checked ~ .filtro-check-count {
+  background: color-mix(in srgb, var(--cat-color, #dc2626) 14%, white);
+  color: var(--cat-color, #dc2626);
+}
+
+/* ===== Toolbar ===== */
+.toolbar-select {
+  appearance: none;
+  border: 1px solid #e5e5e5; border-radius: 10px;
+  padding: 10px 34px 10px 16px;
+  font-size: .82rem; font-weight: 700; color: #171717; background: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  cursor: pointer;
+  transition: border-color .2s ease;
+}
+.toolbar-select:hover { border-color: #a3a3a3; }
+
+.view-toggle-group {
+  display: flex;
+  gap: 2px;
+  background: #f5f5f5;
+  padding: 3px;
+  border-radius: 10px;
+}
+.view-toggle-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 8px;
+  color: #a3a3a3;
+  transition: all .2s ease;
+}
+.view-toggle-btn.is-active { background: #171717; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.view-toggle-btn svg { width: 15px; height: 15px; }
+
+/* ===== Tarjeta de producto (grid) ===== */
+.prod-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #ececec;
+  transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+}
+.prod-card:hover {
+  box-shadow: 0 22px 45px rgba(0,0,0,.12);
+  transform: translateY(-5px);
+  border-color: transparent;
+}
+.prod-card-img { display: block; position: relative; aspect-ratio: 4/3; background: #f5f5f5; overflow: hidden; }
+.prod-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.prod-card:hover .prod-card-img img { transform: scale(1.08); }
+.prod-card-body { padding: 20px; }
+.prod-card-subcat {
+  font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .5px;
+  color: var(--cat-color, #dc2626); margin-bottom: 6px;
+}
+.prod-card-body h3 { font-family: 'Archivo', sans-serif; font-weight: 800; font-style: italic; font-size: 1.2rem; line-height: 1.25; margin-bottom: 8px; }
+.prod-card-body h3 a { color: inherit; text-decoration: none; }
+.prod-card-body h3 a:hover { text-decoration: underline; }
+.prod-card-body p {
+  font-size: .87rem; color: #737373; margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.prod-card-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .4px;
+  color: #fff; background: #dc2626;
+  padding: 10px 18px; border-radius: 999px;
+  transition: gap .2s ease, background .2s ease;
+}
+.prod-card-cta:hover { gap: 12px; background: #b91c1c; }
+.prod-card-cta svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* ===== Tarjeta de producto (lista) ===== */
+.prod-row {
+  display: flex; gap: 22px; align-items: center;
+  border: 1px solid #ececec; border-radius: 16px; padding: 16px;
+  transition: box-shadow .25s ease, border-color .25s ease, transform .25s ease;
+}
+.prod-row:hover { box-shadow: 0 14px 30px rgba(0,0,0,.08); border-color: var(--cat-color, #dc2626); transform: translateX(4px); }
+.prod-row-img { position: relative; flex-shrink: 0; width: 160px; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; background: #f5f5f5; }
+.prod-row-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.prod-row:hover .prod-row-img img { transform: scale(1.06); }
+.prod-row-tag {
+  position: absolute; top: 8px; left: 8px;
+  font-size: .6rem; font-weight: 800; text-transform: uppercase; letter-spacing: .3px;
+  color: #fff; padding: 3px 9px; border-radius: 999px;
+}
+.prod-row-body { flex: 1; min-width: 0; }
+.prod-row-body h3 { font-family: 'Archivo', sans-serif; font-weight: 800; font-style: italic; font-size: 1.15rem; margin-bottom: 6px; }
+.prod-row-body p { font-size: .87rem; color: #737373; margin-bottom: 10px; }
+.prod-row-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .4px;
+  color: #dc2626;
+}
+.prod-row-cta svg { width: 13px; height: 13px; transition: transform .2s ease; }
+.prod-row:hover .prod-row-cta svg { transform: translateX(4px); }
+
+@media (max-width: 640px) {
+  .prod-row { flex-direction: column; align-items: stretch; }
+  .prod-row-img { width: 100%; }
+}
+
+/* ===== Estado vacío ===== */
+.cat-empty {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 70px 20px;
+  color: #a3a3a3;
+}
+.cat-empty svg { width: 46px; height: 46px; margin-bottom: 16px; color: #d4d4d4; }
+.cat-empty p { font-size: .95rem; }
+.cat-empty button {
+  margin-top: 16px;
+  font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .4px;
+  color: #dc2626;
+}
+
+/* ===== Banner Plan de Ahorro (solo landing) ===== */
+.plan-banner {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 1;
+  transition: box-shadow 0.3s ease;
+}
+.plan-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+.plan-banner:hover img { transform: scale(1.05); }
+.plan-banner:hover { box-shadow: 0 18px 40px rgba(0,0,0,0.25); }
+
+/* ===== Sección Maquinaria usada (solo landing) ===== */
+.usados-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: #171717;
+  color: #fff;
+}
+.usados-icon svg { width: 22px; height: 22px; }
+
+.usados-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #171717;
+  color: #fff;
+  font-weight: 700;
+  padding: 16px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease, gap 0.25s ease;
+}
+.usados-cta svg { width: 18px; height: 18px; }
+.usados-cta:hover { background: #dc2626; gap: 16px; }
+
+.usados-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+}
+.usados-photo-badge {
+  position: absolute; top: 24px; left: 24px; z-index: 2;
+  background: #dc2626; color: #fff;
+  font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
+  padding: 8px 16px; border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(220,38,38,0.4);
+}
+.usados-float-card {
+  position: absolute; left: -24px; bottom: -24px; z-index: 2;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 16px; padding: 22px 28px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.usados-stat-number { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 2.5rem; color: #dc2626; line-height: 1; }
+.usados-stat-label { font-size: 0.75rem; font-weight: 700; color: #525252; margin-top: 4px; max-width: 160px; }
+.usados-stat-number-lg { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 3rem; color: #dc2626; line-height: 1; }
+
+@media (max-width: 640px) {
+  .usados-float-card { left: 12px; bottom: -20px; padding: 16px 20px; }
+  .usados-stat-number { font-size: 1.75rem; }
+}
+
+/* ===== Detalle de producto ===== */
+.prod-detail-breadcrumb-bar {
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px 0;
+}
+
+.prod-detail-wrap { position: relative; }
+.prod-detail-blob {
+  position: absolute;
+  top: -60px; right: -80px;
+  width: 380px; height: 380px;
+  border-radius: 999px;
+  background: var(--cat-color, #dc2626);
+  filter: blur(90px);
+  opacity: .1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.prod-detail-main-img {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  max-height: 46vh;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f5f5f5;
+  border: 1px solid #ececec;
+  box-shadow: 0 20px 45px rgba(0,0,0,.08);
+}
+.prod-detail-main-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  cursor: zoom-in;
+  animation: prodImgFade .35s ease;
+}
+@keyframes prodImgFade { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: scale(1); } }
+
+.prod-detail-zoom-hint {
+  position: absolute; left: 12px; bottom: 12px; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(4px);
+  border-radius: 999px;
+  color: #fff;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+.prod-detail-main-img:hover .prod-detail-zoom-hint { opacity: 1; }
+.prod-detail-zoom-hint svg { width: 15px; height: 15px; }
+
+.prod-detail-nav-arrow {
+  position: absolute; top: 50%; z-index: 2;
+  transform: translateY(-50%);
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(3px);
+  border-radius: 999px;
+  color: #171717;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  opacity: 0;
+  transition: opacity .2s ease, background .2s ease, transform .2s ease;
+}
+.prod-detail-main-img:hover .prod-detail-nav-arrow { opacity: 1; }
+.prod-detail-nav-arrow:hover { background: #fff; }
+.prod-detail-nav-arrow-left { left: 12px; }
+.prod-detail-nav-arrow-right { right: 12px; }
+.prod-detail-nav-arrow-left:hover { transform: translateY(-50%) translateX(-2px); }
+.prod-detail-nav-arrow-right:hover { transform: translateY(-50%) translateX(2px); }
+.prod-detail-nav-arrow svg { width: 16px; height: 16px; }
+
+.prod-detail-counter {
+  position: absolute; right: 12px; bottom: 12px;
+  background: rgba(0,0,0,.7); color: #fff;
+  font-size: .68rem; font-weight: 700;
+  padding: 4px 10px; border-radius: 8px;
+}
+
+/* ===== Lightbox de la foto ===== */
+.prod-lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(10,10,10,.86);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  animation: prodLightboxFadeIn .25s ease;
+}
+.prod-lightbox.hidden { display: none; }
+@keyframes prodLightboxFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.prod-lightbox img {
+  max-width: min(1400px, 96vw);
+  max-height: 94vh;
+  width: auto; height: auto;
+  border-radius: 14px;
+  box-shadow: 0 30px 70px rgba(0,0,0,.5);
+  animation: prodLightboxZoomIn .25s cubic-bezier(.2,.9,.3,1.1);
+}
+@keyframes prodLightboxZoomIn { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: scale(1); } }
+
+.prod-lightbox-close {
+  position: absolute; top: 22px; right: 24px; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+  color: #fff;
+  transition: background .2s ease, transform .2s ease;
+}
+.prod-lightbox-close:hover { background: rgba(255,255,255,.22); transform: rotate(90deg); }
+.prod-lightbox-close svg { width: 18px; height: 18px; }
+
+.prod-lightbox-arrow {
+  position: absolute; top: 50%; z-index: 2;
+  transform: translateY(-50%);
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+  color: #fff;
+  transition: background .2s ease, transform .2s ease;
+}
+.prod-lightbox-arrow:hover { background: rgba(255,255,255,.22); }
+.prod-lightbox-arrow-left { left: 16px; }
+.prod-lightbox-arrow-right { right: 16px; }
+.prod-lightbox-arrow-left:hover { transform: translateY(-50%) translateX(-3px); }
+.prod-lightbox-arrow-right:hover { transform: translateY(-50%) translateX(3px); }
+.prod-lightbox-arrow svg { width: 20px; height: 20px; }
+
+.prod-lightbox-counter {
+  position: absolute; bottom: 22px; left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  color: #fff;
+  font-size: .75rem; font-weight: 700;
+  padding: 6px 16px; border-radius: 999px;
+}
+
+@media (max-width: 640px) {
+  .prod-lightbox { padding: 16px; }
+  .prod-lightbox-arrow { width: 40px; height: 40px; }
+  .prod-lightbox-arrow-left { left: 6px; }
+  .prod-lightbox-arrow-right { right: 6px; }
+}
+
+.prod-detail-thumbs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+.prod-detail-thumb {
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  opacity: .55;
+  transition: opacity .2s ease, border-color .2s ease, transform .2s ease;
+}
+.prod-detail-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.prod-detail-thumb:hover { opacity: .85; transform: translateY(-2px); }
+.prod-detail-thumb.is-active {
+  opacity: 1;
+  border-color: var(--cat-color, #dc2626);
+}
+
+.prod-detail-info-card { display: flex; flex-direction: column; min-height: 0; }
+
+.prod-detail-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+  line-height: 1.15;
+  color: #171717;
+  margin-bottom: 6px;
+}
+.prod-detail-subcat {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .78rem; font-weight: 700; color: var(--cat-color, #dc2626);
+  background: color-mix(in srgb, var(--cat-color, #dc2626) 10%, white);
+  padding: 4px 12px; border-radius: 999px;
+  width: fit-content;
+}
+
+.prod-detail-tagline {
+  font-size: .92rem;
+  color: #737373;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.prod-detail-btn-primary {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: #dc2626; color: #fff;
+  font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .3px;
+  padding: 14px 18px; border-radius: 10px;
+  transition: background .2s ease, gap .2s ease;
+  white-space: nowrap;
+}
+.prod-detail-btn-primary:hover { background: #b91c1c; gap: 12px; }
+.prod-detail-btn-primary svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+.prod-detail-btn-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px;
+  border: 1px solid #e0e0e0; border-radius: 10px;
+  color: #525252;
+  transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+.prod-detail-btn-icon:hover { border-color: var(--cat-color, #dc2626); color: var(--cat-color, #dc2626); background: color-mix(in srgb, var(--cat-color, #dc2626) 6%, white); }
+.prod-detail-btn-icon svg { width: 18px; height: 18px; }
+
+/* ===== Pestañas ===== */
+.prod-tabs {
+  flex: 1;
+  min-height: 0;
+  padding-top: 16px;
+  border-top: 1px solid #ececec;
+}
+
+.prod-tabs-nav {
+  position: relative;
+  display: flex;
+  gap: 22px;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 16px;
+}
+
+.prod-tab-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 2px 2px 12px;
+  font-size: .76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  color: #a3a3a3;
+  transition: color .2s ease;
+  white-space: nowrap;
+}
+.prod-tab-btn svg { width: 14px; height: 14px; }
+.prod-tab-btn:hover { color: #171717; }
+.prod-tab-btn.is-active { color: var(--cat-color, #dc2626); }
+
+.prod-tab-indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--cat-color, #dc2626);
+  transition: transform .3s cubic-bezier(.65,0,.35,1), width .3s cubic-bezier(.65,0,.35,1);
+}
+
+.prod-tab-panel {
+  display: none;
+  max-height: 27vh;
+  overflow-y: auto;
+  animation: prodTabFade .3s ease;
+  padding-right: 6px;
+}
+.prod-tab-panel.is-active { display: block; }
+@keyframes prodTabFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.prod-tab-text {
+  font-size: .88rem;
+  color: #404040;
+  line-height: 1.65;
+}
+
+.prod-tab-list { list-style: none; }
+.prod-tab-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: .85rem;
+  color: #404040;
+}
+.prod-tab-list li:last-child { border-bottom: none; }
+.prod-tab-list li svg {
+  flex-shrink: 0;
+  width: 15px; height: 15px;
+  margin-top: 2px;
+  color: var(--cat-color, #dc2626);
+}
+
+.prod-tab-empty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 12px;
+  color: #737373;
+  font-size: .82rem;
+}
+.prod-tab-empty svg { flex-shrink: 0; width: 20px; height: 20px; color: #c4c4c4; }
+
+.prod-tab-sublist {
+  list-style: none;
+  margin-top: 6px;
+  padding-left: 4px;
+}
+.prod-tab-sublist li {
+  position: relative;
+  padding: 3px 0 3px 16px;
+  font-size: .82rem;
+  color: #737373;
+  border-bottom: none;
+}
+.prod-tab-sublist li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #c4c4c4;
+}
+
+.prod-spec-table-title {
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: #737373;
+  margin-bottom: 10px;
+}
+
+.prod-spec-table-group { margin-top: 22px; }
+
+.prod-spec-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+}
+.prod-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .8rem;
+  white-space: nowrap;
+}
+.prod-spec-table thead th {
+  background: #fafafa;
+  color: #171717;
+  font-weight: 800;
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid #ececec;
+}
+.prod-spec-table thead th:first-child { color: var(--cat-color, #dc2626); }
+.prod-spec-table tbody th {
+  text-align: left;
+  font-weight: 600;
+  color: #525252;
+  padding: 9px 14px;
+  white-space: normal;
+}
+.prod-spec-table tbody td {
+  text-align: center;
+  color: #171717;
+  font-weight: 700;
+  padding: 9px 14px;
+}
+.prod-spec-table tbody tr:not(:last-child) th,
+.prod-spec-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #f5f5f5;
+}
+.prod-spec-table tbody tr:hover { background: #fafafa; }
+
+/* ===== Productos relacionados ===== */
+.prod-related {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid #ececec;
+}
+.prod-related-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+}
+.prod-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.prod-related-card {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #ececec;
+  text-decoration: none;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+.prod-related-card:hover { box-shadow: 0 14px 28px rgba(0,0,0,.08); transform: translateY(-3px); }
+.prod-related-img { aspect-ratio: 4/3; background: #f5f5f5; overflow: hidden; }
+.prod-related-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.prod-related-card:hover .prod-related-img img { transform: scale(1.06); }
+.prod-related-body { padding: 12px 14px; }
+.prod-related-body p { font-size: .62rem; font-weight: 800; text-transform: uppercase; color: var(--related-color, #dc2626); margin-bottom: 3px; }
+.prod-related-body h4 { font-family: 'Archivo', sans-serif; font-weight: 800; font-style: italic; font-size: .85rem; line-height: 1.25; color: #171717; }
+
+@media (max-width: 900px) {
+  .prod-related-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1024px) {
+  .prod-detail-main-img { max-height: none; }
+  .prod-tab-panel { max-height: none; overflow-y: visible; }
+}
+
+@media (max-width: 640px) {
+  .prod-detail-thumbs { grid-template-columns: repeat(4, 1fr); }
+}
+
 </style>
 </head>
-<body class="construccion-bg min-h-screen flex flex-col items-center justify-center text-center px-6">
+<body class="bg-white text-neutral-900">
 
-  <a href="index.html" class="mb-10">
-    <img src="img/logo.jpg" alt="OMBU" class="h-16 w-auto mx-auto">
-  </a>
+<!-- ===== HEADER ===== -->
+<a href="https://agroplansa.github.io/CalculadorCuota/" target="_blank" rel="noopener" class="promo-bar fixed top-0 left-0 right-0 z-[60] flex items-center justify-center gap-3 py-2.5 text-xs md:text-sm">
+  <span class="promo-icon">%</span>
+  <span class="text-white/95">
+    <strong class="font-extrabold tracking-wide">PLAN AHORRO GRUPOZZETTO</strong>
+    <span class="hidden sm:inline text-white/80"> — ¡Adquirí tu unidad hoy!</span>
+  </span>
+  <span class="promo-cta">Calculá tu cuota →</span>
+</a>
 
-  <div class="construccion-icon mb-8 text-red-600">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-      <circle cx="12" cy="12" r="3"/>
-    </svg>
+<header id="siteHeader" class="fixed top-9 left-0 right-0 z-50 transition-colors duration-300">
+  <div id="headerRow" class="max-w-[1600px] mx-auto px-2 grid grid-cols-[1fr_auto_1fr] items-center h-28">
+    <div id="headerLogos" class="flex items-center gap-0 h-full overflow-hidden">
+      <a href="index.html" class="inline-flex items-center gap-0">
+        <img src="img/logo-ombu.png" alt="Ombu" class="h-10 w-auto rounded -mr-4">
+        <img src="img/logo.jpg" alt="Grupozzetto" class="h-[140px] w-auto rounded -mr-4">
+        <img src="img/logo-traxor.png" alt="Traxor" class="h-14 w-auto rounded">
+      </a>
+    </div>
+
+    <nav class="hidden lg:flex items-center gap-10 text-sm font-bold tracking-wide uppercase justify-self-center">
+      <a href="productos.html" class="text-red-600">Productos</a>
+      <a href="usados.html" class="hover:text-red-600 transition">Usados</a>
+      <a href="empresa.html" class="hover:text-red-600 transition">Empresa</a>
+      <a href="contacto.html" class="hover:text-red-600 transition">Contacto</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-3 justify-self-end">
+      <button class="header-search-btn flex items-center gap-2 border rounded-full px-4 py-2 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M18 10.5a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"/></svg>
+        Buscar
+      </button>
+      <a href="contacto.html" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-3 rounded-md transition">
+        Solicitar presupuesto
+      </a>
+    </div>
+
+    <button id="menuBtn" class="lg:hidden col-start-3 justify-self-end" aria-label="Abrir menú">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
   </div>
 
-  <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-4">Sección en construcción</p>
+  <div id="mobileMenu" class="hidden lg:hidden bg-neutral-950 px-8 py-6 flex flex-col gap-4 text-sm font-bold uppercase text-white">
+    <a href="productos.html">Productos</a>
+    <a href="usados.html">Usados</a>
+    <a href="empresa.html">Empresa</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="contacto.html" class="bg-red-600 text-center py-3 rounded-md">Solicitar presupuesto</a>
+  </div>
+</header>
 
-  <h1 class="text-3xl md:text-5xl font-extrabold mb-5 leading-tight" style="font-family:'Archivo',sans-serif;">
-    Estamos armando<br>el catálogo de Productos
-  </h1>
+<!-- ===== VISTA 1: LANDING DE CATEGORÍAS ===== -->
+<main id="catLanding" class="pt-[150px] pb-20 hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-2">Catálogo completo</p>
+    <h1 class="text-3xl md:text-5xl font-extrabold mb-12" style="font-family:'Archivo',sans-serif;">Nuestros productos</h1>
 
-  <p class="text-neutral-500 max-w-md mb-2">
-    Muy pronto vas a poder ver acá el catálogo completo, filtrado por categoría, con fotos y detalles de cada producto.
-  </p>
-
-  <div class="flex items-center justify-center gap-1.5 mb-10 mt-2">
-    <span class="construccion-dot h-2 w-2 rounded-full bg-red-600"></span>
-    <span class="construccion-dot h-2 w-2 rounded-full bg-red-600"></span>
-    <span class="construccion-dot h-2 w-2 rounded-full bg-red-600"></span>
+    <div id="catLandingGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6"></div>
   </div>
 
-  <a href="index.html" class="construccion-btn inline-flex items-center gap-2 bg-red-600 text-white font-bold px-7 py-3.5 rounded-md">
-    Volver al inicio
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-  </a>
+  <!-- Banner Plan de Ahorro (solo en esta vista) -->
+  <div class="max-w-6xl mx-auto px-6 mt-20 mb-[-60px] relative z-10">
+    <a href="https://agroplansa.github.io/CalculadorCuota/" target="_blank" rel="noopener" class="plan-banner block rounded-lg overflow-hidden shadow-xl">
+      <img src="img/banner-plan-ahorro.png" alt="Plan de ahorro — Entrega asegurada en cuota 10">
+    </a>
+  </div>
 
+  <!-- Maquinaria usada (solo en esta vista) -->
+  <section class="bg-neutral-50 py-24 overflow-hidden mt-12">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <div>
+          <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Calidad certificada OMBU</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-5 leading-tight" style="font-family:'Archivo',sans-serif;">Maquinaria usada</h2>
+          <p class="text-neutral-600 max-w-md mb-10">
+            Equipos seleccionados, revisados y certificados por nuestros técnicos. La confianza OMBU aplicada a cada máquina usada.
+          </p>
+
+          <div class="space-y-6 mb-10">
+            <div class="flex gap-4">
+              <span class="usados-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 8l2.5-5h13L21 8"/><path d="M9 12h6"/></svg>
+              </span>
+              <div>
+                <h3 class="font-bold text-neutral-900">Stock de usados certificados</h3>
+                <p class="text-sm text-neutral-500 mt-1">Equipos disponibles y listos para trabajar.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="usados-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.2 3.4 9.6 8 11 4.6-1.4 8-5.8 8-11V5l-8-3z"/><path d="m9.5 12 1.8 1.8L15 10"/></svg>
+              </span>
+              <div>
+                <h3 class="font-bold text-neutral-900">Garantía OMBU</h3>
+                <p class="text-sm text-neutral-500 mt-1">Revisión técnica y certificación bajo estándares de la marca.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="usados-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a8 8 0 0 1 16 0v4a2 2 0 0 1-2 2h-1v-6h3M3 15v-4h3v6H5a2 2 0 0 1-2-2z"/><path d="M18 19a2 2 0 0 1-2 2h-2"/></svg>
+              </span>
+              <div>
+                <h3 class="font-bold text-neutral-900">Respaldo de posventa</h3>
+                <p class="text-sm text-neutral-500 mt-1">Soporte técnico, asesoramiento y repuestos originales.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="usados-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.6 12.6 20.6a2 2 0 0 1-2.8 0l-7.4-7.4a2 2 0 0 1 0-2.8L10.4 2.4a2 2 0 0 1 1.4-.6H19a2 2 0 0 1 2 2v7.2a2 2 0 0 1-.6 1.4z"/><circle cx="15.5" cy="7.5" r="1.5"/></svg>
+              </span>
+              <div>
+                <h3 class="font-bold text-neutral-900">Mejor relación precio-producto</h3>
+                <p class="text-sm text-neutral-500 mt-1">Accedé a una OMBU con menor inversión, sin resignar confiabilidad.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="usados.html" class="usados-cta">
+            Ver maquinaria usada disponible
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <div class="relative">
+          <span class="usados-photo-badge">Certificado OMBU</span>
+          <img src="img/header3.jpg" alt="Maquinaria usada certificada OMBU" class="usados-photo">
+
+          <div class="usados-float-card">
+            <p class="usados-stat-number" data-count-to="50" data-suffix="+">0</p>
+            <p class="usados-stat-label">Máquinas disponibles ahora</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-20 pt-14 border-t border-neutral-200 text-center">
+        <div>
+          <p class="usados-stat-number-lg"><span data-count-to="100" data-suffix="%">0</span></p>
+          <p class="text-sm text-neutral-500 mt-1">Garantía de calidad</p>
+        </div>
+        <div>
+          <p class="usados-stat-number-lg">24<span class="text-neutral-300">/</span>7</p>
+          <p class="text-sm text-neutral-500 mt-1">Soporte técnico</p>
+        </div>
+        <div>
+          <p class="usados-stat-number-lg">-<span data-count-to="40" data-suffix="%">0</span></p>
+          <p class="text-sm text-neutral-500 mt-1">Ahorro promedio</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- ===== VISTA 2: LISTADO POR CATEGORÍA ===== -->
+<main id="catDetail" class="hidden">
+
+  <!-- Hero de categoría -->
+  <section id="catHero" class="cat-hero">
+    <img id="catHeroImg" src="" alt="">
+    <div class="cat-hero-blob cat-hero-blob-1"></div>
+    <div class="cat-hero-blob cat-hero-blob-2"></div>
+    <div class="cat-hero-content max-w-7xl mx-auto px-6 h-full flex flex-col justify-end pb-8">
+      <h1 id="catHeroTitle" class="cat-hero-title text-5xl md:text-6xl font-extrabold italic mb-4 leading-none" style="font-family:'Archivo',sans-serif;"></h1>
+      <span class="cat-hero-underline"></span>
+      <p id="catHeroDesc" class="text-white/85 max-w-xl text-lg"></p>
+    </div>
+  </section>
+
+  <div class="max-w-[1600px] mx-auto px-8 py-10 cat-content-wrap">
+    <span class="cat-content-blob cat-content-blob-1"></span>
+    <span class="cat-content-blob cat-content-blob-2"></span>
+
+    <div class="mb-8">
+      <nav class="breadcrumb-light flex items-center gap-2 text-xs font-semibold w-fit">
+        <a href="index.html">Inicio</a>
+        <span class="text-neutral-300">›</span>
+        <a href="productos.html">Productos</a>
+        <span class="text-neutral-300">›</span>
+        <span id="catBreadcrumbCurrent" class="text-neutral-900 font-bold"></span>
+      </nav>
+      <span id="catBreadcrumbUnderline" class="cat-breadcrumb-underline"></span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 mt-6 relative">
+
+      <!-- Sidebar de filtros -->
+      <aside>
+        <div class="filtros-panel sticky top-24">
+          <div class="filtros-panel-header">
+            <p class="filtros-panel-title">
+              <span class="filtros-panel-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+              </span>
+              Filtrar modelos
+            </p>
+            <button id="catFiltrosClear" class="filtros-clear">Limpiar</button>
+          </div>
+          <p class="filtros-sublabel">Modelos</p>
+          <div id="catFiltrosList"></div>
+        </div>
+      </aside>
+
+      <!-- Contenido -->
+      <div>
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-neutral-200">
+          <p class="text-sm text-neutral-500"><span id="catResultCount" class="text-neutral-900 font-extrabold text-base"></span> productos encontrados</p>
+
+          <div class="flex items-center gap-3">
+            <select id="catSortSelect" class="toolbar-select">
+              <option value="default">Recomendados</option>
+              <option value="az">Nombre (A-Z)</option>
+              <option value="za">Nombre (Z-A)</option>
+            </select>
+            <div class="view-toggle-group">
+              <button id="viewGridBtn" class="view-toggle-btn is-active" aria-label="Ver en grilla">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </button>
+              <button id="viewListBtn" class="view-toggle-btn" aria-label="Ver en lista">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="catProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8"></div>
+
+        <div id="catEmptyMsg" class="cat-empty hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m21 21-4.3-4.3"/></svg>
+          <p>No hay productos que coincidan con ese filtro.</p>
+          <button id="catEmptyClear">Quitar filtros</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ===== VISTA 3: DETALLE DE PRODUCTO ===== -->
+<main id="prodDetail" class="pt-[156px] pb-8 hidden">
+  <div class="prod-detail-breadcrumb-bar">
+    <div class="max-w-7xl mx-auto px-6">
+      <nav class="breadcrumb-light flex items-center gap-2 text-xs font-semibold flex-wrap w-fit">
+        <a href="index.html">Inicio</a>
+        <span class="text-neutral-300">›</span>
+        <a href="productos.html">Productos</a>
+        <span class="text-neutral-300">›</span>
+        <a id="prodDetailCatLink" href="#" class="hover:text-red-600 transition"></a>
+        <span class="text-neutral-300">›</span>
+        <span id="prodDetailName" class="text-neutral-900 font-bold"></span>
+      </nav>
+      <span id="prodBreadcrumbUnderline" class="cat-breadcrumb-underline"></span>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-6 prod-detail-wrap">
+    <span class="prod-detail-blob"></span>
+
+    <div class="grid lg:grid-cols-[1.05fr_1fr] gap-10">
+
+      <!-- Galería -->
+      <div>
+        <div class="prod-detail-main-img">
+          <img id="prodDetailMainImg" src="" alt="" role="button" aria-label="Ampliar imagen">
+          <span class="prod-detail-zoom-hint">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg>
+          </span>
+          <button id="prodMainPrev" class="prod-detail-nav-arrow prod-detail-nav-arrow-left hidden" aria-label="Foto anterior">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button id="prodMainNext" class="prod-detail-nav-arrow prod-detail-nav-arrow-right hidden" aria-label="Foto siguiente">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <span id="prodDetailCounter" class="prod-detail-counter"></span>
+        </div>
+        <div id="prodDetailThumbs" class="prod-detail-thumbs"></div>
+      </div>
+
+      <!-- Info + pestañas -->
+      <div class="prod-detail-info-card">
+        <h1 id="prodDetailTitle" class="prod-detail-title"></h1>
+        <p id="prodDetailSubcat" class="prod-detail-subcat"></p>
+        <p id="prodDetailTagline" class="prod-detail-tagline"></p>
+
+        <div class="grid grid-cols-[1fr_auto_auto] gap-2.5 mt-4 mb-5">
+          <a href="contacto.html" id="prodDetailBudgetBtn" class="prod-detail-btn-primary">
+            Solicitar presupuesto
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <button class="prod-detail-btn-icon" aria-label="Folleto">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 2v6h6"/></svg>
+          </button>
+          <button id="prodDetailShareBtn" class="prod-detail-btn-icon" aria-label="Compartir">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path stroke-linecap="round" d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+          </button>
+        </div>
+
+        <!-- Pestañas -->
+        <div class="prod-tabs">
+          <div class="prod-tabs-nav">
+            <button class="prod-tab-btn is-active" data-tab="descripcion">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h10M4 18h7"/></svg>
+              Descripción
+            </button>
+            <button class="prod-tab-btn" data-tab="especificaciones">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path stroke-linecap="round" d="M8 8h8M8 12h8M8 16h5"/></svg>
+              Especificaciones
+            </button>
+            <button class="prod-tab-btn" data-tab="caracteristicas">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m12 2 2.4 7.2H22l-6 4.4 2.3 7.2L12 16.4 5.7 20.8 8 13.6l-6-4.4h7.6z"/></svg>
+              Características
+            </button>
+            <span id="prodTabIndicator" class="prod-tab-indicator"></span>
+          </div>
+
+          <div id="prodTabDescripcion" class="prod-tab-panel is-active">
+            <p id="prodDetailDesc" class="prod-tab-text"></p>
+          </div>
+          <div id="prodTabEspecificaciones" class="prod-tab-panel"></div>
+          <div id="prodTabCaracteristicas" class="prod-tab-panel"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Productos relacionados -->
+    <div id="prodRelatedWrap" class="prod-related hidden">
+      <p class="prod-related-title">También te puede interesar</p>
+      <div id="prodRelatedGrid" class="prod-related-grid"></div>
+    </div>
+  </div>
+</main>
+
+<!-- Lightbox: foto ampliada, sin ocupar toda la pantalla -->
+<div id="prodLightbox" class="prod-lightbox hidden">
+  <button id="prodLightboxClose" class="prod-lightbox-close" aria-label="Cerrar">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <button id="prodLightboxPrev" class="prod-lightbox-arrow prod-lightbox-arrow-left hidden" aria-label="Foto anterior">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+  <img id="prodLightboxImg" src="" alt="">
+  <button id="prodLightboxNext" class="prod-lightbox-arrow prod-lightbox-arrow-right hidden" aria-label="Foto siguiente">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+  <span id="prodLightboxCounter" class="prod-lightbox-counter hidden"></span>
+</div>
+
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/54[NUMERO]" target="_blank" aria-label="WhatsApp" class="fixed bottom-6 left-6 z-50 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.85 9.85 0 004.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0012.04 2m0 1.67c2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 012.43 5.88c0 4.59-3.73 8.32-8.32 8.32a8.3 8.3 0 01-4.22-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.28 8.28 0 01-1.27-4.42c0-4.59 3.74-8.32 8.32-8.32"/></svg>
+</a>
+
+<!-- Botón flotante Solicitar presupuesto -->
+<a href="contacto.html" id="quoteFab" aria-label="Solicitar presupuesto" class="fab-quote fixed bottom-6 right-6 z-50 h-14 w-14 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center shadow-lg transition">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <path d="M14 2v6h6"/>
+    <path d="M9 13h6M9 17h6"/>
+  </svg>
+  <span class="fab-tooltip">Solicitar presupuesto</span>
+</a>
+
+<script src="js/main.js"></script>
+<script src="js/productos.js"></script>
 </body>
 </html>
