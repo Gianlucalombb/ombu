@@ -452,6 +452,15 @@ input:focus-visible {
   line-height: 1;
 }
 
+/* Notebooks con pantalla escalada (Windows al 125-150%) reciben un
+   viewport CSS efectivo mucho más chico que su resolución física
+   (ej: 1920x1080 al 150% = ~1280px reales) y el diseño pensado para
+   desktop grande les queda apretado. Esto compensa achicando todo
+   proporcionalmente, igual que hacer zoom-out al 90% en el navegador. */
+@media (max-width: 1440px) and (min-width: 641px) {
+  html { font-size: 90%; }
+}
+
 @media (max-width: 640px) {
   .usados-float-card {
     left: 12px;
@@ -931,7 +940,7 @@ input:focus-visible {
     <div id="headerLogos" class="flex items-center gap-0 h-full overflow-hidden">
       <a href="index.html" class="inline-flex items-center gap-0">
         <img src="img/logo-ombu.png" alt="Ombu" class="h-10 w-auto rounded -mr-4">
-        <img src="img/logo.jpg" alt="Grupozzetto" class="h-[140px] w-auto rounded -mr-4">
+        <img src="img/logo.jpg" alt="Grupozzetto" class="h-[8.75rem] w-auto rounded -mr-4">
         <img src="img/logo-traxor.png" alt="Traxor" class="h-14 w-auto rounded">
       </a>
     </div>

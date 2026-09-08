@@ -574,6 +574,23 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .prod-row-cta svg { width: 13px; height: 13px; transition: transform .2s ease; }
 .prod-row:hover .prod-row-cta svg { transform: translateX(4px); }
 
+/* Notebooks con pantalla escalada (Windows al 125-150%) reciben un
+   viewport CSS efectivo mucho más chico que su resolución física
+   (ej: 1920x1080 al 150% = ~1280px reales) y el diseño pensado para
+   desktop grande les queda apretado. Esto compensa achicando todo
+   proporcionalmente, igual que hacer zoom-out al 90% en el navegador. */
+@media (max-width: 1440px) and (min-width: 641px) {
+  html { font-size: 90%; }
+}
+/* La foto principal de producto queda chica en este rango porque su
+   columna se angosta con el achicado general; le damos más ancho
+   relativo y algo más de alto máximo para compensar. Solo aplica
+   desde 1024px, que es donde esta grilla pasa a ser de 2 columnas. */
+@media (max-width: 1440px) and (min-width: 1024px) {
+  .prod-detail-grid { grid-template-columns: 1.35fr 1fr !important; }
+  .prod-detail-main-img { max-height: 56vh !important; }
+}
+
 @media (max-width: 640px) {
   .prod-row { flex-direction: column; align-items: stretch; }
   .prod-row-img { width: 100%; }
@@ -1111,7 +1128,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     <div id="headerLogos" class="flex items-center gap-0 h-full overflow-hidden">
       <a href="index.html" class="inline-flex items-center gap-0">
         <img src="img/logo-ombu.png" alt="Ombu" class="h-10 w-auto rounded -mr-4">
-        <img src="img/logo.jpg" alt="Grupozzetto" class="h-[140px] w-auto rounded -mr-4">
+        <img src="img/logo.jpg" alt="Grupozzetto" class="h-[8.75rem] w-auto rounded -mr-4">
         <img src="img/logo-traxor.png" alt="Traxor" class="h-14 w-auto rounded">
       </a>
     </div>
@@ -1359,7 +1376,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   <div class="max-w-7xl mx-auto px-6 py-6 prod-detail-wrap">
     <span class="prod-detail-blob"></span>
 
-    <div class="grid lg:grid-cols-[1.05fr_1fr] gap-10">
+    <div class="grid lg:grid-cols-[1.05fr_1fr] gap-10 prod-detail-grid">
 
       <!-- Galería -->
       <div>

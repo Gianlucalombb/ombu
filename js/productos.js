@@ -69,7 +69,7 @@
       image: 'img/header4.jpg',
       desc: 'Amplia gama de medidas disponibles.',
       heroDesc: 'Neumáticos y llantas para todo tipo de maquinaria agrícola e industrial.',
-      filtros: ['Pace', 'Compasal', 'Suretrac', 'Firestone', 'Goodyear', 'Bridgestone', 'TR Xbri', 'Tornel', 'Aplus', 'Roadcruza', 'Kumotire', 'Triangle', 'Durable', 'Fate', 'Good Ride', 'Samson', 'Yokohama', 'Advance']
+      filtros: ['Pace', 'Compasal', 'Suretrac', 'Firestone', 'Goodyear', 'Bridgestone', 'TR', 'Xbri', 'Tornel', 'Aplus', 'Roadcruza', 'Kumotire', 'Triangle', 'Durable', 'Fate', 'Good Ride', 'Samson', 'Yokohama', 'Advance']
     }
   ];
 

@@ -7131,5 +7131,201 @@
       "Carcasa preparada para trabajo exigente."
     ],
     "destacado": false
+  },
+  {
+    "id": "bridgestone-295-80-r225-traccion",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Bridgestone",
+    "name": "Neumático Bridgestone 295/80 R22.5 Tracción",
+    "description": "Neumático radial para eje de tracción, con buen agarre y durabilidad.",
+    "descripcionLarga": "Neumático radial Bridgestone para camiones, diseñado para eje de tracción. Orientado a brindar buen agarre, durabilidad y desempeño en transporte pesado.",
+    "image": "img/neumaticos-y-llantas/bridgestone-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/bridgestone-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Bridgestone",
+      "Medida: 295/80 R22.5",
+      "Tipo: Tracción",
+      "Construcción: Radial",
+      "Aplicación: Camión / transporte pesado",
+      "Eje recomendado: Motriz"
+    ],
+    "caracteristicas": [
+      "Buen nivel de tracción.",
+      "Resistencia al desgaste.",
+      "Estabilidad.",
+      "Aptitud para recorridos exigentes."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "triangle-295-80-r225-traccion",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Triangle",
+    "name": "Neumático Triangle 295/80 R22.5 Tracción",
+    "description": "Neumático radial para eje de tracción, con buen agarre y estabilidad.",
+    "descripcionLarga": "Neumático radial Triangle para camión, diseñado para eje de tracción. Su banda de rodamiento está orientada a proporcionar buen agarre, estabilidad y resistencia para aplicaciones de transporte pesado.",
+    "image": "img/neumaticos-y-llantas/triangle-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/triangle-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Triangle",
+      "Medida: 295/80 R22.5",
+      "Tipo: Tracción",
+      "Construcción: Radial",
+      "Aplicación: Camión / transporte pesado",
+      "Eje recomendado: Motriz"
+    ],
+    "caracteristicas": [
+      "Buen nivel de tracción.",
+      "Diseño robusto.",
+      "Resistencia al desgaste.",
+      "Desempeño adecuado para transporte de carga."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "xbri-295-80-r225-traccion",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Xbri",
+    "name": "Neumático Xbri 295/80 R22.5 Tracción",
+    "description": "Neumático radial para tracción y transporte pesado.",
+    "descripcionLarga": "Neumático radial Xbri para camión, desarrollado para aplicaciones de tracción y transporte pesado. Su diseño busca proporcionar agarre y buen desempeño durante recorridos en carretera.",
+    "image": "img/neumaticos-y-llantas/xbri-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/xbri-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Xbri",
+      "Medida: 295/80 R22.5",
+      "Tipo: Tracción",
+      "Construcción: Radial",
+      "Aplicación: Camión",
+      "Eje recomendado: Motriz"
+    ],
+    "caracteristicas": [
+      "Buen agarre.",
+      "Diseño para tracción.",
+      "Resistencia al desgaste.",
+      "Aptitud para transporte pesado."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "tornel-1000-20-lineal",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Tornel",
+    "name": "Neumático Tornel 10.00-20 Lineal",
+    "description": "Neumático para vehículos de carga, con diseño lineal orientado a la estabilidad.",
+    "descripcionLarga": "Neumático Tornel 10.00-20 para vehículos de carga, con diseño lineal orientado a proporcionar estabilidad y resistencia en aplicaciones de transporte.",
+    "image": "img/neumaticos-y-llantas/tornel-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/tornel-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Tornel",
+      "Medida: 10.00-20",
+      "Tipo: Lineal",
+      "Aplicación: Camión / transporte de carga",
+      "Uso recomendado: Carretera y transporte"
+    ],
+    "caracteristicas": [
+      "Diseño lineal.",
+      "Estabilidad direccional.",
+      "Construcción resistente.",
+      "Buen desempeño para trabajo de carga."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "aplus-750-r16-lineal",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Aplus",
+    "name": "Neumático Aplus 7.50 R16 Lineal",
+    "description": "Neumático radial de diseño lineal para vehículos comerciales y de carga.",
+    "descripcionLarga": "Neumático radial Aplus 7.50 R16 de diseño lineal, indicado para vehículos comerciales y de carga. Orientado a brindar estabilidad y un desgaste uniforme.",
+    "image": "img/neumaticos-y-llantas/aplus-750r16-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/aplus-750r16-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Aplus",
+      "Medida: 7.50 R16",
+      "Tipo: Lineal",
+      "Construcción: Radial",
+      "Aplicación: Vehículos comerciales / carga",
+      "Uso recomendado: Ruta"
+    ],
+    "caracteristicas": [
+      "Estabilidad direccional.",
+      "Desgaste uniforme.",
+      "Buena evacuación de agua.",
+      "Resistencia para uso comercial."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "aplus-215-75-r175-traccion",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Aplus",
+    "name": "Neumático Aplus 215/75 R17.5 Tracción",
+    "description": "Neumático radial para eje de tracción de vehículos comerciales.",
+    "descripcionLarga": "Neumático radial Aplus 215/75 R17.5 para eje de tracción, diseñado para vehículos comerciales y camiones livianos/medianos que requieren buen agarre y resistencia.",
+    "image": "img/neumaticos-y-llantas/aplus-21575r175-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/aplus-21575r175-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Aplus",
+      "Medida: 215/75 R17.5",
+      "Tipo: Tracción",
+      "Construcción: Radial",
+      "Aplicación: Vehículos comerciales / camión",
+      "Eje recomendado: Motriz"
+    ],
+    "caracteristicas": [
+      "Buen agarre.",
+      "Dibujo de tracción.",
+      "Resistencia al desgaste.",
+      "Desempeño para trabajo comercial."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "aplus-385-65-r225-lineal",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Aplus",
+    "name": "Neumático Aplus 385/65 R22.5 Lineal",
+    "description": "Neumático radial de diseño lineal para transporte pesado.",
+    "descripcionLarga": "Neumático radial Aplus 385/65 R22.5 de diseño lineal para transporte pesado. Su banda ancha está orientada a brindar estabilidad y buen comportamiento en carretera.",
+    "image": "img/neumaticos-y-llantas/aplus-38565r225-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/aplus-38565r225-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Aplus",
+      "Medida: 385/65 R22.5",
+      "Tipo: Lineal",
+      "Construcción: Radial",
+      "Aplicación: Transporte pesado",
+      "Uso recomendado: Ruta"
+    ],
+    "caracteristicas": [
+      "Banda ancha.",
+      "Buena estabilidad.",
+      "Desgaste uniforme.",
+      "Evacuación de agua.",
+      "Construcción para cargas pesadas."
+    ],
+    "destacado": false
   }
 ]
