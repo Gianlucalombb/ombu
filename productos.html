@@ -359,11 +359,128 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 
 /* ===== Filtros sidebar ===== */
 .filtros-panel {
+  background: #fff;
   border: 1px solid #ececec;
   border-radius: 18px;
   padding: 22px 20px 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,.04);
 }
+
+/* Botón "Filtros" y cierre: solo existen visualmente en mobile */
+.filtros-open-mobile {
+  display: none;
+  align-items: center; gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid #d4d4d4;
+  border-radius: 999px;
+  font-size: .82rem; font-weight: 700; color: #171717;
+}
+.filtros-open-mobile svg { width: 16px; height: 16px; }
+.filtros-close-mobile, .filtros-apply-mobile { display: none; }
+.filtros-overlay { display: none; }
+
+@media (max-width: 1023px) {
+  .filtros-open-mobile { display: flex; }
+
+  #filtrosAside {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    pointer-events: none;
+  }
+  #filtrosAside.is-open { pointer-events: auto; }
+
+  .filtros-overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: rgba(23,23,23,0.55);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  #filtrosAside.is-open .filtros-overlay { opacity: 1; }
+
+  #filtrosAside .filtros-panel {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    max-height: 82vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.25);
+    opacity: 0;
+    transform: scale(0.94);
+    transition: opacity 0.22s ease, transform 0.22s cubic-bezier(.2,.9,.3,1.1);
+    padding: 22px 20px 20px;
+  }
+  #filtrosAside.is-open .filtros-panel {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .filtros-panel-header { padding-bottom: 14px; border-bottom: none; margin-bottom: 10px; }
+  .filtros-panel-title { font-size: 1.05rem; }
+  .filtros-panel-icon, #filtrosAside .filtros-clear { display: none; }
+
+  #filtrosAside .filtros-panel {
+    overflow-x: hidden;
+  }
+  #catFiltrosList {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  #filtrosAside .filtro-check {
+    margin: 0;
+  }
+
+  .filtros-close-mobile {
+    display: flex;
+    align-items: center; justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: 999px;
+    background: transparent;
+    color: #171717;
+    margin-left: auto;
+  }
+  .filtros-close-mobile svg { width: 17px; height: 17px; }
+
+  .filtros-mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+    flex-shrink: 0;
+  }
+  .filtros-clear-mobile {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    background: #fff;
+    color: #171717;
+    font-weight: 700; text-transform: uppercase; letter-spacing: .4px; font-size: .78rem;
+    transition: border-color 0.15s ease;
+  }
+  .filtros-clear-mobile:active { border-color: #a3a3a3; }
+
+  .filtros-apply-mobile {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #171717;
+    color: #fff;
+    font-weight: 800; text-transform: uppercase; letter-spacing: .4px; font-size: .78rem;
+    border-radius: 10px;
+    transition: background 0.15s ease;
+  }
+  .filtros-apply-mobile:active { background: #000; }
+}
+
 .filtros-panel-header {
   display: flex;
   align-items: center;
@@ -592,11 +709,16 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 }
 
 @media (max-width: 640px) {
-  /* Mismo criterio que en la home: logos más chicos en celular */
-  #headerRow { height: 84px !important; }
-  #headerLogos img[alt="Ombu"] { height: 24px !important; }
-  #headerLogos img[alt="Grupozzetto"] { height: 64px !important; }
-  #headerLogos img[alt="Traxor"] { height: 30px !important; }
+  /* Sin hamburguesa en esta página: logos centrados y grandes */
+  #headerRow { height: auto !important; padding: 18px 0 !important; }
+  #headerLogos {
+    grid-column: 1 / -1;
+    justify-self: center;
+    overflow: visible;
+  }
+  #headerLogos img[alt="Ombu"] { height: 38px !important; margin-right: -16px !important; }
+  #headerLogos img[alt="Grupozzetto"] { height: 100px !important; margin-right: -16px !important; }
+  #headerLogos img[alt="Traxor"] { height: 48px !important; }
 
   .prod-row { flex-direction: column; align-items: stretch; }
   .prod-row-img { width: 100%; }
@@ -1109,7 +1231,6 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 @media (max-width: 1024px) {
   .prod-detail-main-img { max-height: none; }
   .prod-tab-panel { max-height: none; overflow-y: visible; }
-  .filtros-panel { position: static; top: auto; }
 }
 
 @media (max-width: 640px) {
@@ -1183,8 +1304,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 @media (max-width: 640px) {
   .search-inline-btn.is-search-open { width: 100%; }
   .search-inline-btn.is-search-open .search-inline-input { width: 100%; }
-  #catLanding { padding-top: 122px !important; }
-  #prodDetail { padding-top: 126px !important; }
+  #catLanding { padding-top: 174px !important; }
+  #prodDetail { padding-top: 178px !important; }
 }
 
 </style>
@@ -1228,17 +1349,6 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
       </a>
     </div>
 
-    <button id="menuBtn" class="lg:hidden col-start-3 justify-self-end" aria-label="Abrir menú">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-
-  <div id="mobileMenu" class="hidden lg:hidden bg-neutral-950 px-8 py-6 flex flex-col gap-4 text-sm font-bold uppercase text-white">
-    <a href="productos.html">Productos</a>
-    <a href="usados.html">Usados</a>
-    <a href="empresa.html">Empresa</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" class="bg-red-600 text-center py-3 rounded-md">Solicitar presupuesto</a>
   </div>
 </header>
 
@@ -1382,9 +1492,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 
     <div class="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 mt-6 relative">
 
-      <!-- Sidebar de filtros -->
-      <aside>
-        <div class="filtros-panel sticky top-24">
+      <!-- Sidebar de filtros (en mobile se convierte en panel que sube desde abajo) -->
+      <aside id="filtrosAside">
+        <div id="filtrosOverlay" class="filtros-overlay"></div>
+        <div class="filtros-panel">
           <div class="filtros-panel-header">
             <p class="filtros-panel-title">
               <span class="filtros-panel-icon">
@@ -1393,9 +1504,16 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
               Filtrar modelos
             </p>
             <button id="catFiltrosClear" class="filtros-clear">Limpiar</button>
+            <button id="filtrosCloseBtn" class="filtros-close-mobile" aria-label="Cerrar filtros">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
           </div>
           <p class="filtros-sublabel">Modelos</p>
           <div id="catFiltrosList"></div>
+          <div class="filtros-mobile-actions">
+            <button id="catFiltrosClearMobile" class="filtros-clear-mobile">Limpiar</button>
+            <button id="filtrosApplyBtn" class="filtros-apply-mobile">Ver resultados</button>
+          </div>
         </div>
       </aside>
 
@@ -1405,6 +1523,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
           <p class="text-sm text-neutral-500"><span id="catResultCount" class="text-neutral-900 font-extrabold text-base"></span> productos encontrados</p>
 
           <div class="flex items-center gap-3">
+            <button id="filtrosOpenBtn" class="filtros-open-mobile">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+              Filtros
+            </button>
             <select id="catSortSelect" class="toolbar-select">
               <option value="default">Recomendados</option>
               <option value="az">Nombre (A-Z)</option>

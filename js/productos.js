@@ -273,7 +273,29 @@
     renderProducts();
   }
   catFiltrosClear.addEventListener('click', clearFiltros);
+  const catFiltrosClearMobile = document.getElementById('catFiltrosClearMobile');
+  if (catFiltrosClearMobile) catFiltrosClearMobile.addEventListener('click', clearFiltros);
   catEmptyClear.addEventListener('click', clearFiltros);
+
+  // Panel de filtros en mobile: se abre como una hoja que sube desde abajo
+  const filtrosAside = document.getElementById('filtrosAside');
+  const filtrosOpenBtn = document.getElementById('filtrosOpenBtn');
+  const filtrosCloseBtn = document.getElementById('filtrosCloseBtn');
+  const filtrosApplyBtn = document.getElementById('filtrosApplyBtn');
+  const filtrosOverlay = document.getElementById('filtrosOverlay');
+
+  function openFiltrosMobile() {
+    filtrosAside.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeFiltrosMobile() {
+    filtrosAside.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  if (filtrosOpenBtn) filtrosOpenBtn.addEventListener('click', openFiltrosMobile);
+  if (filtrosCloseBtn) filtrosCloseBtn.addEventListener('click', closeFiltrosMobile);
+  if (filtrosApplyBtn) filtrosApplyBtn.addEventListener('click', closeFiltrosMobile);
+  if (filtrosOverlay) filtrosOverlay.addEventListener('click', closeFiltrosMobile);
 
   function getFilteredSortedProducts() {
     let list = allProducts.filter((p) => p.category === currentCategory.slug);

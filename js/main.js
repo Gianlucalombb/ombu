@@ -1,9 +1,19 @@
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 
-menuBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-});
+if (menuBtn && mobileMenu) {
+  const menuBtnLabel = document.getElementById('menuBtnLabel');
+  const menuBtnIconPath = document.getElementById('menuBtnIconPath');
+  const ICON_HAMBURGER = 'M4 6h16M4 12h16M4 18h16';
+  const ICON_CLOSE = 'M6 18L18 6M6 6l12 12';
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('hidden') === false;
+    if (menuBtnLabel) menuBtnLabel.textContent = isOpen ? 'Cerrar' : 'Menú';
+    if (menuBtnIconPath) menuBtnIconPath.setAttribute('d', isOpen ? ICON_CLOSE : ICON_HAMBURGER);
+    menuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  });
+}
 
 /* ===== Menú desplegable de Productos (clic, para táctiles) ===== */
 (function () {
@@ -250,6 +260,8 @@ menuBtn.addEventListener('click', () => {
       mobilePrev.textContent = names[prevIndex];
       mobileCurrent.textContent = names[current];
       mobileNext.textContent = names[nextIndex];
+      // Nombres largos (ej. "Autopropulsadas") se achican para no salirse de pantalla
+      mobileCurrent.classList.toggle('is-long', names[current].length > 12);
     }
 
     badgeTimer = setTimeout(() => {
@@ -271,6 +283,8 @@ menuBtn.addEventListener('click', () => {
   });
   if (nextBtn) nextBtn.addEventListener('click', next);
   if (prevBtn) prevBtn.addEventListener('click', prev);
+  if (mobilePrev) mobilePrev.addEventListener('click', prev);
+  if (mobileNext) mobileNext.addEventListener('click', next);
 
   window.addEventListener('resize', () => moveIndicator(tabs[current]));
 

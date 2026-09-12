@@ -281,8 +281,14 @@ input:focus-visible {
   text-transform: uppercase;
   letter-spacing: 0.4px;
   color: rgba(255,255,255,0.45);
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease, color 0.2s ease;
+  cursor: pointer;
+  max-width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+.hero-mobile-cat-side:active { color: rgba(255,255,255,0.8); }
 .hero-mobile-cat-current {
   font-family: 'Archivo', sans-serif;
   font-weight: 800;
@@ -290,7 +296,97 @@ input:focus-visible {
   font-size: 1.15rem;
   color: #fff;
   transition: opacity 0.25s ease;
+  white-space: nowrap;
+  max-width: 42vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
+.hero-mobile-cat-current.is-long {
+  font-size: clamp(0.5rem, 2.6vw, 0.62rem);
+  letter-spacing: -0.2px;
+}
+
+/* ===== Menú mobile ===== */
+.mobile-menu-panel {
+  background: rgba(23,23,23,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 20px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: mobileMenuIn 0.25s cubic-bezier(.2,.9,.3,1.1);
+}
+@keyframes mobileMenuIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 12px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.15s ease;
+  opacity: 0;
+  animation: mobileMenuItemIn 0.35s ease forwards;
+}
+.mobile-menu-link:nth-child(1) { animation-delay: 0.03s; }
+.mobile-menu-link:nth-child(2) { animation-delay: 0.08s; }
+.mobile-menu-link:nth-child(3) { animation-delay: 0.13s; }
+.mobile-menu-link:nth-child(4) { animation-delay: 0.18s; }
+@keyframes mobileMenuItemIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.mobile-menu-link:active { background: rgba(255,255,255,0.06); transform: scale(0.98); }
+
+.mobile-menu-arrow {
+  margin-left: auto;
+  width: 15px; height: 15px;
+  color: rgba(255,255,255,0.3);
+  flex-shrink: 0;
+}
+
+.mobile-menu-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 10px 4px 14px;
+}
+
+.mobile-menu-search {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%;
+  padding: 13px; margin: 0 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  font-weight: 700; font-size: 0.88rem; font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.mobile-menu-search svg { width: 18px; height: 18px; flex-shrink: 0; }
+.mobile-menu-search:active { background: rgba(255,255,255,0.1); }
+
+.mobile-menu-cta {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 0 4px;
+  padding: 15px;
+  background: #dc2626;
+  color: #fff;
+  font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px; font-size: 0.82rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.mobile-menu-cta:active { background: #b91c1c; }
 
 .hero-tab {
   position: relative;
@@ -547,18 +643,42 @@ input:focus-visible {
     height: 84px !important;
     position: relative;
   }
-  /* En mobile el nav y los botones de la derecha se ocultan, así que
-     centramos los logos en todo el ancho (no solo en su columna),
-     sacándolos del grid con position:absolute. */
-  #headerLogos {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) !important;
+  /* Header en dos filas apiladas: logos arriba centrados, y el botón
+     de menú (con texto "Menú") abajo, también centrado. */
+  #headerRow {
+    grid-template-columns: none !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: auto !important;
+    padding: 16px 0 !important;
   }
-  #headerLogos img[alt="Ombu"] { height: 30px !important; }
-  #headerLogos img[alt="Grupozzetto"] { height: 78px !important; }
-  #headerLogos img[alt="Traxor"] { height: 38px !important; }
+  #headerLogos {
+    grid-column: unset;
+    justify-self: center;
+    overflow: visible;
+  }
+  #headerLogos img[alt="Ombu"] { height: 38px !important; margin-right: -16px !important; }
+  #headerLogos img[alt="Grupozzetto"] { height: 100px !important; margin-right: -16px !important; }
+  #headerLogos img[alt="Traxor"] { height: 48px !important; }
+
+  #menuBtn {
+    grid-column: unset;
+    justify-self: unset;
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+  }
+  #menuBtn svg { height: 22px !important; width: 22px !important; }
+  #menuBtnLabel {
+    display: inline !important;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
 
   .usados-float-card {
     left: 12px;
@@ -1259,18 +1379,41 @@ input:focus-visible {
 
     <button id="menuBtn" class="lg:hidden col-start-3 text-white justify-self-end" aria-label="Abrir menú">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        <path id="menuBtnIconPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
+      <span id="menuBtnLabel" class="hidden">Menú</span>
     </button>
   </div>
 
   <!-- Menú mobile -->
-  <div id="mobileMenu" class="hidden lg:hidden bg-neutral-950 px-8 py-6 flex flex-col gap-4 text-sm font-bold uppercase text-white">
-    <a href="productos.html">Productos</a>
-    <a href="usados.html">Usados</a>
-    <a href="empresa.html">Empresa</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" class="bg-red-600 text-center py-3 rounded-md">Solicitar presupuesto</a>
+  <div id="mobileMenu" class="hidden lg:hidden mobile-menu-panel">
+    <a href="productos.html" class="mobile-menu-link">
+      <span class="mobile-menu-label">Productos</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="mobile-menu-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+    <a href="usados.html" class="mobile-menu-link">
+      <span class="mobile-menu-label">Usados</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="mobile-menu-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+    <a href="empresa.html" class="mobile-menu-link">
+      <span class="mobile-menu-label">Empresa</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="mobile-menu-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+    <a href="contacto.html" class="mobile-menu-link">
+      <span class="mobile-menu-label">Contacto</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="mobile-menu-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </a>
+
+    <div class="mobile-menu-divider"></div>
+
+    <button type="button" class="header-search-btn mobile-menu-search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M18 10.5a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"/></svg>
+      <span>Buscar</span>
+    </button>
+    <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" class="mobile-menu-cta">
+      Solicitar presupuesto
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
   </div>
 </header>
 
