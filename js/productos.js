@@ -2,14 +2,24 @@
 
   const CATEGORIES = [
     {
-      slug: 'agro',
-      label: 'Agro',
-      color: '#3daa35',
-      tag: 'AGR',
-      image: 'img/header1.jpg',
-      desc: 'Soluciones confiables para cada campaña.',
-      heroDesc: 'Equipamiento de última generación para maximizar la productividad de tu campo.',
-      filtros: ['Autodescargables', 'Conservación de granos', 'Cosecha', 'Equipos siembra', 'Ganadería', 'Labranza']
+      slug: 'remolques',
+      label: 'Semi Remolques',
+      color: '#f97316',
+      tag: 'RMQ',
+      image: 'img/header3.jpg',
+      desc: 'Un verdadero ícono de la marca.',
+      heroDesc: 'Bateas, tolvas y semirremolques para el transporte de granos a gran escala.',
+      filtros: ['Acoplados', 'Bateas', 'Semi Remolques', 'Equipos Bitren', 'Cajas Sobre Camión', 'Equipo Full Trailer']
+    },
+    {
+      slug: 'carrocerias',
+      label: 'Carrocerías',
+      color: '#9333ea',
+      tag: 'CAR',
+      image: 'img/header8.jpg',
+      desc: 'Carrocerías a medida para cada aplicación.',
+      heroDesc: 'Soluciones de carrocería adaptadas a las necesidades de tu operación.',
+      filtros: ['Baranda Volcable', 'Todo Puerta', 'Garrafera', 'Jaula Vaquera', 'Mixta Cerealera y Vaquera', 'Sider', 'Tolva']
     },
     {
       slug: 'camiones',
@@ -22,14 +32,14 @@
       filtros: ['Volvo']
     },
     {
-      slug: 'remolques',
-      label: 'Remolques',
-      color: '#f97316',
-      tag: 'RMQ',
-      image: 'img/header3.jpg',
-      desc: 'Un verdadero ícono de la marca.',
-      heroDesc: 'Bateas, tolvas y semirremolques para el transporte de granos a gran escala.',
-      filtros: ['Acoplados', 'Bateas', 'Semi Remolques', 'Equipos Bitren', 'Cajas Sobre Camión', 'Equipo Full Trailer']
+      slug: 'agro',
+      label: 'Agro',
+      color: '#3daa35',
+      tag: 'AGR',
+      image: 'img/header1.jpg',
+      desc: 'Soluciones confiables para cada campaña.',
+      heroDesc: 'Equipamiento de última generación para maximizar la productividad de tu campo.',
+      filtros: ['Autodescargables', 'Conservación de granos', 'Cosecha', 'Equipos siembra', 'Ganadería', 'Labranza']
     },
     {
       slug: 'tractores',
@@ -69,7 +79,7 @@
       image: 'img/header4.jpg',
       desc: 'Amplia gama de medidas disponibles.',
       heroDesc: 'Neumáticos y llantas para todo tipo de maquinaria agrícola e industrial.',
-      filtros: ['Pace', 'Compasal', 'Suretrac', 'Firestone', 'Goodyear', 'Bridgestone', 'TR', 'Xbri', 'Tornel', 'Aplus', 'Roadcruza', 'Kumotire', 'Triangle', 'Durable', 'Fate', 'Good Ride', 'Samson', 'Yokohama', 'Advance']
+      filtros: ['Pace', 'Compasal', 'Suretrac', 'Firestone', 'Goodyear', 'Bridgestone', 'Xbri', 'Tornel', 'Aplus', 'Roadcruza', 'Kumho Tire', 'Triangle', 'Durable', 'Fate', 'Good Ride', 'Samson', 'Yokohama', 'Advance']
     }
   ];
 
@@ -682,7 +692,8 @@
 
       prodDetailCatLink.textContent = cat.label;
       prodDetailCatLink.href = `productos.html?cat=${cat.slug}`;
-      prodDetailBudgetBtn.href = `contacto.html?producto=${encodeURIComponent(p.id)}`;
+      prodDetailBudgetBtn.href = `https://wa.me/541140447563?text=${encodeURIComponent('Hola! Quiero solicitar un presupuesto para: ' + p.name)}`;
+      prodDetailBudgetBtn.target = '_blank';
 
       // Subcategoría / modelo
       prodDetailSubcat.textContent = p.modelo ? `Modelo ${p.modelo}` : '';

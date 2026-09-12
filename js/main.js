@@ -165,15 +165,18 @@ menuBtn.addEventListener('click', () => {
   const nextBtn = document.getElementById('nextSlide');
   const tabIndicator = document.getElementById('tabIndicator');
   const tabsWrap = document.getElementById('heroTabs');
+  const mobilePrev = document.getElementById('heroMobilePrev');
+  const mobileCurrent = document.getElementById('heroMobileCurrent');
+  const mobileNext = document.getElementById('heroMobileNext');
 
   if (!slides.length) return;
 
   const SLIDE_DURATION = 3500;   // tiempo total por slide (ms)
   const BADGE_DURATION = 2200;   // cuánto se ve la palabra de categoría (ms)
 
-  const names = ['Agro', 'Camiones', 'Remolques', 'Tractores', 'Autopropulsadas', 'Higiene urbana', 'Neumáticos'];
-  const slugs = ['agro', 'camiones', 'remolques', 'tractores', 'autopropulsadas', 'higiene-urbana', 'neumaticos-y-llantas'];
-  const catClasses = ['cat-agro', 'cat-camiones', 'cat-remolques', 'cat-tractores', 'cat-autopropulsadas', 'cat-higiene-urbana', 'cat-neumaticos-llantas'];
+  const names = ['Semi Remolques', 'Carrocerías', 'Camiones', 'Agro', 'Tractores', 'Autopropulsadas', 'Higiene urbana', 'Neumáticos'];
+  const slugs = ['remolques', 'carrocerias', 'camiones', 'agro', 'tractores', 'autopropulsadas', 'higiene-urbana', 'neumaticos-y-llantas'];
+  const catClasses = ['cat-remolques', 'cat-carrocerias', 'cat-camiones', 'cat-agro', 'cat-tractores', 'cat-autopropulsadas', 'cat-higiene-urbana', 'cat-neumaticos-llantas'];
 
   let current = 0;
   let timer = null;
@@ -240,6 +243,15 @@ menuBtn.addEventListener('click', () => {
     badge.classList.add(catClasses[current]);
     badge.classList.add('is-visible');
 
+    // Tira mobile: anterior / actual / siguiente, con vuelta circular
+    if (mobileCurrent) {
+      const prevIndex = (current - 1 + names.length) % names.length;
+      const nextIndex = (current + 1) % names.length;
+      mobilePrev.textContent = names[prevIndex];
+      mobileCurrent.textContent = names[current];
+      mobileNext.textContent = names[nextIndex];
+    }
+
     badgeTimer = setTimeout(() => {
       badge.classList.remove('is-visible');
       badge.classList.add('is-leaving');
@@ -264,4 +276,23 @@ menuBtn.addEventListener('click', () => {
 
   goTo(0);
   resetTimer();
+})();
+
+/* Tarjetas de "copiar" (mail y teléfono) en la sección Nuestra presencia */
+(function () {
+  document.querySelectorAll('.presencia-copy-btn').forEach((btn) => {
+    const hint = btn.querySelector('.presencia-copy-hint');
+    const originalHint = hint ? hint.textContent : '';
+    btn.addEventListener('click', () => {
+      const texto = btn.dataset.copy;
+      navigator.clipboard.writeText(texto).then(() => {
+        btn.classList.add('is-copied');
+        if (hint) hint.textContent = '¡Copiado!';
+        setTimeout(() => {
+          btn.classList.remove('is-copied');
+          if (hint) hint.textContent = originalHint;
+        }, 1800);
+      });
+    });
+  });
 })();

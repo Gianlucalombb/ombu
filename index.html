@@ -3,11 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OMBU [SEDE] — Maquinaria agrícola</title>
-<meta name="description" content="Maquinaria agrícola, remolques y equipos de higiene urbana OMBU en [SEDE]. Desde 1990 desarrollando confianza.">
+<title>OMBU Tapiales — Maquinaria Agrícola, Camiones y Remolques | Grupozzetto</title>
+<meta name="description" content="Concesionario oficial OMBU en Tapiales, Buenos Aires. Maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos. Más de 35 años de trayectoria.">
+<meta name="keywords" content="maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, higiene urbana, neumáticos, OMBU, Grupozzetto, Traxor, Tapiales, Buenos Aires, Argentina">
+<meta name="robots" content="index, follow">
+<meta name="author" content="OMBU Tapiales - Grupozzetto">
+<link rel="canonical" href="https://ombu.grupozzetto.com/">
+<link rel="icon" type="image/png" href="img/logo-ombu.png">
+<link rel="apple-touch-icon" href="img/logo-ombu.png">
+
+<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ombu.grupozzetto.com/">
+<meta property="og:site_name" content="OMBU Tapiales">
+<meta property="og:title" content="OMBU Tapiales — Maquinaria Agrícola, Camiones y Remolques">
+<meta property="og:description" content="Concesionario oficial OMBU en Tapiales, Buenos Aires. Maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos. Más de 35 años de trayectoria.">
+<meta property="og:image" content="https://ombu.grupozzetto.com/img/header1.jpg">
+<meta property="og:locale" content="es_AR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OMBU Tapiales — Maquinaria Agrícola, Camiones y Remolques">
+<meta name="twitter:description" content="Concesionario oficial OMBU en Tapiales, Buenos Aires. Más de 35 años de trayectoria en maquinaria agrícola, camiones y equipos industriales.">
+<meta name="twitter:image" content="https://ombu.grupozzetto.com/img/header1.jpg">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Datos estructurados: negocio local -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "OMBU Tapiales",
+  "alternateName": "Grupozzetto",
+  "description": "Concesionario oficial de maquinaria agrícola OMBU, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos en Tapiales, Buenos Aires.",
+  "url": "https://ombu.grupozzetto.com/",
+  "logo": "https://ombu.grupozzetto.com/img/logo.jpg",
+  "image": "https://ombu.grupozzetto.com/img/header1.jpg",
+  "telephone": "+54-11-4044-7563",
+  "email": "gzzombu@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. de Circunvalación 2181",
+    "addressLocality": "Tapiales",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -34.71090519959011,
+    "longitude": -58.503549579195294
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "17:00"
+  },
+  "priceRange": "$$",
+  "foundingDate": "1990"
+}
+</script>
+
 <style>
 /* Ajustes puntuales que Tailwind (vía CDN) no resuelve solo */
 
@@ -122,6 +181,7 @@ input:focus-visible {
 .hero-card.cat-tractores { --cat-color: #78350f; }
 .hero-card.cat-autopropulsadas { --cat-color: #14b8bd; }
 .hero-card.cat-higiene-urbana { --cat-color: #38bdf8; }
+.hero-card.cat-carrocerias { --cat-color: #9333ea; }
 
 /* Tarjetas grandes de categoría con foto (debajo del hero) */
 .cat-tile {
@@ -212,6 +272,24 @@ input:focus-visible {
 
 .tab-divider {
   border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Tira mobile: anterior / actual / siguiente categoría */
+.hero-mobile-cat-side {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: rgba(255,255,255,0.45);
+  transition: opacity 0.25s ease;
+}
+.hero-mobile-cat-current {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #fff;
+  transition: opacity 0.25s ease;
 }
 
 .hero-tab {
@@ -462,6 +540,26 @@ input:focus-visible {
 }
 
 @media (max-width: 640px) {
+  /* El header a tamaño completo (176px) ocupa demasiado en un celular;
+     lo achicamos junto con los logos, que además tienen "aire" de sobra
+     en el archivo y quedan desproporcionados si no se ajustan a mano. */
+  #headerRow, #siteHeader.is-scrolled #headerRow {
+    height: 84px !important;
+    position: relative;
+  }
+  /* En mobile el nav y los botones de la derecha se ocultan, así que
+     centramos los logos en todo el ancho (no solo en su columna),
+     sacándolos del grid con position:absolute. */
+  #headerLogos {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+  }
+  #headerLogos img[alt="Ombu"] { height: 30px !important; }
+  #headerLogos img[alt="Grupozzetto"] { height: 78px !important; }
+  #headerLogos img[alt="Traxor"] { height: 38px !important; }
+
   .usados-float-card {
     left: 12px;
     bottom: -20px;
@@ -521,6 +619,76 @@ input:focus-visible {
   font-size: 1rem;
   font-weight: 700;
   color: #a3a3a3;
+}
+
+/* Tarjetas de contacto (mail / teléfono) */
+.presencia-contact-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  text-decoration: none;
+  width: 100%;
+  background: #fff;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.presencia-copy-hint {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a3a3a3;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.presencia-contact-row:hover .presencia-copy-hint { opacity: 1; }
+
+.presencia-contact-row.is-copied .presencia-copy-hint {
+  opacity: 1;
+  color: #dc2626;
+}
+
+.presencia-contact-row:hover {
+  border-color: #dc2626;
+  background: #fff7f6;
+  transform: translateX(4px);
+  box-shadow: 0 10px 24px rgba(220,38,38,0.1);
+}
+
+.presencia-contact-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #fdeceb;
+  color: #dc2626;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.presencia-contact-icon svg { width: 22px; height: 22px; }
+
+.presencia-contact-row:hover .presencia-contact-icon {
+  background: #dc2626;
+  color: #fff;
+  transform: scale(1.06);
+}
+
+.presencia-contact-value {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #171717;
+  line-height: 1.2;
 }
 
 /* Tarjeta de "ubicación" con mapa real */
@@ -748,12 +916,68 @@ input:focus-visible {
 
 .footer-whatsapp-card {
   position: relative;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(160deg, rgba(37,211,102,0.12), rgba(255,255,255,0.04));
+  border: 1px solid rgba(37,211,102,0.25);
   border-radius: 16px;
-  padding: 24px;
+  padding: 20px 24px;
   text-align: center;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
+
+.footer-whatsapp-card:hover {
+  border-color: rgba(37,211,102,0.5);
+  transform: translateY(-2px);
+}
+
+/* Categorías: chips de color por rubro */
+.footer-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.footer-cat-chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #d4d4d4;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-cat-chip::before {
+  content: '';
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--chip-color);
+}
+
+.footer-cat-chip:hover {
+  border-color: var(--chip-color);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  transform: translateX(3px);
+}
+
+.footer-extra-links {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #737373;
+}
+
+.footer-extra-links a { color: #a3a3a3; }
+.footer-extra-links span { color: #525252; }
 
 .footer-whatsapp-circle {
   display: flex;
@@ -920,6 +1144,76 @@ input:focus-visible {
   letter-spacing: 0.4px;
   color: #dc2626;
 }
+/* ===== Buscador liviano (dropdown, sin modal ni overlay) ===== */
+.search-inline-btn {
+  position: relative;
+  transition: width .25s ease, background .2s ease;
+}
+.search-inline-input {
+  width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-size: .85rem;
+  font-family: inherit;
+  opacity: 0;
+  transition: width .25s ease, opacity .2s ease;
+}
+.search-inline-btn.is-search-open {
+  width: 220px;
+  cursor: text;
+}
+.search-inline-btn.is-search-open .search-inline-input {
+  width: 160px;
+  opacity: 1;
+  margin-left: 4px;
+}
+
+.search-dropdown {
+  position: absolute;
+  z-index: 150;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+  border: 1px solid #ececec;
+  overflow: hidden;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.search-dropdown.hidden { display: none; }
+
+.search-dropdown-empty {
+  padding: 18px 16px;
+  text-align: center;
+  color: #a3a3a3;
+  font-size: .82rem;
+}
+.search-dropdown-result {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 12px;
+  text-decoration: none;
+  transition: background .12s ease;
+}
+.search-dropdown-result:hover { background: #f7f7f7; }
+.search-dropdown-result img {
+  width: 42px; height: 42px; border-radius: 8px;
+  object-fit: cover; flex-shrink: 0; background: #f0f0f0;
+}
+.search-dropdown-result-info { flex: 1; min-width: 0; }
+.search-dropdown-result-name {
+  font-weight: 700; color: #171717; font-size: .84rem;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.search-dropdown-result-cat {
+  font-size: .72rem; color: #a3a3a3; margin-top: 1px;
+}
+
+@media (max-width: 640px) {
+  .search-inline-btn.is-search-open { width: 100%; }
+  .search-inline-btn.is-search-open .search-inline-input { width: 100%; }
+}
+
 </style>
 </head>
 <body class="bg-white text-neutral-900" style="font-family:'Inter',sans-serif;">
@@ -958,7 +1252,7 @@ input:focus-visible {
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M18 10.5a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"/></svg>
         Buscar
       </button>
-      <a href="contacto.html" class="cta-btn bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-3 rounded-md transition">
+      <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" class="cta-btn bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-3 rounded-md transition">
         Solicitar presupuesto
       </a>
     </div>
@@ -976,7 +1270,7 @@ input:focus-visible {
     <a href="usados.html">Usados</a>
     <a href="empresa.html">Empresa</a>
     <a href="contacto.html">Contacto</a>
-    <a href="contacto.html" class="bg-red-600 text-center py-3 rounded-md">Solicitar presupuesto</a>
+    <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" class="bg-red-600 text-center py-3 rounded-md">Solicitar presupuesto</a>
   </div>
 </header>
 
@@ -985,14 +1279,17 @@ input:focus-visible {
 
   <!-- Slides -->
   <div id="heroSlides" class="absolute inset-0">
-    <div class="hero-slide absolute inset-0 opacity-100" data-cat="agro">
-      <img src="img/header1.jpg" alt="Agro" class="hero-slide-img w-full h-full object-cover">
+    <div class="hero-slide absolute inset-0 opacity-100" data-cat="remolques">
+      <img src="img/header3.jpg" alt="Semi Remolques" class="hero-slide-img w-full h-full object-cover">
+    </div>
+    <div class="hero-slide absolute inset-0 opacity-0" data-cat="carrocerias">
+      <img src="img/header8.jpg" alt="Carrocerías" class="hero-slide-img w-full h-full object-cover">
     </div>
     <div class="hero-slide absolute inset-0 opacity-0" data-cat="camiones">
       <img src="img/header2.jpg" alt="Camiones" class="hero-slide-img w-full h-full object-cover">
     </div>
-    <div class="hero-slide absolute inset-0 opacity-0" data-cat="remolques">
-      <img src="img/header3.jpg" alt="Remolques" class="hero-slide-img w-full h-full object-cover">
+    <div class="hero-slide absolute inset-0 opacity-0" data-cat="agro">
+      <img src="img/header1.jpg" alt="Agro" class="hero-slide-img w-full h-full object-cover">
     </div>
     <div class="hero-slide absolute inset-0 opacity-0" data-cat="tractores">
       <img src="img/header5.jpg" alt="Tractores" class="hero-slide-img w-full h-full object-cover">
@@ -1019,8 +1316,8 @@ input:focus-visible {
     <div class="w-16 h-[3px] bg-white mt-5"></div>
 
     <!-- Tarjeta de categoría: ícono + barra de progreso, clickeable a productos -->
-    <a id="heroBadge" href="productos.html?cat=agro" class="hero-card mt-16">
-      <span id="heroBadgeText" class="hero-card-text">Agro</span>
+    <a id="heroBadge" href="productos.html?cat=remolques" class="hero-card mt-16">
+      <span id="heroBadgeText" class="hero-card-text">Semi Remolques</span>
       <span class="hero-card-cta">
         Ver productos
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -1029,35 +1326,46 @@ input:focus-visible {
   </div>
 
   <!-- Flechas -->
-  <button id="prevSlide" aria-label="Anterior" class="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 z-10 h-11 w-11 items-center justify-center rounded-full text-white/70 hover:text-white transition">
+  <button id="prevSlide" aria-label="Anterior" class="flex absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-10 h-11 w-11 items-center justify-center rounded-full text-white/70 hover:text-white transition">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
   </button>
-  <button id="nextSlide" aria-label="Siguiente" class="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 z-10 h-11 w-11 items-center justify-center rounded-full text-white/70 hover:text-white transition">
+  <button id="nextSlide" aria-label="Siguiente" class="flex absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-10 h-11 w-11 items-center justify-center rounded-full text-white/70 hover:text-white transition">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
   </button>
 
   <!-- Tabs de categorías -->
   <div class="absolute bottom-0 left-0 right-0 z-10">
-    <div id="heroTabs" class="relative max-w-[1600px] mx-auto flex flex-wrap justify-center">
+
+    <!-- Versión mobile: anterior / actual / siguiente, se corren solas -->
+    <div id="heroMobileCatStrip" class="flex lg:hidden items-center justify-between px-5 pb-5 text-white">
+      <span id="heroMobilePrev" class="hero-mobile-cat-side"></span>
+      <span id="heroMobileCurrent" class="hero-mobile-cat-current"></span>
+      <span id="heroMobileNext" class="hero-mobile-cat-side"></span>
+    </div>
+
+    <div id="heroTabs" class="relative max-w-[1600px] mx-auto hidden lg:flex flex-wrap justify-center">
       <button class="hero-tab tab-divider px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="0">
-        Agro
+        Semi Remolques
       </button>
       <button class="hero-tab tab-divider px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="1">
-        Camiones
+        Carrocerías
       </button>
       <button class="hero-tab tab-divider px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="2">
-        Remolques
+        Camiones
       </button>
       <button class="hero-tab tab-divider px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="3">
-        Tractores
+        Agro
       </button>
       <button class="hero-tab tab-divider px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="4">
-        Autopropulsadas
+        Tractores
       </button>
       <button class="hero-tab tab-divider px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="5">
+        Autopropulsadas
+      </button>
+      <button class="hero-tab tab-divider px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="6">
         Higiene urbana
       </button>
-      <button class="hero-tab px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="6">
+      <button class="hero-tab px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="7">
         Neumáticos
       </button>
       <span id="tabIndicator" class="tab-indicator"></span>
@@ -1066,20 +1374,9 @@ input:focus-visible {
 </section>
 
 <!-- Botón flotante WhatsApp -->
-<a href="https://wa.me/54[NUMERO]" target="_blank" aria-label="WhatsApp" class="fixed bottom-6 left-6 z-50 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.85 9.85 0 004.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0012.04 2m0 1.67c2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 012.43 5.88c0 4.59-3.73 8.32-8.32 8.32a8.3 8.3 0 01-4.22-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.28 8.28 0 01-1.27-4.42c0-4.59 3.74-8.32 8.32-8.32"/></svg>
+<a href="https://wa.me/541140447563" target="_blank" aria-label="WhatsApp" class="fixed bottom-6 left-6 z-50 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
 </a>
-
-<!-- Botón flotante Solicitar presupuesto -->
-<a href="contacto.html" id="quoteFab" aria-label="Solicitar presupuesto" class="fab-quote fixed bottom-6 right-6 z-50 h-14 w-14 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center shadow-lg transition">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-    <path d="M14 2v6h6"/>
-    <path d="M9 13h6M9 17h6"/>
-  </svg>
-  <span class="fab-tooltip">Solicitar presupuesto</span>
-</a>
-
 
 <!-- ===== NUESTROS PRODUCTOS (carrusel infinito) ===== -->
 <section class="py-16 overflow-hidden">
@@ -1216,28 +1513,27 @@ input:focus-visible {
       <h2 class="text-3xl md:text-4xl font-extrabold mb-3" style="font-family:'Archivo',sans-serif;">Desde 1990 desarrollando confianza</h2>
       <p class="text-neutral-500 mb-10">Origen argentino, alcance global.</p>
 
-      <div class="space-y-5">
-        <div class="presencia-row reveal" style="--reveal-delay:0s">
-          <span class="presencia-row-bar"></span>
+      <div class="space-y-4">
+        <button type="button" class="presencia-contact-row reveal presencia-copy-btn" data-copy="gzzombu@gmail.com" style="--reveal-delay:0s">
+          <span class="presencia-contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+          </span>
           <div>
-            <p class="presencia-row-label">Origen argentino</p>
-            <p class="presencia-row-value">Tapiales</p>
+            <p class="presencia-row-label">Escribinos</p>
+            <p class="presencia-contact-value presencia-copy-value">gzzombu@gmail.com</p>
           </div>
-        </div>
-        <div class="presencia-row reveal" style="--reveal-delay:0.1s">
-          <span class="presencia-row-bar"></span>
+          <span class="presencia-copy-hint">Copiar</span>
+        </button>
+        <button type="button" class="presencia-contact-row reveal presencia-copy-btn" data-copy="11 4044-7563" style="--reveal-delay:0.1s">
+          <span class="presencia-contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
           <div>
-            <p class="presencia-row-label">Alcance global</p>
-            <p class="presencia-row-value"><span data-count-to="40" data-suffix="">0</span> <span class="presencia-row-unit">países</span></p>
+            <p class="presencia-row-label">Llamanos</p>
+            <p class="presencia-contact-value presencia-copy-value">11 4044-7563</p>
           </div>
-        </div>
-        <div class="presencia-row reveal" style="--reveal-delay:0.2s">
-          <span class="presencia-row-bar"></span>
-          <div>
-            <p class="presencia-row-label">De trayectoria</p>
-            <p class="presencia-row-value"><span data-count-to="35" data-suffix="">0</span> <span class="presencia-row-unit">años</span></p>
-          </div>
-        </div>
+          <span class="presencia-copy-hint">Copiar</span>
+        </button>
       </div>
     </div>
 
@@ -1246,10 +1542,10 @@ input:focus-visible {
       <div class="ubicacion-map-wrap">
         <iframe
           class="ubicacion-map"
-          src="https://www.google.com/maps?q=OMBU+Maquinas+Agricolas,+Tapiales&output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.772993040113!2d-58.503549579195294!3d-34.71090519959011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccf002aa8e39b%3A0x9c97a547bd55149e!2sGrupozzetto!5e0!3m2!1ses!2sar!4v1789170027829!5m2!1ses!2sar"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Ubicación de OMBU en Tapiales">
+          title="Nuestra ubicación">
         </iframe>
       </div>
     </div>
@@ -1288,64 +1584,66 @@ input:focus-visible {
 </section>
 
 <!-- ===== FOOTER ===== -->
-<footer class="footer-dark py-16">
+<footer class="footer-dark py-10">
   <div class="max-w-7xl mx-auto px-6 relative">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_1.4fr_0.9fr] gap-8">
 
       <div>
-        <img src="img/logo-ombu.png" alt="OMBU" class="h-8 mb-5 footer-logo-invert">
+        <img src="img/logo.jpg" alt="Grupozzetto" class="h-44 -mt-8 -mb-12 footer-logo-invert">
         <p class="text-sm text-neutral-400 max-w-xs">
-          Tecnología y soluciones para el agro desde [SEDE] al mundo. Más de 35 años impulsando el desarrollo del campo.
+          Tecnología y soluciones para el agro desde Tapiales al mundo. Más de 35 años impulsando el desarrollo del campo.
         </p>
 
-        <ul class="mt-6 space-y-3 text-sm text-neutral-300">
+        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
           <li class="flex items-center gap-3">
             <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></span>
-            [EMAIL]
+            gzzombu@gmail.com
           </li>
           <li class="flex items-center gap-3">
             <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2.2z"/></svg></span>
-            [TELÉFONO]
+            11 4044-7563
           </li>
           <li class="flex items-center gap-3">
             <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-            [HORARIO]
+            Lunes a viernes de 8 a 17 hs
           </li>
           <li class="flex items-center gap-3">
             <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            [DIRECCIÓN], [SEDE]
+            Av. de Circunvalación 2181, Tapiales
           </li>
         </ul>
       </div>
 
-      <div>
-        <h4 class="font-bold text-sm mb-4 text-white tracking-wide uppercase">Productos</h4>
-        <ul class="text-sm text-neutral-400 space-y-3">
-          <li><a href="productos.html?cat=agro" class="hover:text-white transition">Agro</a></li>
-          <li><a href="productos.html?cat=autopropulsadas" class="hover:text-white transition">Autopropulsadas</a></li>
-          <li><a href="productos.html?cat=remolques" class="hover:text-white transition">Remolques</a></li>
-          <li><a href="productos.html?cat=higiene-urbana" class="hover:text-white transition">Higiene urbana</a></li>
-        </ul>
+      <div class="pt-3">
+        <h4 class="font-bold text-sm mb-3 text-white tracking-wide uppercase">Categorías</h4>
+        <div class="footer-cat-grid">
+          <a href="productos.html?cat=remolques" class="footer-cat-chip" style="--chip-color:#f97316">Semi Remolques</a>
+          <a href="productos.html?cat=carrocerias" class="footer-cat-chip" style="--chip-color:#9333ea">Carrocerías</a>
+          <a href="productos.html?cat=camiones" class="footer-cat-chip" style="--chip-color:#2563eb">Camiones</a>
+          <a href="productos.html?cat=agro" class="footer-cat-chip" style="--chip-color:#3daa35">Agro</a>
+          <a href="productos.html?cat=tractores" class="footer-cat-chip" style="--chip-color:#78350f">Tractores</a>
+          <a href="productos.html?cat=autopropulsadas" class="footer-cat-chip" style="--chip-color:#14b8bd">Autopropulsadas</a>
+          <a href="productos.html?cat=higiene-urbana" class="footer-cat-chip" style="--chip-color:#38bdf8">Higiene urbana</a>
+          <a href="productos.html?cat=neumaticos-y-llantas" class="footer-cat-chip" style="--chip-color:#eab308">Neumáticos</a>
+        </div>
+
+        <div class="footer-extra-links">
+          <a href="usados.html" class="hover:text-white transition">Usados</a>
+          <span>·</span>
+          <a href="empresa.html" class="hover:text-white transition">Empresa</a>
+          <span>·</span>
+          <a href="contacto.html" class="hover:text-white transition">Contacto</a>
+        </div>
       </div>
 
-      <div>
-        <h4 class="font-bold text-sm mb-4 text-white tracking-wide uppercase">Empresa</h4>
-        <ul class="text-sm text-neutral-400 space-y-3">
-          <li><a href="empresa.html" class="hover:text-white transition">Empresa</a></li>
-          <li><a href="#" class="hover:text-white transition">Repuestos</a></li>
-          <li><a href="usados.html" class="hover:text-white transition">Usados</a></li>
-          <li><a href="contacto.html" class="hover:text-white transition">Contacto</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-whatsapp-card">
+      <div class="footer-whatsapp-card self-start">
         <p class="text-xs font-bold text-neutral-300 uppercase tracking-wide">Contacto directo</p>
-        <a href="https://wa.me/54[NUMERO]" class="footer-whatsapp-circle">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.85 9.85 0 004.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0012.04 2m0 1.67c2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 012.43 5.88c0 4.59-3.73 8.32-8.32 8.32a8.3 8.3 0 01-4.22-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.28 8.28 0 01-1.27-4.42c0-4.59 3.74-8.32 8.32-8.32"/></svg>
+        <a href="https://wa.me/541140447563" class="footer-whatsapp-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
         </a>
         <p class="text-xs text-neutral-400 uppercase tracking-wide mt-4">WhatsApp</p>
-        <p class="text-lg font-bold text-white">[TELÉFONO]</p>
-        <a href="https://wa.me/54[NUMERO]" class="inline-flex items-center gap-1 text-sm font-semibold text-white mt-3 hover:gap-2 transition-all">
+        <p class="text-lg font-bold text-white">11 4044-7563</p>
+        <a href="https://wa.me/541140447563" class="inline-flex items-center gap-1 text-sm font-semibold text-white mt-3 hover:gap-2 transition-all">
           Enviar mensaje
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
@@ -1359,7 +1657,7 @@ input:focus-visible {
 <!-- Barra final: copyright + legales + redes -->
 <div class="footer-bottom-bar">
   <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-    <p class="text-neutral-500">© 2026 OMBU [SEDE]. Todos los derechos reservados.</p>
+    <p class="text-neutral-500">© 2026 OMBU Tapiales. Todos los derechos reservados.</p>
 
     <div class="flex items-center gap-5 text-neutral-500">
       <a href="#" class="hover:text-red-600 transition">Política de privacidad</a>
@@ -1384,6 +1682,7 @@ input:focus-visible {
 </div>
 
 <script src="js/main.js"></script>
+<script src="js/search.js"></script>
 <script src="js/destacados.js"></script>
 </body>
 </html>

@@ -7327,5 +7327,901 @@
       "Construcción para cargas pesadas."
     ],
     "destacado": false
+  },
+  {
+    "id": "tornel-900-20-lineal",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Tornel",
+    "name": "Neumático Tornel 9.00-20 Lineal",
+    "description": "Neumático para vehículos de carga, con diseño lineal orientado a la estabilidad.",
+    "descripcionLarga": "Neumático Tornel 9.00-20 para vehículos de carga, con diseño lineal orientado a brindar estabilidad y resistencia en recorridos de trabajo y transporte.",
+    "image": "img/neumaticos-y-llantas/tornel-900-20-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/tornel-900-20-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Tornel",
+      "Medida: 9.00-20",
+      "Tipo: Lineal",
+      "Aplicación: Camión / transporte de carga",
+      "Uso recomendado: Ruta y trabajo comercial"
+    ],
+    "caracteristicas": [
+      "Buena estabilidad direccional.",
+      "Construcción resistente.",
+      "Desempeño pensado para uso de carga."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "aplus-255-70-r225-lineal",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Aplus",
+    "name": "Neumático Aplus 255/70 R22.5 Lineal",
+    "description": "Neumático radial para camión, diseñado para uso lineal y transporte en carretera.",
+    "descripcionLarga": "Neumático radial Aplus para camión, diseñado para uso lineal y transporte en carretera. Su dibujo favorece la estabilidad y un desgaste parejo.",
+    "image": "img/neumaticos-y-llantas/aplus-25570r225-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/aplus-25570r225-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Aplus",
+      "Medida: 255/70 R22.5",
+      "Tipo: Lineal",
+      "Construcción: Radial",
+      "Aplicación: Camión",
+      "Uso recomendado: Ruta"
+    ],
+    "caracteristicas": [
+      "Estabilidad.",
+      "Desgaste uniforme.",
+      "Buena evacuación de agua.",
+      "Resistencia para uso comercial."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "aplus-195-75-r16",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Aplus",
+    "name": "Neumático Aplus 195/75 R16",
+    "description": "Neumático orientado a utilitarios y vehículos comerciales.",
+    "descripcionLarga": "Neumático Aplus 195/75 R16 orientado a utilitarios y vehículos comerciales, con buen equilibrio entre estabilidad, confort y durabilidad.",
+    "image": "img/neumaticos-y-llantas/aplus-19575-23565-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/aplus-19575-23565-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Aplus",
+      "Medida: 195/75 R16",
+      "Construcción: Radial",
+      "Aplicación: Utilitario / vehículo comercial",
+      "Uso recomendado: Ciudad y ruta"
+    ],
+    "caracteristicas": [
+      "Estabilidad.",
+      "Buen comportamiento en carretera.",
+      "Resistencia para trabajo diario."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "aplus-235-65-r16",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Aplus",
+    "name": "Neumático Aplus 235/65 R16",
+    "description": "Neumático radial para utilitarios y vehículos comerciales.",
+    "descripcionLarga": "Neumático radial Aplus 235/65 R16 para utilitarios y vehículos comerciales, diseñado para brindar estabilidad y buen desempeño en recorridos urbanos y de ruta.",
+    "image": "img/neumaticos-y-llantas/aplus-19575-23565-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/aplus-19575-23565-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Aplus",
+      "Medida: 235/65 R16",
+      "Construcción: Radial",
+      "Aplicación: Utilitario / comercial",
+      "Uso recomendado: Ciudad y ruta"
+    ],
+    "caracteristicas": [
+      "Buen agarre.",
+      "Estabilidad.",
+      "Resistencia al desgaste.",
+      "Confort de marcha."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "aplus-215-65-r16",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Aplus",
+    "name": "Neumático Aplus 215/65 R16",
+    "description": "Neumático radial para vehículos utilitarios y comerciales.",
+    "descripcionLarga": "Neumático radial Aplus 215/65 R16 para vehículos utilitarios y comerciales, pensado para ofrecer buen desempeño, estabilidad y durabilidad.",
+    "image": "img/neumaticos-y-llantas/aplus-21565r16-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/aplus-21565r16-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Aplus",
+      "Medida: 215/65 R16",
+      "Construcción: Radial",
+      "Aplicación: Utilitario / comercial",
+      "Uso recomendado: Uso urbano y ruta"
+    ],
+    "caracteristicas": [
+      "Estabilidad.",
+      "Buena respuesta en conducción diaria.",
+      "Desgaste uniforme."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "aplus-255-70-r16",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Aplus",
+    "name": "Neumático Aplus 255/70 R16",
+    "description": "Neumático para vehículos utilitarios, pick-ups y aplicaciones comerciales.",
+    "descripcionLarga": "Neumático Aplus 255/70 R16 para vehículos utilitarios, pick-ups y aplicaciones comerciales, con diseño orientado a brindar resistencia y estabilidad.",
+    "image": "img/neumaticos-y-llantas/aplus-25570r16-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/aplus-25570r16-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Aplus",
+      "Medida: 255/70 R16",
+      "Construcción: Radial",
+      "Aplicación: Pick-up / utilitario",
+      "Uso recomendado: Ciudad, ruta y uso comercial"
+    ],
+    "caracteristicas": [
+      "Buena capacidad de carga.",
+      "Estabilidad.",
+      "Resistencia.",
+      "Desempeño en recorridos mixtos."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "roadcruza-215-85-r16",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Roadcruza",
+    "name": "Neumático Roadcruza 215/85 R16",
+    "description": "Neumático para utilitarios y vehículos de trabajo.",
+    "descripcionLarga": "Neumático Roadcruza 215/85 R16 para utilitarios y vehículos de trabajo, diseñado para ofrecer resistencia, buen agarre y desempeño en distintas condiciones de uso.",
+    "image": "img/neumaticos-y-llantas/roadcruza-21585r16-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/roadcruza-21585r16-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Roadcruza",
+      "Medida: 215/85 R16",
+      "Construcción: Radial",
+      "Aplicación: Utilitario / pick-up",
+      "Uso recomendado: Ruta, ciudad y trabajo"
+    ],
+    "caracteristicas": [
+      "Buen agarre.",
+      "Construcción resistente.",
+      "Estabilidad.",
+      "Aptitud para uso comercial."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "roadcruza-at-275-55-r20",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Roadcruza",
+    "name": "Neumático Roadcruza AT 275/55 R20",
+    "description": "Neumático All Terrain para pick-ups y SUV, combina asfalto y off-road.",
+    "descripcionLarga": "Neumático Roadcruza 275/55 R20 con diseño All Terrain (A/T), pensado para combinar un buen comportamiento en asfalto con capacidad para circular por caminos de tierra y terrenos irregulares. Su dibujo robusto brinda agarre y estabilidad para pickups y SUV.",
+    "image": "img/neumaticos-y-llantas/roadcruza-at-27555r20-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/roadcruza-at-27555r20-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Roadcruza",
+      "Medida: 275/55 R20",
+      "Tipo: All Terrain (A/T)",
+      "Construcción: Radial",
+      "Aplicación: Pick-up / SUV",
+      "Uso recomendado: Ruta, ciudad y caminos off-road"
+    ],
+    "caracteristicas": [
+      "Dibujo A/T de tacos marcados.",
+      "Buen agarre en superficies mixtas.",
+      "Estabilidad en carretera.",
+      "Construcción orientada a un uso versátil entre asfalto y terrenos irregulares."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "roadcruza-30x1050-r15",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Roadcruza",
+    "name": "Neumático Roadcruza 30x10.50 R15",
+    "description": "Neumático de diseño agresivo para pick-ups y 4x4, ideal fuera del asfalto.",
+    "descripcionLarga": "Neumático Roadcruza de diseño agresivo, pensado para pick-ups y vehículos 4x4 que necesitan buen desempeño fuera del asfalto. Su dibujo de tacos profundos favorece la tracción sobre tierra, barro y terrenos irregulares, manteniendo una construcción robusta para uso exigente.",
+    "image": "img/neumaticos-y-llantas/roadcruza-30x1050r15-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/roadcruza-30x1050r15-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Roadcruza",
+      "Medida: 30x10.50 R15",
+      "Construcción: Radial",
+      "Rodado: 15\"",
+      "Aplicación: Pick-up / SUV / 4x4",
+      "Tipo de uso: Off-road / terrenos mixtos",
+      "Diseño: Tacos profundos y abiertos",
+      "Uso recomendado: Tierra, barro, ripio y caminos irregulares"
+    ],
+    "caracteristicas": [
+      "Excelente capacidad de tracción en terrenos difíciles.",
+      "Dibujo robusto para favorecer la evacuación de barro y suciedad.",
+      "Buena resistencia para uso off-road.",
+      "Mayor agarre en superficies sueltas."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "tornel-750-16-lineal",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Tornel",
+    "name": "Neumático Tornel 7.50-16 Lineal",
+    "description": "Neumático para vehículos comerciales y de carga, con diseño lineal.",
+    "descripcionLarga": "Neumático Tornel 7.50-16 diseñado para vehículos comerciales y de carga. Su dibujo lineal favorece la estabilidad direccional y un rodamiento uniforme, siendo una opción adecuada para trabajos de transporte y recorridos por ruta y ciudad.",
+    "image": "img/neumaticos-y-llantas/tornel-750-16-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/tornel-750-16-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Tornel",
+      "Medida: 7.50-16",
+      "Tipo: Lineal",
+      "Aplicación: Camión / vehículo comercial",
+      "Rodado: 16\"",
+      "Uso recomendado: Ruta, ciudad y transporte de carga",
+      "Diseño: Banda de rodamiento con canales longitudinales"
+    ],
+    "caracteristicas": [
+      "Buena estabilidad direccional.",
+      "Desgaste uniforme.",
+      "Construcción robusta para trabajo comercial.",
+      "Dibujo lineal pensado para favorecer el control y la conducción sobre superficies pavimentadas."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "goodyear-215-75-r175-lineal",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Goodyear",
+    "name": "Neumático Goodyear 215/75 R17.5 Lineal",
+    "description": "Neumático de diseño lineal para vehículos comerciales y camiones livianos/medianos.",
+    "descripcionLarga": "Neumático Goodyear 215/75 R17.5 de diseño lineal, pensado para vehículos comerciales y camiones livianos/medianos. Su banda de rodamiento con canales longitudinales favorece la estabilidad direccional y un desgaste uniforme, siendo adecuado para recorridos urbanos y de ruta.",
+    "image": "img/neumaticos-y-llantas/goodyear-21575r175-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/goodyear-21575r175-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Goodyear",
+      "Medida: 215/75 R17.5",
+      "Tipo: Lineal",
+      "Construcción: Radial",
+      "Rodado: 17.5\"",
+      "Aplicación: Camión / vehículo comercial",
+      "Uso recomendado: Ruta y ciudad",
+      "Diseño: Banda con canales longitudinales",
+      "Posición recomendada: Eje direccional / libre"
+    ],
+    "caracteristicas": [
+      "Buena estabilidad direccional.",
+      "Rodamiento uniforme.",
+      "Evacuación de agua mediante canales longitudinales.",
+      "Construcción orientada al uso comercial y transporte de carga."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "kumho-235-75-r175",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Kumho Tire",
+    "name": "Neumático Kumho Tire 235/75 R17.5",
+    "description": "Neumático para camiones livianos y vehículos comerciales.",
+    "descripcionLarga": "Neumático Kumho 235/75 R17.5 para camiones livianos y vehículos comerciales. Su diseño de banda con canales longitudinales está orientado a brindar buena estabilidad direccional, conducción uniforme y evacuación eficiente del agua, ideal para trabajos de transporte en ruta y ciudad.",
+    "image": "img/neumaticos-y-llantas/kumho-23575r175-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/kumho-23575r175-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Kumho Tire",
+      "Medida: 235/75 R17.5",
+      "Construcción: Radial",
+      "Rodado: 17.5\"",
+      "Aplicación: Camión liviano / vehículo comercial",
+      "Tipo: Lineal",
+      "Uso recomendado: Ruta y ciudad",
+      "Diseño: Banda con canales longitudinales",
+      "Posición recomendada: Eje direccional / libre"
+    ],
+    "caracteristicas": [
+      "Buena estabilidad en ruta.",
+      "Desgaste uniforme.",
+      "Canales diseñados para evacuar agua.",
+      "Construcción robusta orientada al transporte comercial."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "triangle-175-65-r14",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Triangle",
+    "name": "Neumático Triangle 175/65 R14",
+    "description": "Neumático para autos de uso urbano y cotidiano.",
+    "descripcionLarga": "Neumático Triangle 175/65 R14 diseñado para autos de uso urbano y cotidiano, con una banda de rodamiento orientada a ofrecer estabilidad, confort y buen comportamiento tanto en piso seco como mojado. Es una opción pensada para recorridos en ciudad y ruta.",
+    "image": "img/neumaticos-y-llantas/triangle-17565r14-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/triangle-17565r14-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Triangle",
+      "Medida: 175/65 R14",
+      "Ancho: 175 mm",
+      "Perfil: 65",
+      "Construcción: Radial",
+      "Rodado: 14\"",
+      "Aplicación: Automóvil",
+      "Uso: Urbano / ruta",
+      "Tipo: Uso general",
+      "Diseño: Banda con canales longitudinales para favorecer la evacuación de agua"
+    ],
+    "caracteristicas": [
+      "Buen confort de marcha.",
+      "Estabilidad direccional.",
+      "Diseño orientado a un desgaste uniforme.",
+      "Canales que ayudan a evacuar el agua sobre superficies mojadas."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "durable-205-75-r16",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Durable",
+    "name": "Neumático Durable 205/75 R16",
+    "description": "Neumático para vehículos utilitarios y comerciales.",
+    "descripcionLarga": "Neumático Durable 205/75 R16 diseñado para vehículos utilitarios y comerciales. Ofrece un buen equilibrio entre estabilidad, resistencia y confort de marcha, con un dibujo pensado para brindar un comportamiento seguro tanto en recorridos urbanos como en ruta.",
+    "image": "img/neumaticos-y-llantas/durable-20575r16-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/durable-20575r16-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Durable",
+      "Medida: 205/75 R16",
+      "Ancho: 205 mm",
+      "Perfil: 75",
+      "Construcción: Radial",
+      "Rodado: 16\"",
+      "Aplicación: Utilitarios / vehículos comerciales",
+      "Uso recomendado: Ciudad y ruta",
+      "Diseño: Canales longitudinales",
+      "Tipo: Uso comercial / mixto pavimentado"
+    ],
+    "caracteristicas": [
+      "Buena estabilidad direccional.",
+      "Evacuación de agua mediante canales longitudinales.",
+      "Diseño orientado a un desgaste uniforme.",
+      "Construcción adecuada para el uso diario en vehículos comerciales."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "fate-205-70-r15",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Fate",
+    "name": "Neumático Fate 205/70 R15",
+    "description": "Neumático para automóviles y vehículos de uso cotidiano.",
+    "descripcionLarga": "Neumático Fate 205/70 R15 pensado para automóviles y vehículos de uso cotidiano. Su diseño de banda de rodamiento busca ofrecer un buen equilibrio entre estabilidad, confort y adherencia, con un desempeño adecuado para circulación urbana y recorridos en ruta.",
+    "image": "img/neumaticos-y-llantas/fate-20570r15-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/fate-20570r15-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Fate",
+      "Medida: 205/70 R15",
+      "Ancho: 205 mm",
+      "Perfil: 70",
+      "Construcción: Radial",
+      "Rodado: 15\"",
+      "Aplicación: Automóviles / vehículos compatibles con la medida",
+      "Uso recomendado: Ciudad y ruta",
+      "Tipo: Uso general",
+      "Diseño: Banda con canales longitudinales"
+    ],
+    "caracteristicas": [
+      "Buen confort de marcha.",
+      "Estabilidad direccional.",
+      "Canales que favorecen la evacuación de agua.",
+      "Diseño orientado a lograr un desgaste parejo durante el uso cotidiano."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "goodride-235-75-r175",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Good Ride",
+    "name": "Neumático Good Ride 235/75 R17.5",
+    "description": "Neumático para camiones livianos y vehículos comerciales.",
+    "descripcionLarga": "Neumático Good Ride 235/75 R17.5 desarrollado para camiones livianos y vehículos comerciales, pensado para ofrecer estabilidad, resistencia y buen rendimiento durante el transporte. Adecuado para recorridos urbanos y de ruta, con una construcción radial orientada al trabajo diario.",
+    "image": "img/neumaticos-y-llantas/goodride-23575r175-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/goodride-23575r175-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Good Ride",
+      "Medida: 235/75 R17.5",
+      "Ancho: 235 mm",
+      "Perfil: 75",
+      "Construcción: Radial",
+      "Rodado: 17.5\"",
+      "Aplicación: Camiones livianos / vehículos comerciales",
+      "Uso recomendado: Ciudad y ruta",
+      "Tipo: Comercial",
+      "Uso: Transporte de carga y distribución"
+    ],
+    "caracteristicas": [
+      "Construcción robusta para uso comercial.",
+      "Buena estabilidad durante la marcha.",
+      "Diseño orientado a un desgaste uniforme.",
+      "Desempeño adecuado para recorridos de media y larga distancia."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "samson-600-9-nhs",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Samson",
+    "name": "Neumático Samson 6.00-9 NHS",
+    "description": "Neumático industrial para autoelevadores.",
+    "descripcionLarga": "Neumático Samson 6.00-9 NHS diseñado para aplicaciones industriales, especialmente equipos de manipulación de materiales como autoelevadores. Su dibujo robusto proporciona buena tracción y resistencia para trabajos exigentes sobre superficies industriales.",
+    "image": "img/neumaticos-y-llantas/samson-600-9-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/samson-600-9-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Samson",
+      "Medida: 6.00-9",
+      "Designación: NHS (Not for Highway Service)",
+      "Rodado: 9\"",
+      "Aplicación: Industrial / autoelevadores",
+      "Uso recomendado: Depósitos, plantas industriales, centros logísticos y superficies de trabajo",
+      "Tipo de servicio: Fuera de carretera / no destinado a circulación en ruta",
+      "Diseño: Tacos profundos y robustos"
+    ],
+    "caracteristicas": [
+      "Buena capacidad de tracción.",
+      "Banda resistente para trabajo industrial.",
+      "Diseño preparado para uso intensivo.",
+      "Buen comportamiento en maniobras a baja velocidad."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "yokohama-255-55-r19",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Yokohama",
+    "name": "Neumático Yokohama 255/55 R19",
+    "description": "Neumático para SUV y camionetas, buen equilibrio entre confort y adherencia.",
+    "descripcionLarga": "Neumático Yokohama 255/55 R19 desarrollado principalmente para SUV y camionetas, ofreciendo un buen equilibrio entre confort, estabilidad y adherencia. Su medida de perfil medio brinda una conducción firme tanto para uso urbano como en ruta.",
+    "image": "img/neumaticos-y-llantas/yokohama-25555r19-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/yokohama-25555r19-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Yokohama",
+      "Medida: 255/55 R19",
+      "Ancho: 255 mm",
+      "Perfil: 55",
+      "Construcción: Radial",
+      "Rodado: 19\"",
+      "Aplicación: SUV / camionetas",
+      "Uso recomendado: Ciudad y ruta",
+      "Tipo: Uso general / carretera",
+      "Diseño: Banda con canales longitudinales para evacuación de agua"
+    ],
+    "caracteristicas": [
+      "Buena estabilidad a velocidad de ruta.",
+      "Confort de marcha.",
+      "Respuesta precisa en curvas.",
+      "Diseño de banda orientado a mantener adherencia sobre superficies secas y mojadas."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "advance-650-r16",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Advance",
+    "name": "Neumático Advance 6.50 R16",
+    "description": "Neumático agrícola para eje delantero de tractores.",
+    "descripcionLarga": "Neumático Advance 6.50 R16 diseñado para uso agrícola, especialmente en ejes delanteros de tractores y maquinaria rural. Su dibujo lineal con tacos laterales favorece la estabilidad direccional y el control durante trabajos en campo y desplazamientos sobre distintos tipos de terreno.",
+    "image": "img/neumaticos-y-llantas/advance-650r16-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/advance-650r16-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Advance",
+      "Medida: 6.50 R16",
+      "Construcción: Radial",
+      "Rodado: 16\"",
+      "Aplicación: Agrícola / tractores",
+      "Posición recomendada: Eje delantero",
+      "Tipo de dibujo: Direccional / agrícola",
+      "Uso recomendado: Campo, caminos rurales y tareas agrícolas"
+    ],
+    "caracteristicas": [
+      "Buena estabilidad direccional.",
+      "Diseño robusto para trabajo rural.",
+      "Banda preparada para terrenos irregulares.",
+      "Dibujo que ayuda a mantener el control de la maquinaria."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "triangle-275-80-r225-traccion",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Triangle",
+    "name": "Neumático Triangle 275/80 R22.5 Tracción",
+    "description": "Neumático para camiones y transporte pesado, diseño de tracción.",
+    "descripcionLarga": "Neumático Triangle 275/80 R22.5 desarrollado para camiones y transporte pesado. Su diseño de tracción favorece el agarre, la resistencia al desgaste y un buen comportamiento en recorridos de ruta, siendo adecuado para transporte de media y larga distancia.",
+    "image": "img/neumaticos-y-llantas/triangle-27580r225-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/triangle-27580r225-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Triangle",
+      "Medida: 275/80 R22.5",
+      "Ancho: 275 mm",
+      "Perfil: 80",
+      "Construcción: Radial",
+      "Rodado: 22.5\"",
+      "Aplicación: Camiones / transporte pesado",
+      "Tipo: Tracción",
+      "Uso recomendado: Ruta y transporte de carga",
+      "Posición recomendada: Eje motriz",
+      "Diseño: Canales longitudinales"
+    ],
+    "caracteristicas": [
+      "Buen nivel de tracción y agarre.",
+      "Diseño orientado a un desgaste parejo.",
+      "Canales que ayudan a evacuar agua.",
+      "Construcción robusta para las exigencias del transporte comercial."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "aplus-275-70-r225",
+    "category": "neumaticos-y-llantas",
+    "categoryLabel": "Neumáticos",
+    "modelo": "Aplus",
+    "name": "Neumático Aplus 275/70 R22.5",
+    "description": "Neumático para camiones y vehículos de transporte pesado.",
+    "descripcionLarga": "Neumático Aplus 275/70 R22.5 diseñado para camiones y vehículos de transporte pesado. Su construcción radial y diseño de banda están orientados a ofrecer estabilidad, resistencia y un desgaste uniforme, siendo una alternativa para trabajos de transporte en ciudad y ruta.",
+    "image": "img/neumaticos-y-llantas/aplus-27570r225-1.jpg",
+    "images": [
+      "img/neumaticos-y-llantas/aplus-27570r225-1.jpg"
+    ],
+    "especificaciones": [
+      "Marca: Aplus",
+      "Medida: 275/70 R22.5",
+      "Ancho: 275 mm",
+      "Perfil: 70",
+      "Construcción: Radial",
+      "Rodado: 22.5\"",
+      "Aplicación: Camiones / transporte pesado",
+      "Uso recomendado: Ruta y transporte de carga",
+      "Tipo: Comercial",
+      "Diseño: Banda con canales longitudinales y bloques de apoyo",
+      "Superficie recomendada: Pavimento / carretera"
+    ],
+    "caracteristicas": [
+      "Buena estabilidad direccional.",
+      "Construcción robusta para uso comercial.",
+      "Canales que favorecen la evacuación de agua.",
+      "Diseño orientado a lograr un desgaste regular durante recorridos de media y larga distancia."
+    ],
+    "destacado": false
+  },
+   {
+    "id": "carroceria-baranda-volcable",
+    "category": "carrocerias",
+    "categoryLabel": "Carrocerías",
+    "modelo": "Baranda Volcable",
+    "name": "Carrocería Baranda Volcable — Varios modelos y colores",
+    "description": "Carrocería para carga general, con barandas laterales rebatibles para facilitar la carga y descarga.",
+    "descripcionLarga": "Carrocería para camión diseñada para carga general y transporte de mercadería, con barandas laterales rebatibles que facilitan considerablemente las tareas de carga y descarga. Su configuración permite acceder a la plataforma desde los laterales y adaptarla a diferentes tipos de cargas.",
+    "image": "img/carrocerias/baranda-volcable-1.jpeg",
+    "images": [
+      "img/carrocerias/baranda-volcable-1.jpeg",
+      "img/carrocerias/baranda-volcable-2.jpeg",
+      "img/carrocerias/baranda-volcable-3.jpeg",
+      "img/carrocerias/baranda-volcable-4.jpeg",
+      "img/carrocerias/baranda-volcable-5.jpeg",
+      "img/carrocerias/baranda-volcable-6.jpeg",
+      "img/carrocerias/baranda-volcable-7.jpeg",
+      "img/carrocerias/baranda-volcable-8.jpeg",
+      "img/carrocerias/baranda-volcable-9.jpeg",
+      "img/carrocerias/baranda-volcable-10.jpeg",
+      "img/carrocerias/baranda-volcable-11.jpeg",
+      "img/carrocerias/baranda-volcable-12.jpeg",
+      "img/carrocerias/baranda-volcable-13.jpeg",
+      "img/carrocerias/baranda-volcable-14.jpeg",
+      "img/carrocerias/baranda-volcable-15.jpeg",
+      "img/carrocerias/baranda-volcable-16.jpeg",
+      "img/carrocerias/baranda-volcable-17.jpeg",
+      "img/carrocerias/baranda-volcable-18.jpeg"
+    ],
+    "especificaciones": [
+      "Tipo: Baranda volcable",
+      "Construcción: Estructura metálica reforzada",
+      "Laterales: Barandas rebatibles/volcables",
+      "Parantes: Rebatibles o desmontables según configuración",
+      "Carga: Acceso lateral y trasero",
+      "Aplicación: Carga general, mercadería y cargas paletizadas",
+      "Piso: Habitualmente de chapa de acero reforzada/antideslizante",
+      "Portón trasero: Rebatible o volcable según configuración",
+      "Largo y ancho: Adaptables al chasis del camión",
+      "Opcionales habituales: Cajón de herramientas, guardabarros, paragolpes, arcos y lona"
+    ],
+    "caracteristicas": [
+      "Las barandas y parantes pueden permitir que la carrocería quede prácticamente como una plataforma abierta, dependiendo de su construcción.",
+      "Versátil para distintos trabajos gracias a esa configuración adaptable."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "carroceria-baranda-volcable-destape-rapido",
+    "category": "carrocerias",
+    "categoryLabel": "Carrocerías",
+    "modelo": "Baranda Volcable",
+    "name": "Carrocería Baranda Volcable con Destape Rápido — Varios modelos y colores",
+    "description": "Carrocería para carga general, con sistema de destape rápido para agilizar la carga y descarga.",
+    "descripcionLarga": "Carrocería para camión destinada al transporte de carga general, equipada con sistema de destape rápido que permite liberar y abrir las barandas de manera ágil, facilitando las operaciones de carga y descarga. Su diseño ofrece buena versatilidad para trabajos que requieren acceso frecuente a los laterales de la caja.",
+    "image": "img/carrocerias/baranda-volcable-destape-rapido-1.jpeg",
+    "images": [
+      "img/carrocerias/baranda-volcable-destape-rapido-1.jpeg",
+      "img/carrocerias/baranda-volcable-destape-rapido-2.jpeg",
+      "img/carrocerias/baranda-volcable-destape-rapido-3.jpeg",
+      "img/carrocerias/baranda-volcable-destape-rapido-4.jpeg",
+      "img/carrocerias/baranda-volcable-destape-rapido-5.jpeg",
+      "img/carrocerias/baranda-volcable-destape-rapido-6.jpeg",
+      "img/carrocerias/baranda-volcable-destape-rapido-7.jpeg",
+      "img/carrocerias/baranda-volcable-destape-rapido-8.jpeg"
+    ],
+    "especificaciones": [
+      "Tipo: Baranda volcable con destape rápido",
+      "Construcción: Estructura metálica reforzada",
+      "Sistema de apertura: Destape rápido",
+      "Laterales: Barandas rebatibles",
+      "Portón trasero: Rebatible",
+      "Acceso de carga: Lateral y trasero",
+      "Aplicación: Carga general y transporte comercial",
+      "Configuración: Adaptable a diferentes largos de chasis",
+      "Cobertura: Compatible con estructura para lona",
+      "Uso recomendado: Distribución, logística, cargas paletizadas y mercadería general"
+    ],
+    "caracteristicas": [
+      "El sistema de destape rápido permite reducir el tiempo de apertura de las barandas, agilizando la carga y descarga.",
+      "La posibilidad de abrir los laterales brinda mayor accesibilidad y hace que sea una carrocería práctica para distintos tipos de transporte."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "carroceria-todo-puerta",
+    "category": "carrocerias",
+    "categoryLabel": "Carrocerías",
+    "modelo": "Todo Puerta",
+    "name": "Carrocería Todo Puerta — Varios modelos y colores",
+    "description": "Carrocería con múltiples puertas laterales independientes para acceso sectorizado a la carga.",
+    "descripcionLarga": "Carrocería Todo Puerta diseñada para transporte y distribución de mercadería, caracterizada por contar con múltiples puertas laterales independientes. Esta configuración permite acceder directamente a distintos sectores de la carga sin necesidad de descargar todo el contenido, agilizando las tareas de reparto.",
+    "image": "img/carrocerias/todo-puerta-1.jpeg",
+    "images": [
+      "img/carrocerias/todo-puerta-1.jpeg",
+      "img/carrocerias/todo-puerta-2.jpeg",
+      "img/carrocerias/todo-puerta-3.jpeg",
+      "img/carrocerias/todo-puerta-4.jpeg",
+      "img/carrocerias/todo-puerta-5.jpeg",
+      "img/carrocerias/todo-puerta-6.jpeg",
+      "img/carrocerias/todo-puerta-7.jpeg",
+      "img/carrocerias/todo-puerta-8.jpeg",
+      "img/carrocerias/todo-puerta-9.jpeg",
+      "img/carrocerias/todo-puerta-10.jpeg"
+    ],
+    "especificaciones": [
+      "Tipo: Carrocería Todo Puerta",
+      "Construcción: Estructura metálica reforzada",
+      "Laterales: Múltiples puertas de apertura independiente",
+      "Sistema de cierre: Cierres individuales por puerta",
+      "Acceso: Lateral y trasero según configuración",
+      "Aplicación: Transporte y distribución de mercadería",
+      "Configuración: Adaptable a diferentes largos y chasis",
+      "Uso recomendado: Reparto urbano, distribución y logística",
+      "Ventaja principal: Acceso sectorizado y rápido a la carga",
+      "Terminaciones: Configurables según las necesidades del cliente"
+    ],
+    "caracteristicas": [
+      "Su principal ventaja es la facilidad de acceso a diferentes sectores de la carrocería, permitiendo organizar la mercadería y realizar entregas de forma más rápida.",
+      "Es especialmente práctica para vehículos que realizan múltiples cargas y descargas durante una misma jornada."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "carroceria-garrafera",
+    "category": "carrocerias",
+    "categoryLabel": "Carrocerías",
+    "modelo": "Garrafera",
+    "name": "Carrocería Garrafera",
+    "description": "Carrocería con estructura abierta para el transporte y distribución de garrafas.",
+    "descripcionLarga": "Carrocería especialmente diseñada para el transporte y distribución de garrafas, con una estructura abierta que facilita la ventilación, la organización de la carga y las operaciones de carga y descarga. Su construcción robusta permite adaptarla a diferentes camiones y necesidades de reparto.",
+    "image": "img/carrocerias/garrafera-1.jpeg",
+    "images": [
+      "img/carrocerias/garrafera-1.jpeg",
+      "img/carrocerias/garrafera-2.jpeg",
+      "img/carrocerias/garrafera-3.jpeg"
+    ],
+    "especificaciones": [
+      "Tipo: Carrocería Garrafera",
+      "Construcción: Estructura metálica reforzada",
+      "Laterales: Estructura abierta con barandas",
+      "Diseño: Preparado para favorecer la ventilación de la carga",
+      "Acceso: Lateral y trasero, según configuración",
+      "Aplicación: Transporte y distribución de garrafas",
+      "Configuración: Adaptable a diferentes largos y modelos de chasis",
+      "Estructura superior: Preparada según las necesidades de transporte",
+      "Uso recomendado: Distribución urbana, comercial y logística de garrafas",
+      "Terminaciones: Configurables según requerimientos del cliente"
+    ],
+    "caracteristicas": [
+      "Diseño pensado para ofrecer buena ventilación, resistencia estructural y fácil acceso a la carga.",
+      "La disposición abierta de sus laterales facilita las tareas de distribución y permite configurar la carrocería de acuerdo con la capacidad y el tipo de trabajo requerido."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "carroceria-jaula-vaquera-doble-piso",
+    "category": "carrocerias",
+    "categoryLabel": "Carrocerías",
+    "modelo": "Jaula Vaquera",
+    "name": "Carrocería Jaula Vaquera Doble Piso",
+    "description": "Carrocería para transporte de ganado, con dos niveles de carga.",
+    "descripcionLarga": "Carrocería Jaula Vaquera Doble Piso diseñada para el transporte de ganado, aprovechando la altura disponible mediante dos niveles de carga. Su estructura tipo jaula proporciona ventilación y está pensada para operaciones de transporte ganadero de mayor capacidad.",
+    "image": "img/carrocerias/jaula-vaquera-doble-piso-1.jpeg",
+    "images": [
+      "img/carrocerias/jaula-vaquera-doble-piso-1.jpeg",
+      "img/carrocerias/jaula-vaquera-doble-piso-2.jpeg"
+    ],
+    "especificaciones": [
+      "Tipo: Jaula vaquera doble piso",
+      "Aplicación: Transporte de ganado",
+      "Configuración: Dos niveles de carga",
+      "Construcción: Estructura metálica reforzada",
+      "Laterales: Tipo jaula con sectores abiertos",
+      "Ventilación: Amplia circulación de aire",
+      "Acceso: Mediante puertas y portones según configuración",
+      "Capacidad: Variable según dimensiones de la carrocería y chasis",
+      "Adaptación: Disponible para diferentes largos y configuraciones de camión",
+      "Uso recomendado: Transporte ganadero y actividades rurales"
+    ],
+    "caracteristicas": [
+      "El sistema de doble piso permite aprovechar mejor el volumen de la carrocería, mientras que su estructura abierta favorece la ventilación durante el traslado.",
+      "Puede configurarse en dimensiones, divisiones y sistemas de apertura de acuerdo con el vehículo y las necesidades de transporte."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "carroceria-mixta-cerealera-vaquera",
+    "category": "carrocerias",
+    "categoryLabel": "Carrocerías",
+    "modelo": "Mixta Cerealera y Vaquera",
+    "name": "Carrocería Mixta – Cerealera y Vaquera",
+    "description": "Carrocería versátil, apta tanto para transporte de cereales como de ganado.",
+    "descripcionLarga": "Carrocería Mixta Cerealera y Vaquera diseñada para brindar mayor versatilidad de trabajo, permitiendo adaptar el mismo vehículo tanto al transporte de cereales como al transporte de ganado. Su configuración combina cerramientos para contener carga a granel con sectores abiertos que proporcionan la ventilación necesaria para el uso ganadero.",
+    "image": "img/carrocerias/mixta-cerealera-vaquera-1.jpeg",
+    "images": [
+      "img/carrocerias/mixta-cerealera-vaquera-1.jpeg"
+    ],
+    "especificaciones": [
+      "Tipo: Carrocería mixta Cerealera / Vaquera",
+      "Construcción: Estructura metálica reforzada",
+      "Aplicación: Transporte agrícola y ganadero",
+      "Uso cerealero: Apta para transporte de granos y cereales",
+      "Uso vaquero: Configuración para transporte de ganado",
+      "Laterales: Paneles metálicos con sectores ventilados",
+      "Ventilación: Aberturas laterales para configuración ganadera",
+      "Acceso: Puertas y portones según configuración",
+      "Configuración: Adaptable a diferentes medidas y chasis",
+      "Uso recomendado: Actividad agropecuaria, establecimientos rurales y transporte"
+    ],
+    "caracteristicas": [
+      "Su principal ventaja es la doble funcionalidad, ya que permite utilizar un mismo camión para diferentes tareas del sector agropecuario.",
+      "La combinación de estructura cerrada y sectores ventilados permite adaptar la carrocería según el tipo de carga, evitando tener que contar con una unidad específica para cada trabajo."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "carroceria-sider",
+    "category": "carrocerias",
+    "categoryLabel": "Carrocerías",
+    "modelo": "Sider",
+    "name": "Carrocería Sider",
+    "description": "Carrocería con lonas laterales corredizas para acceso rápido a la carga.",
+    "descripcionLarga": "Carrocería Sider diseñada para el transporte y distribución de mercadería, equipada con lonas laterales corredizas que permiten acceder rápidamente a la carga desde ambos costados. Es una solución versátil para operaciones logísticas que requieren cargas y descargas frecuentes.",
+    "image": "img/carrocerias/sider-1.jpg",
+    "images": [
+      "img/carrocerias/sider-1.jpg"
+    ],
+    "especificaciones": [
+      "Tipo: Carrocería Sider",
+      "Construcción: Estructura metálica reforzada",
+      "Laterales: Lonas corredizas",
+      "Apertura: Acceso amplio desde los laterales",
+      "Cierre: Sistema de tensores y sujeciones para la lona",
+      "Protección: Cobertura contra lluvia, polvo y condiciones externas",
+      "Aplicación: Transporte de mercadería y carga general",
+      "Carga y descarga: Lateral y trasera, según configuración",
+      "Configuración: Adaptable a diferentes largos y modelos de chasis",
+      "Uso recomendado: Logística, distribución, cargas paletizadas y transporte comercial"
+    ],
+    "caracteristicas": [
+      "Su principal ventaja es el rápido acceso lateral a prácticamente toda la carga, facilitando el trabajo con autoelevadores y reduciendo los tiempos de carga y descarga.",
+      "La lona permite mantener la mercadería cubierta durante el transporte sin perder la practicidad de una apertura lateral amplia."
+    ],
+    "destacado": false
+  },
+  {
+    "id": "carroceria-tolva",
+    "category": "carrocerias",
+    "categoryLabel": "Carrocerías",
+    "modelo": "Tolva",
+    "name": "Carrocería Tolva",
+    "description": "Carrocería robusta y de gran capacidad para el transporte de cargas a granel.",
+    "descripcionLarga": "Carrocería Tolva diseñada para el transporte de cargas a granel, con una estructura metálica robusta y de gran capacidad. Su diseño permite aprovechar eficientemente el espacio de carga y está orientado a trabajos de transporte comercial, industrial y agropecuario.",
+    "image": "img/carrocerias/tolva-1.jpeg",
+    "images": [
+      "img/carrocerias/tolva-1.jpeg"
+    ],
+    "especificaciones": [
+      "Tipo: Carrocería Tolva",
+      "Construcción: Estructura metálica reforzada",
+      "Laterales: Cerrados",
+      "Aplicación: Transporte de materiales y productos a granel",
+      "Capacidad: Variable según dimensiones y configuración",
+      "Chasis: Adaptable a diferentes modelos y largos",
+      "Uso recomendado: Transporte comercial, industrial y agropecuario",
+      "Terminaciones: Configurables según las necesidades del cliente"
+    ],
+    "caracteristicas": [
+      "Construcción resistente, buen aprovechamiento del volumen disponible.",
+      "Posibilidad de adaptar sus dimensiones y configuración al tipo de carga y vehículo."
+    ],
+    "destacado": false
   }
 ]

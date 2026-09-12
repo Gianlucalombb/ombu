@@ -5,7 +5,8 @@
   const catStyles = {
     'agro': { color: '#3daa35', tag: 'Agro' },
     'camiones': { color: '#2563eb', tag: 'Camiones' },
-    'remolques': { color: '#f97316', tag: 'Remolques' },
+    'remolques': { color: '#f97316', tag: 'Semi Remolques' },
+    'carrocerias': { color: '#9333ea', tag: 'Carrocerías' },
     'tractores': { color: '#78350f', tag: 'Tractores' },
     'autopropulsadas': { color: '#14b8bd', tag: 'Autopropulsadas' },
     'higiene-urbana': { color: '#38bdf8', tag: 'Higiene urbana' },

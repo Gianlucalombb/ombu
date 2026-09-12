@@ -592,6 +592,12 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 }
 
 @media (max-width: 640px) {
+  /* Mismo criterio que en la home: logos más chicos en celular */
+  #headerRow { height: 84px !important; }
+  #headerLogos img[alt="Ombu"] { height: 24px !important; }
+  #headerLogos img[alt="Grupozzetto"] { height: 64px !important; }
+  #headerLogos img[alt="Traxor"] { height: 30px !important; }
+
   .prod-row { flex-direction: column; align-items: stretch; }
   .prod-row-img { width: 100%; }
 }
@@ -1103,10 +1109,82 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 @media (max-width: 1024px) {
   .prod-detail-main-img { max-height: none; }
   .prod-tab-panel { max-height: none; overflow-y: visible; }
+  .filtros-panel { position: static; top: auto; }
 }
 
 @media (max-width: 640px) {
   .prod-detail-thumbs { grid-template-columns: repeat(4, 1fr); }
+}
+/* ===== Buscador liviano (dropdown, sin modal ni overlay) ===== */
+.search-inline-btn {
+  position: relative;
+  transition: width .25s ease, background .2s ease;
+}
+.search-inline-input {
+  width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-size: .85rem;
+  font-family: inherit;
+  opacity: 0;
+  transition: width .25s ease, opacity .2s ease;
+}
+.search-inline-btn.is-search-open {
+  width: 220px;
+  cursor: text;
+}
+.search-inline-btn.is-search-open .search-inline-input {
+  width: 160px;
+  opacity: 1;
+  margin-left: 4px;
+}
+
+.search-dropdown {
+  position: absolute;
+  z-index: 150;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+  border: 1px solid #ececec;
+  overflow: hidden;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+.search-dropdown.hidden { display: none; }
+
+.search-dropdown-empty {
+  padding: 18px 16px;
+  text-align: center;
+  color: #a3a3a3;
+  font-size: .82rem;
+}
+.search-dropdown-result {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 12px;
+  text-decoration: none;
+  transition: background .12s ease;
+}
+.search-dropdown-result:hover { background: #f7f7f7; }
+.search-dropdown-result img {
+  width: 42px; height: 42px; border-radius: 8px;
+  object-fit: cover; flex-shrink: 0; background: #f0f0f0;
+}
+.search-dropdown-result-info { flex: 1; min-width: 0; }
+.search-dropdown-result-name {
+  font-weight: 700; color: #171717; font-size: .84rem;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.search-dropdown-result-cat {
+  font-size: .72rem; color: #a3a3a3; margin-top: 1px;
+}
+
+@media (max-width: 640px) {
+  .search-inline-btn.is-search-open { width: 100%; }
+  .search-inline-btn.is-search-open .search-inline-input { width: 100%; }
+  #catLanding { padding-top: 122px !important; }
+  #prodDetail { padding-top: 126px !important; }
 }
 
 </style>
@@ -1145,7 +1223,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M18 10.5a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"/></svg>
         Buscar
       </button>
-      <a href="contacto.html" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-3 rounded-md transition">
+      <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-3 rounded-md transition">
         Solicitar presupuesto
       </a>
     </div>
@@ -1160,7 +1238,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     <a href="usados.html">Usados</a>
     <a href="empresa.html">Empresa</a>
     <a href="contacto.html">Contacto</a>
-    <a href="contacto.html" class="bg-red-600 text-center py-3 rounded-md">Solicitar presupuesto</a>
+    <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" class="bg-red-600 text-center py-3 rounded-md">Solicitar presupuesto</a>
   </div>
 </header>
 
@@ -1402,14 +1480,11 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
         <p id="prodDetailSubcat" class="prod-detail-subcat"></p>
         <p id="prodDetailTagline" class="prod-detail-tagline"></p>
 
-        <div class="grid grid-cols-[1fr_auto_auto] gap-2.5 mt-4 mb-5">
-          <a href="contacto.html" id="prodDetailBudgetBtn" class="prod-detail-btn-primary">
+        <div class="grid grid-cols-[1fr_auto] gap-2.5 mt-4 mb-5">
+          <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" id="prodDetailBudgetBtn" class="prod-detail-btn-primary">
             Solicitar presupuesto
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
-          <button class="prod-detail-btn-icon" aria-label="Folleto">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 2v6h6"/></svg>
-          </button>
           <button id="prodDetailShareBtn" class="prod-detail-btn-icon" aria-label="Compartir">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path stroke-linecap="round" d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
           </button>
@@ -1468,21 +1543,13 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 
 
 <!-- Botón flotante WhatsApp -->
-<a href="https://wa.me/54[NUMERO]" target="_blank" aria-label="WhatsApp" class="fixed bottom-6 left-6 z-50 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.85 9.85 0 004.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0012.04 2m0 1.67c2.22 0 4.31.87 5.88 2.44a8.26 8.26 0 012.43 5.88c0 4.59-3.73 8.32-8.32 8.32a8.3 8.3 0 01-4.22-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.28 8.28 0 01-1.27-4.42c0-4.59 3.74-8.32 8.32-8.32"/></svg>
+<a href="https://wa.me/541140447563" target="_blank" aria-label="WhatsApp" class="fixed bottom-6 left-6 z-50 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
 </a>
 
-<!-- Botón flotante Solicitar presupuesto -->
-<a href="contacto.html" id="quoteFab" aria-label="Solicitar presupuesto" class="fab-quote fixed bottom-6 right-6 z-50 h-14 w-14 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center shadow-lg transition">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-    <path d="M14 2v6h6"/>
-    <path d="M9 13h6M9 17h6"/>
-  </svg>
-  <span class="fab-tooltip">Solicitar presupuesto</span>
-</a>
 
 <script src="js/main.js"></script>
 <script src="js/productos.js"></script>
+<script src="js/search.js"></script>
 </body>
 </html>
