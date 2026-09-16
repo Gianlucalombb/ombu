@@ -1097,9 +1097,14 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   gap: 22px;
   border-bottom: 1px solid #ececec;
   margin-bottom: 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.prod-tabs-nav::-webkit-scrollbar { display: none; }
 
 .prod-tab-btn {
+  flex-shrink: 0;
   display: flex; align-items: center; gap: 6px;
   padding: 2px 2px 12px;
   font-size: .76rem;
