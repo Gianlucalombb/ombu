@@ -3,14 +3,14 @@
   // Mismas categorías y colores que productos.js, para que los filtros
   // y las tarjetas usen siempre la misma paleta en todo el sitio.
   const CATEGORIES = [
-    { slug: 'remolques', label: 'Semi Remolques', color: '#f97316' },
+    { slug: 'remolques', label: 'Semirremolques', color: '#eab308' },
     { slug: 'carrocerias', label: 'Carrocerías', color: '#9333ea' },
-    { slug: 'camiones', label: 'Camiones', color: '#2563eb' },
+    { slug: 'camiones', label: 'Camiones', color: '#6b7280' },
     { slug: 'agro', label: 'Agro', color: '#3daa35' },
     { slug: 'tractores', label: 'Tractores', color: '#78350f' },
-    { slug: 'autopropulsadas', label: 'Autopropulsadas', color: '#14b8bd' },
+    { slug: 'autopropulsadas', label: 'Autopropulsadas', color: '#2563eb' },
     { slug: 'higiene-urbana', label: 'Higiene urbana', color: '#38bdf8' },
-    { slug: 'neumaticos-y-llantas', label: 'Neumáticos', color: '#eab308' }
+    { slug: 'neumaticos-y-llantas', label: 'Neumáticos', color: '#171717' }
   ];
 
   const grid = document.getElementById('usadosGrid');
@@ -139,7 +139,7 @@
   if (filtrosOverlay) filtrosOverlay.addEventListener('click', closeFiltrosMobile);
 
   /* ===== Carga inicial ===== */
-  fetch('usados.json')
+  fetch('/usados.json')
     .then((res) => res.json())
     .then((data) => {
       allUsados = data;

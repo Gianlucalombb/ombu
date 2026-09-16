@@ -4,20 +4,20 @@
 
   const catStyles = {
     'agro': { color: '#3daa35', tag: 'Agro' },
-    'camiones': { color: '#2563eb', tag: 'Camiones' },
-    'remolques': { color: '#f97316', tag: 'Semi Remolques' },
+    'camiones': { color: '#6b7280', tag: 'Camiones' },
+    'remolques': { color: '#eab308', tag: 'Semirremolques' },
     'carrocerias': { color: '#9333ea', tag: 'Carrocerías' },
     'tractores': { color: '#78350f', tag: 'Tractores' },
-    'autopropulsadas': { color: '#14b8bd', tag: 'Autopropulsadas' },
+    'autopropulsadas': { color: '#2563eb', tag: 'Autopropulsadas' },
     'higiene-urbana': { color: '#38bdf8', tag: 'Higiene urbana' },
-    'neumaticos-y-llantas': { color: '#eab308', tag: 'Neumáticos' }
+    'neumaticos-y-llantas': { color: '#171717', tag: 'Neumáticos' }
   };
 
   function buildCard(p) {
     const style = catStyles[p.category] || { color: '#525252', tag: p.categoryLabel };
 
     const a = document.createElement('a');
-    a.href = `productos.html?producto=${encodeURIComponent(p.id)}`;
+    a.href = `/producto/${encodeURIComponent(p.id)}`;
     a.className = 'showcase-card';
     a.innerHTML = `
       <img src="${p.image}" alt="${p.name}" loading="lazy">

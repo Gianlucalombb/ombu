@@ -176,17 +176,20 @@ if (menuBtn && mobileMenu) {
   const tabIndicator = document.getElementById('tabIndicator');
   const tabsWrap = document.getElementById('heroTabs');
   const mobilePrev = document.getElementById('heroMobilePrev');
+  const mobilePrevText = mobilePrev ? mobilePrev.querySelector('.hero-mobile-cat-side-text') : null;
   const mobileCurrent = document.getElementById('heroMobileCurrent');
   const mobileNext = document.getElementById('heroMobileNext');
+  const mobileNextText = mobileNext ? mobileNext.querySelector('.hero-mobile-cat-side-text') : null;
 
   if (!slides.length) return;
 
   const SLIDE_DURATION = 3500;   // tiempo total por slide (ms)
   const BADGE_DURATION = 2200;   // cuánto se ve la palabra de categoría (ms)
 
-  const names = ['Semi Remolques', 'Carrocerías', 'Camiones', 'Agro', 'Tractores', 'Autopropulsadas', 'Higiene urbana', 'Neumáticos'];
+  const names = ['Semirremolques', 'Carrocerías', 'Camiones', 'Agro', 'Tractores', 'Autopropulsadas', 'Higiene urbana', 'Neumáticos'];
   const slugs = ['remolques', 'carrocerias', 'camiones', 'agro', 'tractores', 'autopropulsadas', 'higiene-urbana', 'neumaticos-y-llantas'];
   const catClasses = ['cat-remolques', 'cat-carrocerias', 'cat-camiones', 'cat-agro', 'cat-tractores', 'cat-autopropulsadas', 'cat-higiene-urbana', 'cat-neumaticos-llantas'];
+  const colors = ['#eab308', '#9333ea', '#6b7280', '#3daa35', '#78350f', '#2563eb', '#38bdf8', '#171717'];
 
   let current = 0;
   let timer = null;
@@ -249,7 +252,8 @@ if (menuBtn && mobileMenu) {
     void badge.offsetWidth;
 
     badgeText.textContent = names[current];
-    badge.href = 'productos.html?cat=' + slugs[current];
+    badgeText.classList.toggle('is-long', names[current].length > 12);
+    badge.href = '/productos/' + slugs[current];
     badge.classList.add(catClasses[current]);
     badge.classList.add('is-visible');
 
@@ -257,11 +261,9 @@ if (menuBtn && mobileMenu) {
     if (mobileCurrent) {
       const prevIndex = (current - 1 + names.length) % names.length;
       const nextIndex = (current + 1) % names.length;
-      mobilePrev.textContent = names[prevIndex];
+      mobilePrevText.textContent = names[prevIndex];
       mobileCurrent.textContent = names[current];
-      mobileNext.textContent = names[nextIndex];
-      // Nombres largos (ej. "Autopropulsadas") se achican para no salirse de pantalla
-      mobileCurrent.classList.toggle('is-long', names[current].length > 12);
+      mobileNextText.textContent = names[nextIndex];
     }
 
     badgeTimer = setTimeout(() => {
@@ -279,12 +281,24 @@ if (menuBtn && mobileMenu) {
   }
 
   tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => { goTo(i); resetTimer(); });
+    tab.addEventListener('click', () => {
+      if (i === current) {
+        window.location.href = '/productos/' + slugs[i];
+        return;
+      }
+      goTo(i);
+      resetTimer();
+    });
   });
   if (nextBtn) nextBtn.addEventListener('click', next);
   if (prevBtn) prevBtn.addEventListener('click', prev);
   if (mobilePrev) mobilePrev.addEventListener('click', prev);
   if (mobileNext) mobileNext.addEventListener('click', next);
+  if (mobileCurrent) {
+    mobileCurrent.addEventListener('click', () => {
+      window.location.href = '/productos/' + slugs[current];
+    });
+  }
 
   window.addEventListener('resize', () => moveIndicator(tabs[current]));
 

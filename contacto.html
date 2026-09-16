@@ -3,14 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto — OMBU Tapiales</title>
-<meta name="description" content="Contactate con OMBU Tapiales. Dirección, teléfono, horarios y formulario de contacto.">
+<title>Contacto — OMBU Tapiales | Concesionario OMBU y Traxor</title>
+<meta name="description" content="Contactate con OMBU Tapiales, concesionario oficial OMBU y Traxor en Buenos Aires. Dirección, teléfono, WhatsApp y formulario de contacto.">
+<meta name="keywords" content="contacto OMBU, concesionario Tapiales, OMBU Buenos Aires, Traxor Argentina, maquinaria agrícola contacto">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grupozzettoombu.com/contacto.html">
+<link rel="icon" type="image/png" href="img/logo-ombu.png">
+<link rel="apple-touch-icon" href="img/logo-ombu.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grupozzettoombu.com/contacto.html">
+<meta property="og:site_name" content="OMBU Tapiales">
+<meta property="og:title" content="Contacto — OMBU Tapiales">
+<meta property="og:description" content="Concesionario oficial OMBU y Traxor en Tapiales, Buenos Aires. Escribinos por WhatsApp o completá el formulario.">
+<meta property="og:image" content="https://grupozzettoombu.com/img/header1.jpg">
+<meta property="og:locale" content="es_AR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contacto — OMBU Tapiales">
+<meta name="twitter:description" content="Concesionario oficial OMBU y Traxor en Tapiales, Buenos Aires.">
+<meta name="twitter:image" content="https://grupozzettoombu.com/img/header1.jpg">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://grupozzettoombu.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://grupozzettoombu.com/contacto.html" }
+  ]
+}
+</script>
+
 <style>
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #dc2626; outline-offset: 2px; }
 
 /* ===== Header (mismo que el resto del sitio) ===== */
@@ -62,7 +93,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .search-inline-btn { position: relative; transition: width .25s ease, background .2s ease; }
 .search-inline-input {
   width: 0; border: none; outline: none; background: transparent; color: inherit;
-  font-size: .85rem; font-family: inherit; opacity: 0;
+  font-size: 1rem; font-family: inherit; opacity: 0;
   transition: width .25s ease, opacity .2s ease;
 }
 .search-inline-btn.is-search-open { width: 220px; cursor: text; }
@@ -121,6 +152,38 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .contact-map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
 
+/* ===== Redes sociales ===== */
+.social-follow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 16px 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+}
+.social-follow-label {
+  font-size: .82rem;
+  font-weight: 700;
+  color: #525252;
+}
+.social-follow-icons { display: flex; align-items: center; gap: 10px; }
+.social-follow-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  color: #737373;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.social-follow-icon svg { width: 18px; height: 18px; }
+.social-follow-icon:hover {
+  background: var(--social-color);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 /* ===== Formulario ===== */
 .contact-form-card {
   background: #fafafa;
@@ -139,7 +202,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   border: 1px solid #d4d4d4;
   border-radius: 10px;
   padding: 12px 14px;
-  font: inherit; font-size: .92rem; color: #171717;
+  font: inherit; font-size: 1rem; color: #171717;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
 .contact-field input:focus, .contact-field textarea:focus {
@@ -214,14 +277,32 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .footer-whatsapp-circle svg { width: 26px; height: 26px; }
 .footer-whatsapp-circle:hover { transform: scale(1.08); }
-.footer-bottom-bar { background: #fff; border-top: 1px solid #e5e5e5; }
-.footer-social-icon {
-  display: flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; border-radius: 999px;
-  background: #171717; color: #fff; transition: background 0.2s ease;
+.footer-bottom-dark {
+  display: flex; flex-direction: column; gap: 24px;
+  margin-top: 40px; padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
-.footer-social-icon svg { width: 16px; height: 16px; }
-.footer-social-icon:hover { background: #dc2626; }
+@media (min-width: 768px) {
+  .footer-bottom-dark { flex-direction: row; align-items: center; justify-content: center; }
+}
+.footer-bottom-social { display: flex; align-items: center; gap: 16px; }
+.footer-bottom-social-label {
+  font-size: .78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .5px; color: #a3a3a3; white-space: nowrap;
+}
+.footer-bottom-social-icons { display: flex; align-items: center; gap: 10px; }
+.footer-bottom-social-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 999px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: #d4d4d4;
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.footer-bottom-social-icon svg { width: 17px; height: 17px; }
+.footer-bottom-social-icon:hover {
+  background: var(--social-color); border-color: var(--social-color);
+  color: #fff; transform: translateY(-3px);
+}
 @media (max-width: 640px) {
   #headerRow { height: auto !important; padding: 18px 0 !important; }
   #headerLogos {
@@ -342,6 +423,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       <div class="contact-map-wrap">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.772993040113!2d-58.503549579195294!3d-34.71090519959011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccf002aa8e39b%3A0x9c97a547bd55149e!2sGrupozzetto!5e0!3m2!1ses!2sar!4v1789170027829!5m2!1ses!2sar" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Nuestra ubicación"></iframe>
       </div>
+
+      <div class="social-follow-row">
+        <p class="social-follow-label">Seguinos en redes</p>
+        <div class="social-follow-icons">
+          <a href="https://www.facebook.com/grupozzetto/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook" class="social-follow-icon" style="--social-color:#1877F2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/javier_frazzetto_grupozzetto/" target="_blank" rel="noopener" aria-label="Instagram" class="social-follow-icon" style="--social-color:#E1306C">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://ar.linkedin.com/company/grupozzetto" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-follow-icon" style="--social-color:#0A66C2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Columna derecha: formulario -->
@@ -425,14 +521,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       <div class="pt-3">
         <h4 class="font-bold text-sm mb-3 text-white tracking-wide uppercase">Categorías</h4>
         <div class="footer-cat-grid">
-          <a href="productos.html?cat=remolques" class="footer-cat-chip" style="--chip-color:#f97316">Semi Remolques</a>
-          <a href="productos.html?cat=carrocerias" class="footer-cat-chip" style="--chip-color:#9333ea">Carrocerías</a>
-          <a href="productos.html?cat=camiones" class="footer-cat-chip" style="--chip-color:#2563eb">Camiones</a>
-          <a href="productos.html?cat=agro" class="footer-cat-chip" style="--chip-color:#3daa35">Agro</a>
-          <a href="productos.html?cat=tractores" class="footer-cat-chip" style="--chip-color:#78350f">Tractores</a>
-          <a href="productos.html?cat=autopropulsadas" class="footer-cat-chip" style="--chip-color:#14b8bd">Autopropulsadas</a>
-          <a href="productos.html?cat=higiene-urbana" class="footer-cat-chip" style="--chip-color:#38bdf8">Higiene urbana</a>
-          <a href="productos.html?cat=neumaticos-y-llantas" class="footer-cat-chip" style="--chip-color:#eab308">Neumáticos</a>
+          <a href="/productos/remolques" class="footer-cat-chip" style="--chip-color:#eab308">Semirremolques</a>
+          <a href="/productos/carrocerias" class="footer-cat-chip" style="--chip-color:#9333ea">Carrocerías</a>
+          <a href="/productos/camiones" class="footer-cat-chip" style="--chip-color:#6b7280">Camiones</a>
+          <a href="/productos/agro" class="footer-cat-chip" style="--chip-color:#3daa35">Agro</a>
+          <a href="/productos/tractores" class="footer-cat-chip" style="--chip-color:#78350f">Tractores</a>
+          <a href="/productos/autopropulsadas" class="footer-cat-chip" style="--chip-color:#2563eb">Autopropulsadas</a>
+          <a href="/productos/higiene-urbana" class="footer-cat-chip" style="--chip-color:#38bdf8">Higiene urbana</a>
+          <a href="/productos/neumaticos-y-llantas" class="footer-cat-chip" style="--chip-color:#171717">Neumáticos</a>
         </div>
 
         <div class="footer-extra-links">
@@ -458,35 +554,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       </div>
 
     </div>
+
+    <div class="footer-bottom-dark">
+      <div class="footer-bottom-social">
+        <p class="footer-bottom-social-label">Seguinos en redes</p>
+        <div class="footer-bottom-social-icons">
+          <a href="https://www.facebook.com/grupozzetto/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook" class="footer-bottom-social-icon" style="--social-color:#1877F2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/javier_frazzetto_grupozzetto/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-bottom-social-icon" style="--social-color:#E1306C">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://ar.linkedin.com/company/grupozzetto" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-bottom-social-icon" style="--social-color:#0A66C2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </footer>
-
-<!-- Barra final: copyright + legales + redes -->
-<div class="footer-bottom-bar">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-    <p class="text-neutral-500">© 2026 OMBU Tapiales. Todos los derechos reservados.</p>
-
-    <div class="flex items-center gap-5 text-neutral-500">
-      <a href="#" class="hover:text-red-600 transition">Política de privacidad</a>
-      <span class="text-neutral-300">|</span>
-      <a href="#" class="hover:text-red-600 transition">Términos y condiciones</a>
-      <span class="text-neutral-300">|</span>
-      <a href="#" class="hover:text-red-600 transition">Política de cookies</a>
-    </div>
-
-    <div class="flex items-center gap-3">
-      <a href="#" aria-label="Facebook" class="footer-social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-      </a>
-      <a href="#" aria-label="Instagram" class="footer-social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-      </a>
-      <a href="#" aria-label="YouTube" class="footer-social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.5-5.3c-.3-1-1-1.7-2-2C18.9 4.2 12 4.2 12 4.2s-6.9 0-8.5.5c-1 .3-1.7 1-2 2C1 8.4 1 12 1 12s0 3.6.5 5.3c.3 1 1 1.7 2 2 1.6.5 8.5.5 8.5.5s6.9 0 8.5-.5c1-.3 1.7-1 2-2 .5-1.7.5-5.3.5-5.3zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
-      </a>
-    </div>
-  </div>
-</div>
 
 <!-- Botón flotante WhatsApp -->
 <a href="https://wa.me/541140447563" target="_blank" aria-label="WhatsApp" class="fixed bottom-6 left-6 z-50 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition">

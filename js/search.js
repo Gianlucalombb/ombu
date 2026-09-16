@@ -5,7 +5,7 @@
 
   function loadProducts() {
     if (!productsPromise) {
-      productsPromise = fetch('productos.json')
+      productsPromise = fetch('/productos.json')
         .then((res) => res.json())
         .then((data) => { allProducts = data; return data; })
         .catch((err) => {
@@ -44,7 +44,7 @@
       return;
     }
     dropdown.innerHTML = list.map((p) => `
-      <a href="productos.html?producto=${encodeURIComponent(p.id)}" class="search-dropdown-result">
+      <a href="/producto/${encodeURIComponent(p.id)}" class="search-dropdown-result">
         <img src="${p.image}" alt="${p.name}" loading="lazy">
         <div class="search-dropdown-result-info">
           <p class="search-dropdown-result-name">${p.name}</p>

@@ -3,71 +3,640 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Empresa — OMBU [SEDE]</title>
+<title>Empresa — Concesionario Oficial OMBU y Traxor | OMBU Tapiales</title>
+<meta name="description" content="Concesionario oficial OMBU y Traxor en Tapiales, Buenos Aires. Líderes en la comercialización de línea pesada y agrícola, más de 35 años de trayectoria.">
+<meta name="keywords" content="concesionario OMBU, concesionario Traxor, empresa maquinaria agrícola, Grupozzetto, historia OMBU Tapiales">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grupozzettoombu.com/empresa.html">
+<link rel="icon" type="image/png" href="img/logo-ombu.png">
+<link rel="apple-touch-icon" href="img/logo-ombu.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://grupozzettoombu.com/empresa.html">
+<meta property="og:site_name" content="OMBU Tapiales">
+<meta property="og:title" content="Empresa — Concesionario Oficial OMBU y Traxor">
+<meta property="og:description" content="Concesionario oficial OMBU y Traxor en Tapiales, Buenos Aires. Más de 35 años de trayectoria.">
+<meta property="og:image" content="https://grupozzettoombu.com/img/empresa-expo-1.jpg">
+<meta property="og:locale" content="es_AR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Empresa — OMBU Tapiales">
+<meta name="twitter:description" content="Concesionario oficial OMBU y Traxor en Tapiales, Buenos Aires.">
+<meta name="twitter:image" content="https://grupozzettoombu.com/img/empresa-expo-1.jpg">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://grupozzettoombu.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Empresa", "item": "https://grupozzettoombu.com/empresa.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "AutoDealer",
+    "name": "OMBU Tapiales",
+    "alternateName": "Grupozzetto",
+    "foundingDate": "1990",
+    "url": "https://grupozzettoombu.com/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. de Circunvalación 2181",
+      "addressLocality": "Tapiales",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    }
+  }
+}
+</script>
+
 <style>
-body { font-family: 'Inter', sans-serif; }
-.construccion-bg {
-  background: radial-gradient(circle at 30% 20%, rgba(220,38,38,0.08), transparent 55%),
-              radial-gradient(circle at 80% 80%, rgba(220,38,38,0.06), transparent 55%);
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+a:focus-visible, button:focus-visible { outline: 2px solid #dc2626; outline-offset: 2px; }
+
+/* ===== Header (mismo criterio que productos/contacto/usados) ===== */
+.promo-bar {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #7f1d1d, #dc2626 45%, #b91c1c);
 }
-.construccion-icon {
-  animation: gearSpin 6s linear infinite;
+.promo-bar::after {
+  content: '';
+  position: absolute; top: 0; left: -40%;
+  width: 30%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: skewX(-20deg);
+  animation: promoShine 4.5s ease-in-out infinite;
 }
-@keyframes gearSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes promoShine { 0% { left:-40%; } 55% { left:130%; } 100% { left:130%; } }
+.promo-icon {
+  display:flex; align-items:center; justify-content:center;
+  width:20px; height:20px; border-radius:999px;
+  background:#fff; color:#b91c1c; font-weight:800; font-size:.7rem;
+  animation: promoPulse 1.8s ease-in-out infinite;
 }
-.construccion-dot {
-  animation: dotBounce 1.4s ease-in-out infinite;
+@keyframes promoPulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.15);} }
+.promo-cta { background:#fff; color:#b91c1c; font-weight:800; padding:4px 12px; border-radius:999px; white-space:nowrap; }
+
+#siteHeader { background: rgba(255,255,255,0.98); border-bottom: 1px solid #e5e5e5; }
+#siteHeader nav a, #siteHeader .header-search-btn { color: #171717; }
+#siteHeader .header-search-btn { border-color: #d4d4d4; }
+#headerLogos img { filter: brightness(0); }
+
+@media (max-width: 640px) {
+  #headerRow { height: auto !important; padding: 18px 0 !important; }
+  #headerLogos { grid-column: 1 / -1; justify-self: center; overflow: visible; }
+  #headerLogos img[alt="Ombu"] { height: 38px !important; margin-right: -16px !important; }
+  #headerLogos img[alt="Grupozzetto"] { height: 100px !important; margin-right: -16px !important; }
+  #headerLogos img[alt="Traxor"] { height: 48px !important; }
+  #empresaHero { padding-top: 172px !important; }
 }
-.construccion-dot:nth-child(2) { animation-delay: 0.15s; }
-.construccion-dot:nth-child(3) { animation-delay: 0.3s; }
-@keyframes dotBounce {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-  30% { transform: translateY(-6px); opacity: 1; }
+
+/* ===== Buscador liviano (igual que el resto del sitio) ===== */
+.search-inline-btn { position: relative; transition: width .25s ease, background .2s ease; }
+.search-inline-input {
+  width: 0; border: none; outline: none; background: transparent; color: inherit;
+  font-size: 1rem; font-family: inherit; opacity: 0;
+  transition: width .25s ease, opacity .2s ease;
 }
-.construccion-btn {
-  transition: gap 0.25s ease, background 0.25s ease;
+.search-inline-btn.is-search-open { width: 220px; cursor: text; }
+.search-inline-btn.is-search-open .search-inline-input { width: 160px; opacity: 1; margin-left: 4px; }
+.search-dropdown {
+  position: absolute; z-index: 150; background: #fff; border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.18); border: 1px solid #ececec;
+  overflow: hidden; max-height: 70vh; overflow-y: auto;
 }
-.construccion-btn:hover { gap: 14px; background: #171717; }
+.search-dropdown.hidden { display: none; }
+.search-dropdown-empty { padding: 18px 16px; text-align: center; color: #a3a3a3; font-size: .82rem; }
+.search-dropdown-result { display: flex; align-items: center; gap: 12px; padding: 9px 12px; text-decoration: none; transition: background .12s ease; }
+.search-dropdown-result:hover { background: #f7f7f7; }
+.search-dropdown-result img { width: 42px; height: 42px; border-radius: 8px; object-fit: cover; flex-shrink: 0; background: #f0f0f0; }
+.search-dropdown-result-info { flex: 1; min-width: 0; }
+.search-dropdown-result-name { font-weight: 700; color: #171717; font-size: .84rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.search-dropdown-result-cat { font-size: .72rem; color: #a3a3a3; margin-top: 1px; }
+
+/* ===== Animaciones al hacer scroll (usa el observer genérico de main.js) ===== */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1.is-visible { transition-delay: .1s; }
+.reveal-delay-2.is-visible { transition-delay: .2s; }
+.reveal-delay-3.is-visible { transition-delay: .3s; }
+
+/* ===== Hero ===== */
+.empresa-hero-bg {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(220,38,38,0.07), transparent 55%),
+    radial-gradient(circle at 85% 0%, rgba(220,38,38,0.05), transparent 50%);
+}
+
+/* ===== Quiénes somos ===== */
+.empresa-photo-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #f0f0f0;
+}
+.empresa-photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.empresa-photo-frame:hover img { transform: scale(1.05); }
+.empresa-photo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,.65), transparent);
+  color: #fff; font-size: .78rem; font-weight: 600;
+  padding: 30px 16px 12px;
+}
+
+/* ===== Números ===== */
+.stat-block { text-align: center; }
+.stat-number {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800; font-style: italic;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  color: #dc2626;
+  line-height: 1;
+}
+.stat-label {
+  margin-top: 8px;
+  font-size: .82rem; font-weight: 700; color: #737373;
+  text-transform: uppercase; letter-spacing: .5px;
+}
+
+/* ===== Marcas ===== */
+.marca-card {
+  border: 1px solid #ececec;
+  border-radius: 20px;
+  padding: 32px 28px;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.marca-card:hover {
+  border-color: #dc2626;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(220,38,38,0.08);
+}
+.marca-card img { height: 44px; width: auto; margin-bottom: 18px; }
+.marca-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #fdeceb; color: #dc2626;
+  font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .5px;
+  padding: 5px 12px; border-radius: 999px;
+  margin-bottom: 14px;
+}
+.marca-badge svg { width: 12px; height: 12px; }
+
+/* ===== Por qué elegirnos ===== */
+.porque-item { display: flex; gap: 16px; }
+.porque-icon {
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 14px;
+  background: #fdeceb; color: #dc2626;
+}
+.porque-icon svg { width: 22px; height: 22px; }
+
+/* ===== Franja expo ===== */
+.expo-banner {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 21/9;
+  background: #171717;
+}
+.expo-banner img { width: 100%; height: 100%; object-fit: cover; opacity: .85; }
+.expo-banner-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(10,10,10,0.75), rgba(10,10,10,0.15));
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 0 40px;
+}
+@media (max-width: 640px) { .expo-banner { aspect-ratio: 4/5; } .expo-banner-overlay { padding: 0 24px; } }
+
+/* ===== Mapa ===== */
+.empresa-map-wrap { border-radius: 16px; overflow: hidden; border: 1px solid #e5e5e5; height: 320px; }
+.empresa-map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* ===== Redes sociales ===== */
+.social-follow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 16px 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+}
+.social-follow-label {
+  font-size: .82rem;
+  font-weight: 700;
+  color: #525252;
+}
+.social-follow-icons { display: flex; align-items: center; gap: 10px; }
+.social-follow-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  color: #737373;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.social-follow-icon svg { width: 18px; height: 18px; }
+.social-follow-icon:hover {
+  background: var(--social-color);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== Footer (idéntico al del resto del sitio) ===== */
+.footer-dark { position: relative; background: #0a0a0a; overflow: hidden; }
+.footer-dark::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 14px);
+  pointer-events: none;
+}
+.footer-logo-invert { filter: brightness(0) invert(1); }
+.footer-icon {
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 999px;
+  background: rgba(255,255,255,0.08); color: #d4d4d4;
+}
+.footer-icon svg { width: 15px; height: 15px; }
+.footer-whatsapp-card {
+  position: relative;
+  background: linear-gradient(160deg, rgba(37,211,102,0.12), rgba(255,255,255,0.04));
+  border: 1px solid rgba(37,211,102,0.25);
+  border-radius: 16px; padding: 20px 24px; text-align: center;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.footer-whatsapp-card:hover { border-color: rgba(37,211,102,0.5); transform: translateY(-2px); }
+.footer-cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.footer-cat-chip {
+  position: relative; display: flex; align-items: center; gap: 9px;
+  padding: 8px 14px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);
+  font-size: 0.8rem; font-weight: 600; color: #d4d4d4;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+.footer-cat-chip::before { content: ''; flex-shrink: 0; width: 8px; height: 8px; border-radius: 999px; background: var(--chip-color); }
+.footer-cat-chip:hover { border-color: var(--chip-color); background: rgba(255,255,255,0.06); color: #fff; transform: translateX(3px); }
+.footer-extra-links { margin-top: 20px; display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: #737373; }
+.footer-extra-links a { color: #a3a3a3; }
+.footer-extra-links span { color: #525252; }
+.footer-whatsapp-circle {
+  display: flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; border-radius: 999px;
+  background: #22c55e; color: #fff; margin: 14px auto 0;
+  transition: transform 0.2s ease;
+}
+.footer-whatsapp-circle svg { width: 26px; height: 26px; }
+.footer-whatsapp-circle:hover { transform: scale(1.08); }
+.footer-bottom-dark {
+  display: flex; flex-direction: column; gap: 24px;
+  margin-top: 40px; padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+@media (min-width: 768px) {
+  .footer-bottom-dark { flex-direction: row; align-items: center; justify-content: center; }
+}
+.footer-bottom-social { display: flex; align-items: center; gap: 16px; }
+.footer-bottom-social-label {
+  font-size: .78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .5px; color: #a3a3a3; white-space: nowrap;
+}
+.footer-bottom-social-icons { display: flex; align-items: center; gap: 10px; }
+.footer-bottom-social-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 999px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: #d4d4d4;
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.footer-bottom-social-icon svg { width: 17px; height: 17px; }
+.footer-bottom-social-icon:hover {
+  background: var(--social-color); border-color: var(--social-color);
+  color: #fff; transform: translateY(-3px);
+}
 </style>
 </head>
-<body class="construccion-bg min-h-screen flex flex-col items-center justify-center text-center px-6">
+<body class="bg-white text-neutral-900">
 
-  <a href="index.html" class="mb-10">
-    <img src="img/logo.jpg" alt="OMBU" class="h-16 w-auto mx-auto">
-  </a>
+<!-- ===== HEADER ===== -->
+<a href="https://agroplansa.github.io/CalculadorCuota/" target="_blank" rel="noopener" class="promo-bar fixed top-0 left-0 right-0 z-[60] flex items-center justify-center gap-3 py-2.5 text-xs md:text-sm">
+  <span class="promo-icon">%</span>
+  <span class="text-white/95">
+    <strong class="font-extrabold tracking-wide">PLAN AHORRO GRUPOZZETTO</strong>
+    <span class="hidden sm:inline text-white/80"> — ¡Adquirí tu unidad hoy!</span>
+  </span>
+  <span class="promo-cta">Calculá tu cuota →</span>
+</a>
 
-  <div class="construccion-icon mb-8 text-red-600">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-      <circle cx="12" cy="12" r="3"/>
-    </svg>
+<header id="siteHeader" class="fixed top-9 left-0 right-0 z-50">
+  <div id="headerRow" class="max-w-[1600px] mx-auto px-2 grid grid-cols-[1fr_auto_1fr] items-center h-28">
+    <div id="headerLogos" class="flex items-center gap-0 h-full overflow-hidden">
+      <a href="index.html" class="inline-flex items-center gap-0">
+        <img src="img/logo-ombu.png" alt="Ombu" class="h-10 w-auto rounded -mr-4">
+        <img src="img/logo.jpg" alt="Grupozzetto" class="h-[8.75rem] w-auto rounded -mr-4">
+        <img src="img/logo-traxor.png" alt="Traxor" class="h-14 w-auto rounded">
+      </a>
+    </div>
+
+    <nav class="hidden lg:flex items-center gap-10 text-sm font-bold tracking-wide uppercase justify-self-center">
+      <a href="productos.html" class="hover:text-red-600 transition">Productos</a>
+      <a href="usados.html" class="hover:text-red-600 transition">Usados</a>
+      <a href="empresa.html" class="text-red-600">Empresa</a>
+      <a href="contacto.html" class="hover:text-red-600 transition">Contacto</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-3 justify-self-end">
+      <button class="header-search-btn flex items-center gap-2 border rounded-full px-4 py-2 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M18 10.5a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"/></svg>
+        Buscar
+      </button>
+      <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-5 py-3 rounded-md transition">
+        Solicitar presupuesto
+      </a>
+    </div>
   </div>
+</header>
 
-  <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-4">Sección en construcción</p>
-
-  <h1 class="text-3xl md:text-5xl font-extrabold mb-5 leading-tight" style="font-family:'Archivo',sans-serif;">
-    Estamos armando<br>la sección Empresa
-  </h1>
-
-  <p class="text-neutral-500 max-w-md mb-2">
-    Muy pronto vas a poder conocer nuestra historia, trayectoria y todo lo que nos representa como marca.
-  </p>
-
-  <div class="flex items-center justify-center gap-1.5 mb-10 mt-2">
-    <span class="construccion-dot h-2 w-2 rounded-full bg-red-600"></span>
-    <span class="construccion-dot h-2 w-2 rounded-full bg-red-600"></span>
-    <span class="construccion-dot h-2 w-2 rounded-full bg-red-600"></span>
+<!-- ===== HERO ===== -->
+<section id="empresaHero" class="empresa-hero-bg pt-[156px] pb-16 px-6">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Empresa</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold italic mb-5 leading-tight" style="font-family:'Archivo',sans-serif;">
+      Concesionario líder en la comercialización de línea pesada y agrícola
+    </h1>
+    <p class="text-neutral-500 max-w-2xl mx-auto text-lg">
+      Concesionario oficial OMBU y Traxor en Tapiales, Buenos Aires. Más de 35 años acompañando al campo y al transporte argentino.
+    </p>
   </div>
+</section>
 
-  <a href="index.html" class="construccion-btn inline-flex items-center gap-2 bg-red-600 text-white font-bold px-7 py-3.5 rounded-md">
-    Volver al inicio
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-  </a>
+<!-- ===== QUIÉNES SOMOS ===== -->
+<section class="px-6 py-8">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Quiénes somos</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold italic mb-5" style="font-family:'Archivo',sans-serif;">
+        Más de tres décadas construyendo confianza
+      </h2>
+      <p class="text-neutral-600 mb-4 leading-relaxed">
+        Desde 1990, Grupozzetto se consolidó como uno de los concesionarios de referencia en la comercialización de maquinaria de línea pesada y agrícola en Argentina. Representamos oficialmente a OMBU y Traxor en Tapiales, acompañando a productores, transportistas y empresas de todo el país con equipos de primer nivel.
+      </p>
+      <p class="text-neutral-600 leading-relaxed">
+        Nuestro compromiso siempre fue el mismo: ofrecer soluciones confiables, con respaldo real y atención cercana, en cada etapa del camino.
+      </p>
+    </div>
+    <div class="empresa-photo-frame reveal reveal-delay-1">
+      <img src="img/empresa-expo-1.jpg" alt="Grupozzetto en una exposición del sector">
+      <div class="empresa-photo-caption">Presentes en las principales exposiciones del sector</div>
+    </div>
+  </div>
+</section>
 
+<!-- ===== NÚMEROS ===== -->
+<section class="px-6 py-16">
+  <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
+    <div class="stat-block reveal">
+      <p class="stat-number"><span data-count-to="36"></span></p>
+      <p class="stat-label">Años en el rubro</p>
+    </div>
+    <div class="stat-block reveal reveal-delay-1">
+      <p class="stat-number"><span data-count-to="1000" data-suffix="+"></span></p>
+      <p class="stat-label">Equipos entregados</p>
+    </div>
+    <div class="stat-block reveal reveal-delay-2">
+      <p class="stat-number"><span data-count-to="2"></span></p>
+      <p class="stat-label">Marcas oficiales</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARCAS ===== -->
+<section class="px-6 py-16 bg-neutral-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Nuestras marcas</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold italic" style="font-family:'Archivo',sans-serif;">
+        Representantes oficiales
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="marca-card bg-white reveal">
+        <span class="marca-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          Concesionario oficial
+        </span>
+        <img src="img/logo-ombu.png" alt="OMBU">
+        <p class="text-neutral-600 leading-relaxed">
+          Maquinaria agrícola de origen argentino, pensada para maximizar la productividad de cada campaña: tolvas, acoplados cerealeros, sembradoras y equipos de labranza.
+        </p>
+      </div>
+      <div class="marca-card bg-white reveal reveal-delay-1">
+        <span class="marca-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          Concesionario oficial
+        </span>
+        <img src="img/logo-traxor.png" alt="Traxor">
+        <p class="text-neutral-600 leading-relaxed">
+          Camiones y equipos de línea pesada preparados para las exigencias del transporte agrícola e industrial, con la robustez que necesita el trabajo diario.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FRANJA EXPO ===== -->
+<section class="px-6 py-16">
+  <div class="max-w-7xl mx-auto expo-banner reveal">
+    <img src="img/empresa-expo-2.jpg" alt="Grupozzetto en una exposición">
+    <div class="expo-banner-overlay">
+      <p class="text-white/70 font-bold text-xs tracking-widest uppercase mb-2">Presencia en el sector</p>
+      <h3 class="text-white text-2xl md:text-3xl font-extrabold italic max-w-md leading-tight" style="font-family:'Archivo',sans-serif;">
+        Presentes en cada exposición donde el agro y el transporte se encuentran
+      </h3>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUÉ ELEGIRNOS ===== -->
+<section class="px-6 py-16 bg-neutral-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Por qué elegirnos</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold italic" style="font-family:'Archivo',sans-serif;">
+        Lo que nos diferencia
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10">
+      <div class="porque-item reveal">
+        <span class="porque-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        <div>
+          <h3 class="font-bold text-lg mb-1">Atención personalizada</h3>
+          <p class="text-neutral-600 text-sm leading-relaxed">Te acompañamos en todo el proceso, desde la primera consulta hasta después de la entrega.</p>
+        </div>
+      </div>
+      <div class="porque-item reveal reveal-delay-1">
+        <span class="porque-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        </span>
+        <div>
+          <h3 class="font-bold text-lg mb-1">Financiación propia</h3>
+          <p class="text-neutral-600 text-sm leading-relaxed">Con nuestro Plan Ahorro podés acceder a tu equipo con cuotas pensadas para el ritmo del campo.</p>
+        </div>
+      </div>
+      <div class="porque-item reveal reveal-delay-2">
+        <span class="porque-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 7.28a2 2 0 0 1 1 1.72v6a2 2 0 0 1-1 1.72l-5 3a2 2 0 0 1-2 0l-5-3a2 2 0 0 1-1-1.72V9a2 2 0 0 1 1-1.72l5-3a2 2 0 0 1 2 0z"/></svg>
+        </span>
+        <div>
+          <h3 class="font-bold text-lg mb-1">Stock permanente</h3>
+          <p class="text-neutral-600 text-sm leading-relaxed">Trabajamos con disponibilidad constante para que no tengas que esperar meses por tu equipo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== UBICACIÓN ===== -->
+<section class="px-6 py-16">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Dónde estamos</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold italic mb-4" style="font-family:'Archivo',sans-serif;">
+        Visitanos en Tapiales
+      </h2>
+      <p class="text-neutral-600 mb-6 leading-relaxed">
+        Av. de Circunvalación 2181, Tapiales, Buenos Aires. Lunes a viernes de 8 a 17 hs.
+      </p>
+      <a href="https://wa.me/541140447563?text=Hola!%20Quiero%20solicitar%20un%20presupuesto" target="_blank" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-6 py-3.5 rounded-md transition">
+        Solicitar presupuesto
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+
+      <div class="social-follow-row">
+        <p class="social-follow-label">Seguinos en redes</p>
+        <div class="social-follow-icons">
+          <a href="https://www.facebook.com/grupozzetto/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook" class="social-follow-icon" style="--social-color:#1877F2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/javier_frazzetto_grupozzetto/" target="_blank" rel="noopener" aria-label="Instagram" class="social-follow-icon" style="--social-color:#E1306C">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://ar.linkedin.com/company/grupozzetto" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-follow-icon" style="--social-color:#0A66C2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="empresa-map-wrap reveal reveal-delay-1">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.772993040113!2d-58.503549579195294!3d-34.71090519959011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccf002aa8e39b%3A0x9c97a547bd55149e!2sGrupozzetto!5e0!3m2!1ses!2sar!4v1789170027829!5m2!1ses!2sar" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Nuestra ubicación"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-dark py-10">
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_1.4fr_0.9fr] gap-8">
+
+      <div>
+        <img src="img/logo.jpg" alt="Grupozzetto" class="h-44 -mt-8 -mb-12 footer-logo-invert">
+        <p class="text-sm text-neutral-400 max-w-xs">
+          Tecnología y soluciones para el agro desde Tapiales al mundo. Más de 35 años impulsando el desarrollo del campo.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></span>
+            gzzombu@gmail.com
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2.2z"/></svg></span>
+            11 4044-7563
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            Lunes a viernes de 8 a 17 hs
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            Av. de Circunvalación 2181, Tapiales
+          </li>
+        </ul>
+      </div>
+
+      <div class="pt-3">
+        <h4 class="font-bold text-sm mb-3 text-white tracking-wide uppercase">Categorías</h4>
+        <div class="footer-cat-grid">
+          <a href="/productos/remolques" class="footer-cat-chip" style="--chip-color:#eab308">Semirremolques</a>
+          <a href="/productos/carrocerias" class="footer-cat-chip" style="--chip-color:#9333ea">Carrocerías</a>
+          <a href="/productos/camiones" class="footer-cat-chip" style="--chip-color:#6b7280">Camiones</a>
+          <a href="/productos/agro" class="footer-cat-chip" style="--chip-color:#3daa35">Agro</a>
+          <a href="/productos/tractores" class="footer-cat-chip" style="--chip-color:#78350f">Tractores</a>
+          <a href="/productos/autopropulsadas" class="footer-cat-chip" style="--chip-color:#2563eb">Autopropulsadas</a>
+          <a href="/productos/higiene-urbana" class="footer-cat-chip" style="--chip-color:#38bdf8">Higiene urbana</a>
+          <a href="/productos/neumaticos-y-llantas" class="footer-cat-chip" style="--chip-color:#171717">Neumáticos</a>
+        </div>
+        <div class="footer-extra-links">
+          <a href="usados.html" class="hover:text-white transition">Usados</a>
+          <span>·</span>
+          <a href="empresa.html" class="hover:text-white transition">Empresa</a>
+          <span>·</span>
+          <a href="contacto.html" class="hover:text-white transition">Contacto</a>
+        </div>
+      </div>
+
+      <div class="footer-whatsapp-card self-start">
+        <p class="text-xs font-bold text-neutral-300 uppercase tracking-wide">Contacto directo</p>
+        <a href="https://wa.me/541140447563" class="footer-whatsapp-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        </a>
+        <p class="text-xs text-neutral-400 uppercase tracking-wide mt-4">WhatsApp</p>
+        <p class="text-lg font-bold text-white">11 4044-7563</p>
+        <a href="https://wa.me/541140447563" class="inline-flex items-center gap-1 text-sm font-semibold text-white mt-3 hover:gap-2 transition-all">
+          Enviar mensaje
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-dark">
+      <div class="footer-bottom-social">
+        <p class="footer-bottom-social-label">Seguinos en redes</p>
+        <div class="footer-bottom-social-icons">
+          <a href="https://www.facebook.com/grupozzetto/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook" class="footer-bottom-social-icon" style="--social-color:#1877F2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/javier_frazzetto_grupozzetto/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-bottom-social-icon" style="--social-color:#E1306C">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://ar.linkedin.com/company/grupozzetto" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-bottom-social-icon" style="--social-color:#0A66C2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<a href="https://wa.me/541140447563" target="_blank" aria-label="WhatsApp" class="fixed bottom-6 left-6 z-50 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+<script src="js/search.js"></script>
 </body>
 </html>

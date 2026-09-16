@@ -3,14 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Productos — OMBU [SEDE]</title>
-<meta name="description" content="Catálogo completo de maquinaria agrícola, camiones, remolques, tractores y más — OMBU [SEDE].">
+<title id="pageTitle">Productos — Maquinaria Agrícola, Camiones y Semirremolques | OMBU Tapiales</title>
+<meta id="metaDescription" name="description" content="Catálogo completo OMBU y Traxor: maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos. Concesionario oficial en Tapiales, Buenos Aires.">
+<meta name="keywords" content="maquinaria agrícola, tractores OMBU, camiones Traxor, semirremolques, carrocerías, tolvas, acoplados, autopropulsadas, pulverizadoras, sembradoras, higiene urbana, neumáticos, Tapiales, Buenos Aires">
+<meta name="robots" content="index, follow">
+<link id="canonicalLink" rel="canonical" href="https://grupozzettoombu.com/productos.html">
+<link rel="icon" type="image/png" href="/img/logo-ombu.png">
+<link rel="apple-touch-icon" href="/img/logo-ombu.png">
+
+<meta id="ogType" property="og:type" content="website">
+<meta id="ogUrl" property="og:url" content="https://grupozzettoombu.com/productos.html">
+<meta property="og:site_name" content="OMBU Tapiales">
+<meta id="ogTitle" property="og:title" content="Productos — Maquinaria Agrícola, Camiones y Semirremolques | OMBU Tapiales">
+<meta id="ogDescription" property="og:description" content="Catálogo completo OMBU y Traxor: maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos.">
+<meta id="ogImage" property="og:image" content="https://grupozzettoombu.com/img/header1.jpg">
+<meta property="og:locale" content="es_AR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta id="twTitle" name="twitter:title" content="Productos — OMBU Tapiales">
+<meta id="twDescription" name="twitter:description" content="Catálogo completo de maquinaria agrícola, camiones, semirremolques y más — OMBU Tapiales.">
+<meta id="twImage" name="twitter:image" content="https://grupozzettoombu.com/img/header1.jpg">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://grupozzettoombu.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://grupozzettoombu.com/productos.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Semirremolques", "url": "https://grupozzettoombu.com/productos/remolques" },
+    { "@type": "ListItem", "position": 2, "name": "Carrocerías", "url": "https://grupozzettoombu.com/productos/carrocerias" },
+    { "@type": "ListItem", "position": 3, "name": "Camiones", "url": "https://grupozzettoombu.com/productos/camiones" },
+    { "@type": "ListItem", "position": 4, "name": "Agro", "url": "https://grupozzettoombu.com/productos/agro" },
+    { "@type": "ListItem", "position": 5, "name": "Tractores", "url": "https://grupozzettoombu.com/productos/tractores" },
+    { "@type": "ListItem", "position": 6, "name": "Autopropulsadas", "url": "https://grupozzettoombu.com/productos/autopropulsadas" },
+    { "@type": "ListItem", "position": 7, "name": "Higiene urbana", "url": "https://grupozzettoombu.com/productos/higiene-urbana" },
+    { "@type": "ListItem", "position": 8, "name": "Neumáticos", "url": "https://grupozzettoombu.com/productos/neumaticos-y-llantas" }
+  ]
+}
+</script>
+
 <style>
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #dc2626; outline-offset: 2px; }
 
 /* ===== Header (igual que index.html) ===== */
@@ -306,19 +353,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   background: linear-gradient(100deg, var(--cat-color), color-mix(in srgb, var(--cat-color) 65%, black));
 }
 
-/* Formas de color de fondo, sutiles, detrás de todo el contenido */
-.cat-content-wrap { position: relative; }
-.cat-content-blob {
-  position: absolute;
-  border-radius: 999px;
-  background: var(--cat-color, #dc2626);
-  filter: blur(90px);
-  opacity: .12;
-  z-index: -1;
-  pointer-events: none;
-}
-.cat-content-blob-1 { width: 420px; height: 420px; top: -100px; right: -120px; }
-.cat-content-blob-2 { width: 320px; height: 320px; bottom: 10%; left: -140px; }
+
+.cat-content-wrap { position: relative; overflow-x: hidden; }
 
 /* Tarjeta "Consultanos" al final de la grilla */
 .prod-card-cta-tile {
@@ -376,7 +412,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   font-size: .82rem; font-weight: 700; color: #171717;
 }
 .filtros-open-mobile svg { width: 16px; height: 16px; }
-.filtros-close-mobile, .filtros-apply-mobile { display: none; }
+.filtros-close-mobile, .filtros-apply-mobile, .filtros-clear-mobile { display: none; }
 .filtros-overlay { display: none; }
 
 @media (max-width: 1023px) {
@@ -457,6 +493,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     flex-shrink: 0;
   }
   .filtros-clear-mobile {
+    display: block;
     width: 100%;
     padding: 13px;
     border: 1px solid #d4d4d4;
@@ -823,18 +860,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   padding: 10px 0;
 }
 
-.prod-detail-wrap { position: relative; }
-.prod-detail-blob {
-  position: absolute;
-  top: -60px; right: -80px;
-  width: 380px; height: 380px;
-  border-radius: 999px;
-  background: var(--cat-color, #dc2626);
-  filter: blur(90px);
-  opacity: .1;
-  z-index: -1;
-  pointer-events: none;
-}
+.prod-detail-wrap { position: relative; overflow-x: hidden; }
 
 .prod-detail-main-img {
   position: relative;
@@ -1026,6 +1052,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .prod-detail-btn-primary svg { width: 15px; height: 15px; flex-shrink: 0; }
 
 .prod-detail-btn-icon {
+  position: relative;
   display: flex; align-items: center; justify-content: center;
   width: 46px; height: 46px;
   border: 1px solid #e0e0e0; border-radius: 10px;
@@ -1034,6 +1061,27 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 }
 .prod-detail-btn-icon:hover { border-color: var(--cat-color, #dc2626); color: var(--cat-color, #dc2626); background: color-mix(in srgb, var(--cat-color, #dc2626) 6%, white); }
 .prod-detail-btn-icon svg { width: 18px; height: 18px; }
+
+.prod-share-hint {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #171717;
+  color: #fff;
+  font-size: .74rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.prod-detail-btn-icon.is-copied .prod-share-hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
 /* ===== Pestañas ===== */
 .prod-tabs {
@@ -1247,7 +1295,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   outline: none;
   background: transparent;
   color: inherit;
-  font-size: .85rem;
+  font-size: 1rem;
   font-family: inherit;
   opacity: 0;
   transition: width .25s ease, opacity .2s ease;
@@ -1308,6 +1356,97 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   #prodDetail { padding-top: 178px !important; }
 }
 
+/* ===== Footer (idéntico al del resto del sitio) ===== */
+.footer-dark { position: relative; background: #0a0a0a; overflow: hidden; }
+.footer-dark.is-revealed { animation: footerFadeIn 0.35s ease; }
+@keyframes footerFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.footer-dark::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 14px);
+  pointer-events: none;
+}
+.footer-logo-invert { filter: brightness(0) invert(1); }
+.footer-icon {
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 999px;
+  background: rgba(255,255,255,0.08); color: #d4d4d4;
+}
+.footer-icon svg { width: 15px; height: 15px; }
+.footer-whatsapp-card {
+  position: relative;
+  background: linear-gradient(160deg, rgba(37,211,102,0.12), rgba(255,255,255,0.04));
+  border: 1px solid rgba(37,211,102,0.25);
+  border-radius: 16px; padding: 20px 24px; text-align: center;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.footer-whatsapp-card:hover { border-color: rgba(37,211,102,0.5); transform: translateY(-2px); }
+.footer-cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.footer-cat-chip {
+  position: relative; display: flex; align-items: center; gap: 9px;
+  padding: 8px 14px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);
+  font-size: 0.8rem; font-weight: 600; color: #d4d4d4;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+.footer-cat-chip::before {
+  content: ''; flex-shrink: 0; width: 8px; height: 8px; border-radius: 999px;
+  background: var(--chip-color);
+}
+.footer-cat-chip:hover { border-color: var(--chip-color); background: rgba(255,255,255,0.06); color: #fff; transform: translateX(3px); }
+.footer-extra-links { margin-top: 20px; display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: #737373; }
+.footer-extra-links a { color: #a3a3a3; }
+.footer-extra-links span { color: #525252; }
+.footer-whatsapp-circle {
+  display: flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; border-radius: 999px;
+  background: #22c55e; color: #fff; margin: 14px auto 0;
+  transition: transform 0.2s ease;
+}
+.footer-whatsapp-circle svg { width: 26px; height: 26px; }
+.footer-whatsapp-circle:hover { transform: scale(1.08); }
+.footer-bottom-dark {
+  display: flex; flex-direction: column; gap: 24px;
+  margin-top: 40px; padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+@media (min-width: 768px) {
+  .footer-bottom-dark { flex-direction: row; align-items: center; justify-content: center; }
+}
+.footer-bottom-social { display: flex; align-items: center; gap: 16px; }
+.footer-bottom-social-label {
+  font-size: .78rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .5px; color: #a3a3a3; white-space: nowrap;
+}
+.footer-bottom-social-icons { display: flex; align-items: center; gap: 10px; }
+.footer-bottom-social-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 999px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: #d4d4d4;
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.footer-bottom-social-icon svg { width: 17px; height: 17px; }
+.footer-bottom-social-icon:hover {
+  background: var(--social-color); border-color: var(--social-color);
+  color: #fff; transform: translateY(-3px);
+}
+@media (max-width: 640px) {
+  #headerRow { height: auto !important; padding: 18px 0 !important; }
+  #headerLogos {
+    grid-column: 1 / -1;
+    justify-self: center;
+    overflow: visible;
+  }
+  #headerLogos img[alt="Ombu"] { height: 38px !important; margin-right: -16px !important; }
+  #headerLogos img[alt="Grupozzetto"] { height: 100px !important; margin-right: -16px !important; }
+  #headerLogos img[alt="Traxor"] { height: 48px !important; }
+  .contacto-hero { padding-top: 172px !important; }
+  .contact-form-card { padding: 24px !important; }
+}
+
 </style>
 </head>
 <body class="bg-white text-neutral-900">
@@ -1325,18 +1464,18 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 <header id="siteHeader" class="fixed top-9 left-0 right-0 z-50 transition-colors duration-300">
   <div id="headerRow" class="max-w-[1600px] mx-auto px-2 grid grid-cols-[1fr_auto_1fr] items-center h-28">
     <div id="headerLogos" class="flex items-center gap-0 h-full overflow-hidden">
-      <a href="index.html" class="inline-flex items-center gap-0">
-        <img src="img/logo-ombu.png" alt="Ombu" class="h-10 w-auto rounded -mr-4">
-        <img src="img/logo.jpg" alt="Grupozzetto" class="h-[8.75rem] w-auto rounded -mr-4">
-        <img src="img/logo-traxor.png" alt="Traxor" class="h-14 w-auto rounded">
+      <a href="/index.html" class="inline-flex items-center gap-0">
+        <img src="/img/logo-ombu.png" alt="Ombu" class="h-10 w-auto rounded -mr-4">
+        <img src="/img/logo.jpg" alt="Grupozzetto" class="h-[8.75rem] w-auto rounded -mr-4">
+        <img src="/img/logo-traxor.png" alt="Traxor" class="h-14 w-auto rounded">
       </a>
     </div>
 
     <nav class="hidden lg:flex items-center gap-10 text-sm font-bold tracking-wide uppercase justify-self-center">
-      <a href="productos.html" class="text-red-600">Productos</a>
-      <a href="usados.html" class="hover:text-red-600 transition">Usados</a>
-      <a href="empresa.html" class="hover:text-red-600 transition">Empresa</a>
-      <a href="contacto.html" class="hover:text-red-600 transition">Contacto</a>
+      <a href="/productos.html" class="text-red-600">Productos</a>
+      <a href="/usados.html" class="hover:text-red-600 transition">Usados</a>
+      <a href="/empresa.html" class="hover:text-red-600 transition">Empresa</a>
+      <a href="/contacto.html" class="hover:text-red-600 transition">Contacto</a>
     </nav>
 
     <div class="hidden lg:flex items-center gap-3 justify-self-end">
@@ -1364,7 +1503,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   <!-- Banner Plan de Ahorro (solo en esta vista) -->
   <div class="max-w-6xl mx-auto px-6 mt-20 mb-[-60px] relative z-10">
     <a href="https://agroplansa.github.io/CalculadorCuota/" target="_blank" rel="noopener" class="plan-banner block rounded-lg overflow-hidden shadow-xl">
-      <img src="img/banner-plan-ahorro.png" alt="Plan de ahorro — Entrega asegurada en cuota 10">
+      <img src="/img/banner-plan-ahorro.png" alt="Plan de ahorro — Entrega asegurada en cuota 10">
     </a>
   </div>
 
@@ -1423,7 +1562,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
             </div>
           </div>
 
-          <a href="usados.html" class="usados-cta">
+          <a href="/usados.html" class="usados-cta">
             Ver maquinaria usada disponible
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
@@ -1431,7 +1570,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 
         <div class="relative">
           <span class="usados-photo-badge">Certificado OMBU</span>
-          <img src="img/header3.jpg" alt="Maquinaria usada certificada OMBU" class="usados-photo">
+          <img src="/img/header3.jpg" alt="Maquinaria usada certificada OMBU" class="usados-photo">
 
           <div class="usados-float-card">
             <p class="usados-stat-number" data-count-to="50" data-suffix="+">0</p>
@@ -1476,14 +1615,12 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   </section>
 
   <div class="max-w-[1600px] mx-auto px-8 py-10 cat-content-wrap">
-    <span class="cat-content-blob cat-content-blob-1"></span>
-    <span class="cat-content-blob cat-content-blob-2"></span>
 
     <div class="mb-8">
       <nav class="breadcrumb-light flex items-center gap-2 text-xs font-semibold w-fit">
-        <a href="index.html">Inicio</a>
+        <a href="/index.html">Inicio</a>
         <span class="text-neutral-300">›</span>
-        <a href="productos.html">Productos</a>
+        <a href="/productos.html">Productos</a>
         <span class="text-neutral-300">›</span>
         <span id="catBreadcrumbCurrent" class="text-neutral-900 font-bold"></span>
       </nav>
@@ -1561,9 +1698,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   <div class="prod-detail-breadcrumb-bar">
     <div class="max-w-7xl mx-auto px-6">
       <nav class="breadcrumb-light flex items-center gap-2 text-xs font-semibold flex-wrap w-fit">
-        <a href="index.html">Inicio</a>
+        <a href="/index.html">Inicio</a>
         <span class="text-neutral-300">›</span>
-        <a href="productos.html">Productos</a>
+        <a href="/productos.html">Productos</a>
         <span class="text-neutral-300">›</span>
         <a id="prodDetailCatLink" href="#" class="hover:text-red-600 transition"></a>
         <span class="text-neutral-300">›</span>
@@ -1574,7 +1711,6 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   </div>
 
   <div class="max-w-7xl mx-auto px-6 py-6 prod-detail-wrap">
-    <span class="prod-detail-blob"></span>
 
     <div class="grid lg:grid-cols-[1.05fr_1fr] gap-10 prod-detail-grid">
 
@@ -1608,6 +1744,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
           <button id="prodDetailShareBtn" class="prod-detail-btn-icon" aria-label="Compartir">
+            <span id="prodDetailShareHint" class="prod-share-hint">¡Copiado!</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path stroke-linecap="round" d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
           </button>
         </div>
@@ -1664,14 +1801,102 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 </div>
 
 
+<footer id="siteFooter" class="footer-dark py-10 hidden">
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_1.4fr_0.9fr] gap-8">
+
+      <div>
+        <img src="/img/logo.jpg" alt="Grupozzetto" class="h-44 -mt-8 -mb-12 footer-logo-invert">
+        <p class="text-sm text-neutral-400 max-w-xs">
+          Tecnología y soluciones para el agro desde Tapiales al mundo. Más de 35 años impulsando el desarrollo del campo.
+        </p>
+
+        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></span>
+            gzzombu@gmail.com
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2.2z"/></svg></span>
+            11 4044-7563
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            Lunes a viernes de 8 a 17 hs
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="footer-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            Av. de Circunvalación 2181, Tapiales
+          </li>
+        </ul>
+      </div>
+
+      <div class="pt-3">
+        <h4 class="font-bold text-sm mb-3 text-white tracking-wide uppercase">Categorías</h4>
+        <div class="footer-cat-grid">
+          <a href="/productos/remolques" class="footer-cat-chip" style="--chip-color:#eab308">Semirremolques</a>
+          <a href="/productos/carrocerias" class="footer-cat-chip" style="--chip-color:#9333ea">Carrocerías</a>
+          <a href="/productos/camiones" class="footer-cat-chip" style="--chip-color:#6b7280">Camiones</a>
+          <a href="/productos/agro" class="footer-cat-chip" style="--chip-color:#3daa35">Agro</a>
+          <a href="/productos/tractores" class="footer-cat-chip" style="--chip-color:#78350f">Tractores</a>
+          <a href="/productos/autopropulsadas" class="footer-cat-chip" style="--chip-color:#2563eb">Autopropulsadas</a>
+          <a href="/productos/higiene-urbana" class="footer-cat-chip" style="--chip-color:#38bdf8">Higiene urbana</a>
+          <a href="/productos/neumaticos-y-llantas" class="footer-cat-chip" style="--chip-color:#171717">Neumáticos</a>
+        </div>
+
+        <div class="footer-extra-links">
+          <a href="/usados.html" class="hover:text-white transition">Usados</a>
+          <span>·</span>
+          <a href="/empresa.html" class="hover:text-white transition">Empresa</a>
+          <span>·</span>
+          <a href="/contacto.html" class="hover:text-white transition">Contacto</a>
+        </div>
+      </div>
+
+      <div class="footer-whatsapp-card self-start">
+        <p class="text-xs font-bold text-neutral-300 uppercase tracking-wide">Contacto directo</p>
+        <a href="https://wa.me/541140447563" class="footer-whatsapp-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        </a>
+        <p class="text-xs text-neutral-400 uppercase tracking-wide mt-4">WhatsApp</p>
+        <p class="text-lg font-bold text-white">11 4044-7563</p>
+        <a href="https://wa.me/541140447563" class="inline-flex items-center gap-1 text-sm font-semibold text-white mt-3 hover:gap-2 transition-all">
+          Enviar mensaje
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-dark">
+      <div class="footer-bottom-social">
+        <p class="footer-bottom-social-label">Seguinos en redes</p>
+        <div class="footer-bottom-social-icons">
+          <a href="https://www.facebook.com/grupozzetto/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook" class="footer-bottom-social-icon" style="--social-color:#1877F2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/javier_frazzetto_grupozzetto/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-bottom-social-icon" style="--social-color:#E1306C">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://ar.linkedin.com/company/grupozzetto" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-bottom-social-icon" style="--social-color:#0A66C2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
 <!-- Botón flotante WhatsApp -->
 <a href="https://wa.me/541140447563" target="_blank" aria-label="WhatsApp" class="fixed bottom-6 left-6 z-50 h-14 w-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
 </a>
 
 
-<script src="js/main.js"></script>
-<script src="js/productos.js"></script>
-<script src="js/search.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/productos.js"></script>
+<script src="/js/search.js"></script>
 </body>
 </html>

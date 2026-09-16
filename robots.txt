@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grupozzettoombu.com/sitemap.xml

@@ -3,10 +3,10 @@
   const CATEGORIES = [
     {
       slug: 'remolques',
-      label: 'Semi Remolques',
-      color: '#f97316',
+      label: 'Semirremolques',
+      color: '#eab308',
       tag: 'RMQ',
-      image: 'img/header3.jpg',
+      image: '/img/header3.jpg',
       desc: 'Un verdadero ícono de la marca.',
       heroDesc: 'Bateas, tolvas y semirremolques para el transporte de granos a gran escala.',
       filtros: ['Acoplados', 'Bateas', 'Semi Remolques', 'Equipos Bitren', 'Cajas Sobre Camión', 'Equipo Full Trailer']
@@ -16,7 +16,7 @@
       label: 'Carrocerías',
       color: '#9333ea',
       tag: 'CAR',
-      image: 'img/header8.jpg',
+      image: '/img/header8.jpg',
       desc: 'Carrocerías a medida para cada aplicación.',
       heroDesc: 'Soluciones de carrocería adaptadas a las necesidades de tu operación.',
       filtros: ['Baranda Volcable', 'Todo Puerta', 'Garrafera', 'Jaula Vaquera', 'Mixta Cerealera y Vaquera', 'Sider', 'Tolva']
@@ -24,19 +24,19 @@
     {
       slug: 'camiones',
       label: 'Camiones',
-      color: '#2563eb',
+      color: '#6b7280',
       tag: 'CAM',
-      image: 'img/header2.jpg',
+      image: '/img/header2.jpg',
       desc: 'Robustez y confiabilidad para trabajo pesado.',
       heroDesc: 'Camiones preparados para exigencias del transporte agrícola e industrial.',
-      filtros: ['Volvo']
+      filtros: ['Volvo', 'Mercedes-Benz', 'Iveco']
     },
     {
       slug: 'agro',
       label: 'Agro',
       color: '#3daa35',
       tag: 'AGR',
-      image: 'img/header1.jpg',
+      image: '/img/header1.jpg',
       desc: 'Soluciones confiables para cada campaña.',
       heroDesc: 'Equipamiento de última generación para maximizar la productividad de tu campo.',
       filtros: ['Autodescargables', 'Conservación de granos', 'Cosecha', 'Equipos siembra', 'Ganadería', 'Labranza']
@@ -46,7 +46,7 @@
       label: 'Tractores',
       color: '#78350f',
       tag: 'TRAC',
-      image: 'img/header5.jpg',
+      image: '/img/header5.jpg',
       desc: 'Potencia y versatilidad para el día a día.',
       heroDesc: 'Tractores pensados para el trabajo agrícola diario, con distintas configuraciones.',
       filtros: ['Línea Compacta', 'Línea Media', 'Potencia Superior', 'Alta Gama']
@@ -54,9 +54,9 @@
     {
       slug: 'autopropulsadas',
       label: 'Autopropulsadas',
-      color: '#14b8bd',
+      color: '#2563eb',
       tag: 'AP',
-      image: 'img/header6.jpg',
+      image: '/img/header6.jpg',
       desc: 'Pulverizadoras de alta tecnología.',
       heroDesc: 'Mejores prestaciones, mejores resultados en cada aplicación.',
       filtros: ['Pulverizadoras', 'Fertilizadoras', 'Cosechadoras']
@@ -66,7 +66,7 @@
       label: 'Higiene urbana',
       color: '#38bdf8',
       tag: 'URB',
-      image: 'img/header7.jpg',
+      image: '/img/header7.jpg',
       desc: 'Equipos confiables y duraderos.',
       heroDesc: 'Adaptables a cualquier tipo y modelo de camión.',
       filtros: ['Compactadores de residuos', 'Compactadores de residuos automatizados', 'Barredoras', 'Roll Off Sistema de Izaje', 'Roll Off Contenedores Bisistema', 'Tanques', 'Cajas Volcadoras', 'Equipos de Remolque', 'Equipos de Carrocerías, Playos y Grúas', 'Lavacontenedores, Contenedores Plásticos, Contenedores Metálicos']
@@ -74,9 +74,9 @@
     {
       slug: 'neumaticos-y-llantas',
       label: 'Neumáticos',
-      color: '#eab308',
+      color: '#171717',
       tag: 'NEU',
-      image: 'img/header4.jpg',
+      image: '/img/header4.jpg',
       desc: 'Amplia gama de medidas disponibles.',
       heroDesc: 'Neumáticos y llantas para todo tipo de maquinaria agrícola e industrial.',
       filtros: ['Pace', 'Compasal', 'Suretrac', 'Firestone', 'Goodyear', 'Bridgestone', 'Xbri', 'Tornel', 'Aplus', 'Roadcruza', 'Kumho Tire', 'Triangle', 'Durable', 'Fate', 'Good Ride', 'Samson', 'Yokohama', 'Advance']
@@ -145,11 +145,77 @@
   let currentView = 'grid';
 
   function getCatSlugFromUrl() {
-    return new URLSearchParams(window.location.search).get('cat');
+    const fromQuery = new URLSearchParams(window.location.search).get('cat');
+    if (fromQuery) return fromQuery;
+    const fromPath = window.location.pathname.match(/^\/productos\/([^\/]+)\/?$/);
+    return fromPath ? decodeURIComponent(fromPath[1]) : null;
   }
 
   function getProductoIdFromUrl() {
-    return new URLSearchParams(window.location.search).get('producto');
+    const fromQuery = new URLSearchParams(window.location.search).get('producto');
+    if (fromQuery) return fromQuery;
+    const fromPath = window.location.pathname.match(/^\/producto\/([^\/]+)\/?$/);
+    return fromPath ? decodeURIComponent(fromPath[1]) : null;
+  }
+
+  /* ===== SEO dinámico: título, descripción, canonical y OG según la vista ===== */
+  function updateSEO({ title, description, url, image }) {
+    const set = (id, attr, value) => {
+      const el = document.getElementById(id);
+      if (el) el[attr] = value;
+    };
+    document.title = title;
+    set('pageTitle', 'textContent', title);
+    set('metaDescription', 'content', description);
+    set('canonicalLink', 'href', url);
+    set('ogUrl', 'content', url);
+    set('ogTitle', 'content', title);
+    set('ogDescription', 'content', description);
+    set('twTitle', 'content', title);
+    set('twDescription', 'content', description);
+    if (image) {
+      set('ogImage', 'content', image);
+      set('twImage', 'content', image);
+    }
+  }
+
+  // Asegura que cualquier ruta de imagen empiece con "/", así siempre
+  // apunta a la raíz del sitio sin importar la URL "linda" desde la que
+  // se esté mostrando (ej. /producto/algo en vez de /productos.html).
+  function imgPath(path) {
+    if (!path) return path;
+    if (path.startsWith('/') || path.startsWith('http')) return path;
+    return '/' + path;
+  }
+
+  function setProductJsonLd(p, cat) {
+    let script = document.getElementById('productJsonLd');
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = 'productJsonLd';
+      document.head.appendChild(script);
+    }
+    // Para camiones el campo "modelo" guarda la marca real (Volvo, Mercedes-Benz, Iveco);
+    // para el resto de las categorías, "modelo" es un sub-tipo (ej. "Baranda Volcable"),
+    // no una marca, así que ahí seguimos usando OMBU.
+    const brandName = (p.category === 'camiones' && p.modelo) ? p.modelo : 'OMBU';
+
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": p.name,
+      "description": p.description || p.descripcionLarga || '',
+      "image": p.images && p.images.length ? p.images.map((img) => `https://grupozzettoombu.com/${img}`) : [`https://grupozzettoombu.com/${p.image}`],
+      "category": cat ? cat.label : p.categoryLabel,
+      "brand": { "@type": "Brand", "name": brandName },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "ARS",
+        "url": `https://grupozzettoombu.com/producto/${encodeURIComponent(p.id)}`
+      }
+    });
   }
 
   /* ===== VISTA 1: Landing de categorías ===== */
@@ -161,10 +227,16 @@
     headerMode = 'landing';
     updateHeaderNow();
 
+    updateSEO({
+      title: 'Productos — Maquinaria Agrícola, Camiones y Semirremolques | OMBU Tapiales',
+      description: 'Catálogo completo OMBU y Traxor: maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos. Concesionario oficial en Tapiales, Buenos Aires.',
+      url: 'https://grupozzettoombu.com/productos.html'
+    });
+
     catLandingGrid.innerHTML = '';
     CATEGORIES.forEach((cat, i) => {
       const a = document.createElement('a');
-      a.href = `productos.html?cat=${cat.slug}`;
+      a.href = `/productos/${cat.slug}`;
       a.className = 'cat-landing-card fade-item';
       a.style.animationDelay = (i * 0.06) + 's';
       a.style.setProperty('--cat-color', cat.color);
@@ -199,6 +271,13 @@
 
     headerMode = 'detail';
     updateHeaderNow();
+
+    updateSEO({
+      title: `${cat.label} — OMBU Tapiales | Maquinaria y Equipos`,
+      description: `${cat.heroDesc || `Conocé nuestra línea de ${cat.label} OMBU y Traxor.`} Concesionario oficial en Tapiales, Buenos Aires.`,
+      url: `https://grupozzettoombu.com/productos/${cat.slug}`,
+      image: `https://grupozzettoombu.com${cat.image}`
+    });
 
     // Hero
     catHeroImg.src = cat.image;
@@ -338,7 +417,7 @@
 
     list.forEach((p, i) => {
       const el = document.createElement(currentView === 'grid' ? 'article' : 'a');
-      if (currentView === 'list') el.href = `productos.html?producto=${encodeURIComponent(p.id)}`;
+      if (currentView === 'list') el.href = `/producto/${encodeURIComponent(p.id)}`;
 
       el.className = (currentView === 'grid' ? 'prod-card' : 'prod-row') + ' fade-item';
       el.style.animationDelay = (i * 0.05) + 's';
@@ -346,14 +425,14 @@
 
       if (currentView === 'grid') {
         el.innerHTML = `
-          <a href="productos.html?producto=${encodeURIComponent(p.id)}" class="prod-card-img">
-            <img src="${p.image}" alt="${p.name}" loading="lazy">
+          <a href="/producto/${encodeURIComponent(p.id)}" class="prod-card-img">
+            <img src="${imgPath(p.image)}" alt="${p.name}" loading="lazy">
           </a>
           <div class="prod-card-body">
             ${p.modelo ? `<p class="prod-card-subcat">${p.modelo}</p>` : ''}
-            <h3><a href="productos.html?producto=${encodeURIComponent(p.id)}">${p.name}</a></h3>
+            <h3><a href="/producto/${encodeURIComponent(p.id)}">${p.name}</a></h3>
             <p>${p.description}</p>
-            <a href="productos.html?producto=${encodeURIComponent(p.id)}" class="prod-card-cta">
+            <a href="/producto/${encodeURIComponent(p.id)}" class="prod-card-cta">
               Ver detalles
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
@@ -362,7 +441,7 @@
       } else {
         el.innerHTML = `
           <div class="prod-row-img">
-            <img src="${p.image}" alt="${p.name}" loading="lazy">
+            <img src="${imgPath(p.image)}" alt="${p.name}" loading="lazy">
             <span class="prod-row-tag" style="background:${color}">${currentCategory.label}</span>
           </div>
           <div class="prod-row-body">
@@ -428,7 +507,6 @@
   const prodDetailName = document.getElementById('prodDetailName');
   const prodDetailBudgetBtn = document.getElementById('prodDetailBudgetBtn');
   const prodDetailShareBtn = document.getElementById('prodDetailShareBtn');
-  const prodDetailShareLabel = document.getElementById('prodDetailShareLabel');
 
   // Pestañas: indicador deslizante + clicks
   const prodTabBtns = document.querySelectorAll('.prod-tab-btn');
@@ -549,8 +627,16 @@
     headerMode = 'landing';
     updateHeaderNow();
 
+    updateSEO({
+      title: `${p.name} — ${cat ? cat.label : p.categoryLabel} OMBU | OMBU Tapiales`,
+      description: (p.description || `${p.name}, ${cat ? cat.label.toLowerCase() : ''} OMBU disponible en OMBU Tapiales, Buenos Aires. Consultá precio y disponibilidad.`).slice(0, 160),
+      url: `https://grupozzettoombu.com/producto/${encodeURIComponent(p.id)}`,
+      image: `https://grupozzettoombu.com/${p.image}`
+    });
+    setProductJsonLd(p, cat);
+
     // Galería: usa p.images si existe, si no repite la única foto
-    const images = (p.images && p.images.length) ? p.images : [p.image];
+    const images = ((p.images && p.images.length) ? p.images : [p.image]).map(imgPath);
     let currentImg = 0;
     currentGalleryImages = images;
     currentGalleryName = p.name;
@@ -713,7 +799,7 @@
       }
 
       prodDetailCatLink.textContent = cat.label;
-      prodDetailCatLink.href = `productos.html?cat=${cat.slug}`;
+      prodDetailCatLink.href = `/productos/${cat.slug}`;
       prodDetailBudgetBtn.href = `https://wa.me/541140447563?text=${encodeURIComponent('Hola! Quiero solicitar un presupuesto para: ' + p.name)}`;
       prodDetailBudgetBtn.target = '_blank';
 
@@ -730,9 +816,8 @@
         navigator.share({ title: p.name, url: shareUrl }).catch(() => {});
       } else {
         navigator.clipboard.writeText(shareUrl).then(() => {
-          const original = prodDetailShareLabel.textContent;
-          prodDetailShareLabel.textContent = '¡Copiado!';
-          setTimeout(() => { prodDetailShareLabel.textContent = original; }, 1800);
+          prodDetailShareBtn.classList.add('is-copied');
+          setTimeout(() => prodDetailShareBtn.classList.remove('is-copied'), 1800);
         });
       }
     };
@@ -749,8 +834,8 @@
       if (relacionados.length) {
         relatedWrap.classList.remove('hidden');
         relatedGrid.innerHTML = relacionados.map((rp) => `
-          <a href="productos.html?producto=${encodeURIComponent(rp.id)}" class="prod-related-card" style="--related-color:${cat.color}">
-            <div class="prod-related-img"><img src="${rp.image}" alt="${rp.name}" loading="lazy"></div>
+          <a href="/producto/${encodeURIComponent(rp.id)}" class="prod-related-card" style="--related-color:${cat.color}">
+            <div class="prod-related-img"><img src="${imgPath(rp.image)}" alt="${rp.name}" loading="lazy"></div>
             <div class="prod-related-body">
               ${rp.modelo ? `<p>${rp.modelo}</p>` : ''}
               <h4>${rp.name}</h4>
@@ -764,7 +849,7 @@
   }
 
   /* ===== Carga inicial ===== */
-  fetch('productos.json')
+  fetch('/productos.json')
     .then((res) => res.json())
     .then((data) => {
       allProducts = data;
@@ -774,7 +859,14 @@
       else if (slug) renderDetail(slug);
       else renderLanding();
     })
-    .catch((err) => console.error('Error cargando productos.json', err));
+    .catch((err) => console.error('Error cargando productos.json', err))
+    .finally(() => {
+      const footer = document.getElementById('siteFooter');
+      if (footer) {
+        footer.classList.remove('hidden');
+        footer.classList.add('is-revealed');
+      }
+    });
 
   window.addEventListener('popstate', () => {
     const productoId = getProductoIdFromUrl();

@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OMBU Tapiales — Maquinaria Agrícola, Camiones y Remolques | Grupozzetto</title>
-<meta name="description" content="Concesionario oficial OMBU en Tapiales, Buenos Aires. Maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos. Más de 35 años de trayectoria.">
-<meta name="keywords" content="maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, higiene urbana, neumáticos, OMBU, Grupozzetto, Traxor, Tapiales, Buenos Aires, Argentina">
+<title>Grupozzetto Ombu — Maquinaria Agrícola, Camiones</title>
+<meta name="description" content="Concesionario oficial OMBU y Traxor en Tapiales, Buenos Aires. Maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos. Más de 35 años de trayectoria.">
+<meta name="keywords" content="OMBU, Traxor, Grupozzetto, concesionario oficial OMBU, concesionario Traxor, maquinaria agrícola Argentina, tractores OMBU, camiones Traxor, semirremolques, carrocerías, tolvas, acoplados cerealeros, autopropulsadas, pulverizadoras, sembradoras, higiene urbana, compactadores de residuos, neumáticos agrícolas, Tapiales, Buenos Aires, Argentina">
 <meta name="robots" content="index, follow">
 <meta name="author" content="OMBU Tapiales - Grupozzetto">
-<link rel="canonical" href="https://ombu.grupozzetto.com/">
+<link rel="canonical" href="https://grupozzettoombu.com/">
 <link rel="icon" type="image/png" href="img/logo-ombu.png">
 <link rel="apple-touch-icon" href="img/logo-ombu.png">
 
 <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ombu.grupozzetto.com/">
+<meta property="og:url" content="https://grupozzettoombu.com/">
 <meta property="og:site_name" content="OMBU Tapiales">
-<meta property="og:title" content="OMBU Tapiales — Maquinaria Agrícola, Camiones y Remolques">
+<meta property="og:title" content="Grupozzetto Ombu — Maquinaria Agrícola, Camiones">
 <meta property="og:description" content="Concesionario oficial OMBU en Tapiales, Buenos Aires. Maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos. Más de 35 años de trayectoria.">
-<meta property="og:image" content="https://ombu.grupozzetto.com/img/header1.jpg">
+<meta property="og:image" content="https://grupozzettoombu.com/img/header1.jpg">
 <meta property="og:locale" content="es_AR">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OMBU Tapiales — Maquinaria Agrícola, Camiones y Remolques">
+<meta name="twitter:title" content="Grupozzetto Ombu — Maquinaria Agrícola, Camiones">
 <meta name="twitter:description" content="Concesionario oficial OMBU en Tapiales, Buenos Aires. Más de 35 años de trayectoria en maquinaria agrícola, camiones y equipos industriales.">
-<meta name="twitter:image" content="https://ombu.grupozzetto.com/img/header1.jpg">
+<meta name="twitter:image" content="https://grupozzettoombu.com/img/header1.jpg">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,10 +38,10 @@
   "@type": "AutoDealer",
   "name": "OMBU Tapiales",
   "alternateName": "Grupozzetto",
-  "description": "Concesionario oficial de maquinaria agrícola OMBU, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos en Tapiales, Buenos Aires.",
-  "url": "https://ombu.grupozzetto.com/",
-  "logo": "https://ombu.grupozzetto.com/img/logo.jpg",
-  "image": "https://ombu.grupozzetto.com/img/header1.jpg",
+  "description": "Concesionario oficial de maquinaria agrícola OMBU y camiones Traxor: semirremolques, carrocerías, equipos de higiene urbana y neumáticos en Tapiales, Buenos Aires.",
+  "url": "https://grupozzettoombu.com/",
+  "logo": "https://grupozzettoombu.com/img/logo.jpg",
+  "image": "https://grupozzettoombu.com/img/header1.jpg",
   "telephone": "+54-11-4044-7563",
   "email": "gzzombu@gmail.com",
   "address": {
@@ -63,7 +63,11 @@
     "closes": "17:00"
   },
   "priceRange": "$$",
-  "foundingDate": "1990"
+  "foundingDate": "1990",
+  "brand": [
+    { "@type": "Brand", "name": "OMBU" },
+    { "@type": "Brand", "name": "Traxor" }
+  ]
 }
 </script>
 
@@ -72,6 +76,10 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
 }
 
 /* Foco visible para accesibilidad de teclado */
@@ -139,18 +147,18 @@ input:focus-visible {
   font-size: clamp(3rem, 7vw, 5.5rem);
   line-height: 1;
   letter-spacing: 1px;
-  color: #fff;
+  color: var(--cat-color, #22c55e);
   text-transform: uppercase;
   white-space: nowrap;
-  -webkit-text-stroke: 2.5px var(--cat-color, #22c55e);
+  -webkit-text-stroke: 2.5px #fff;
   paint-order: stroke fill;
-  text-shadow: 0 0 30px color-mix(in srgb, var(--cat-color, #22c55e) 70%, transparent), 0 4px 20px rgba(0,0,0,0.5);
-  transition: -webkit-text-stroke-color 0.3s ease;
+  text-shadow: 0 0 40px color-mix(in srgb, var(--cat-color, #22c55e) 85%, transparent), 0 4px 20px rgba(0,0,0,0.5);
+  transition: -webkit-text-stroke-color 0.3s ease, color 0.3s ease;
 }
 
 .hero-card:hover .hero-card-text {
-  -webkit-text-stroke-color: #fff;
-  color: var(--cat-color, #22c55e);
+  -webkit-text-stroke-color: var(--cat-color, #22c55e);
+  color: #fff;
 }
 
 .hero-card-cta {
@@ -175,11 +183,11 @@ input:focus-visible {
 }
 
 .hero-card.cat-agro { --cat-color: #3daa35; }
-.hero-card.cat-camiones { --cat-color: #2563eb; }
-.hero-card.cat-remolques { --cat-color: #f97316; }
-.hero-card.cat-neumaticos-llantas { --cat-color: #eab308; }
+.hero-card.cat-camiones { --cat-color: #6b7280; }
+.hero-card.cat-remolques { --cat-color: #eab308; }
+.hero-card.cat-neumaticos-llantas { --cat-color: #171717; }
 .hero-card.cat-tractores { --cat-color: #78350f; }
-.hero-card.cat-autopropulsadas { --cat-color: #14b8bd; }
+.hero-card.cat-autopropulsadas { --cat-color: #2563eb; }
 .hero-card.cat-higiene-urbana { --cat-color: #38bdf8; }
 .hero-card.cat-carrocerias { --cat-color: #9333ea; }
 
@@ -252,7 +260,7 @@ input:focus-visible {
 }
 
 .cat-tractores { --cat-color: #78350f; }
-.cat-autopropulsadas { --cat-color: #14b8bd; }
+.cat-autopropulsadas { --cat-color: #2563eb; }
 .cat-higiene-urbana { --cat-color: #38bdf8; }
 
 /* Pulso sutil del título al cambiar de categoría */
@@ -275,36 +283,43 @@ input:focus-visible {
 }
 
 /* Tira mobile: anterior / actual / siguiente categoría */
+.hero-mobile-strip {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 10px;
+}
 .hero-mobile-cat-side {
-  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.55rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   color: rgba(255,255,255,0.45);
   transition: opacity 0.25s ease, color 0.2s ease;
   cursor: pointer;
-  max-width: 30%;
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-shadow: none;
+}
+.hero-mobile-cat-side svg {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
 }
 .hero-mobile-cat-side:active { color: rgba(255,255,255,0.8); }
 .hero-mobile-cat-current {
   font-family: 'Archivo', sans-serif;
   font-weight: 800;
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: #fff;
   transition: opacity 0.25s ease;
   white-space: nowrap;
-  max-width: 42vw;
-  overflow: hidden;
-  text-overflow: ellipsis;
   text-align: center;
-}
-.hero-mobile-cat-current.is-long {
-  font-size: clamp(0.5rem, 2.6vw, 0.62rem);
-  letter-spacing: -0.2px;
+  text-shadow: none;
+  cursor: pointer;
 }
 
 /* ===== Menú mobile ===== */
@@ -415,8 +430,8 @@ input:focus-visible {
   clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
 }
 .destacado-badge.badge-agro { background: linear-gradient(100deg, #15803d, #22c55e); }
-.destacado-badge.badge-autopropulsadas { background: linear-gradient(100deg, #0e6b73, #14b8bd); }
-.destacado-badge.badge-remolques { background: linear-gradient(100deg, #c2410c, #f97316); }
+.destacado-badge.badge-autopropulsadas { background: linear-gradient(100deg, #1d4ed8, #2563eb); }
+.destacado-badge.badge-remolques { background: linear-gradient(100deg, #a16207, #eab308); }
 .destacado-badge.badge-higiene-urbana { background: linear-gradient(100deg, #0369a1, #38bdf8); }
 
 /* ===== Carrusel infinito "Nuestros productos" ===== */
@@ -636,6 +651,24 @@ input:focus-visible {
 }
 
 @media (max-width: 640px) {
+  /* El nombre grande de categoría (ej. "Autopropulsadas") se sale de
+     pantalla con el tamaño de desktop; en mobile va bastante más chico,
+     y todavía más chico si el nombre es largo. Con tope de ancho y
+     puntos suspensivos como resguardo, para que nunca más se corte feo. */
+  .hero-card-text {
+    font-size: clamp(1.8rem, 10vw, 2.8rem);
+    max-width: 90vw;
+    white-space: normal;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    text-shadow: none;
+    -webkit-text-stroke: 1.5px #fff;
+  }
+  .hero-card-text.is-long {
+    font-size: clamp(1.3rem, 7.5vw, 1.9rem);
+  }
+
   /* El header a tamaño completo (176px) ocupa demasiado en un celular;
      lo achicamos junto con los logos, que además tienen "aire" de sobra
      en el archivo y quedan desproporcionados si no se ajustan a mano. */
@@ -691,6 +724,62 @@ input:focus-visible {
 }
 
 /* Sección "Nuestra presencia" */
+.presencia-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #dc2626;
+  font-weight: 800;
+  font-size: .82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.presencia-eyebrow-dot {
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: #dc2626;
+  box-shadow: 0 0 0 0 rgba(220,38,38,0.6);
+  animation: presenciaPulse 1.8s ease-in-out infinite;
+}
+@keyframes presenciaPulse {
+  0% { box-shadow: 0 0 0 0 rgba(220,38,38,0.5); }
+  70% { box-shadow: 0 0 0 7px rgba(220,38,38,0); }
+  100% { box-shadow: 0 0 0 0 rgba(220,38,38,0); }
+}
+
+.presencia-underline {
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #dc2626, #f97316);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.reveal.is-visible .presencia-underline {
+  animation: presenciaLineDraw 0.9s 0.3s cubic-bezier(.2,.9,.3,1.1) forwards;
+}
+@keyframes presenciaLineDraw {
+  to { transform: scaleX(1); }
+}
+
+.presencia-text-col { position: relative; }
+.presencia-glow {
+  position: absolute;
+  top: -60px; left: -80px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(220,38,38,0.1), transparent 70%);
+  filter: blur(20px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.presencia-accent-text {
+  font-style: italic;
+  color: #dc2626;
+}
+
 .presencia-row {
   position: relative;
   display: flex;
@@ -793,6 +882,37 @@ input:focus-visible {
   background: #fdeceb;
   color: #dc2626;
   transition: background 0.25s ease, transform 0.25s ease;
+}
+
+/* ===== Redes sociales ===== */
+.social-follow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+}
+.social-follow-label {
+  font-size: .82rem;
+  font-weight: 700;
+  color: #525252;
+}
+.social-follow-icons { display: flex; align-items: center; gap: 10px; }
+.social-follow-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  color: #737373;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.social-follow-icon svg { width: 18px; height: 18px; }
+.social-follow-icon:hover {
+  background: var(--social-color);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .presencia-contact-icon svg { width: 22px; height: 22px; }
@@ -1121,30 +1241,51 @@ input:focus-visible {
   transform: scale(1.08);
 }
 
-.footer-bottom-bar {
-  background: #fff;
-  border-top: 1px solid #e5e5e5;
+.footer-bottom-dark {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+@media (min-width: 768px) {
+  .footer-bottom-dark {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-.footer-social-icon {
+.footer-bottom-social {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
+  gap: 16px;
+}
+.footer-bottom-social-label {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #a3a3a3;
+  white-space: nowrap;
+}
+.footer-bottom-social-icons { display: flex; align-items: center; gap: 10px; }
+.footer-bottom-social-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px;
   border-radius: 999px;
-  background: #171717;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #d4d4d4;
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.footer-bottom-social-icon svg { width: 17px; height: 17px; }
+.footer-bottom-social-icon:hover {
+  background: var(--social-color);
+  border-color: var(--social-color);
   color: #fff;
-  transition: background 0.2s ease;
-}
-
-.footer-social-icon svg {
-  width: 16px;
-  height: 16px;
-}
-
-.footer-social-icon:hover {
-  background: #dc2626;
+  transform: translateY(-3px);
 }
 
 /* ===== Menú desplegable de Productos ===== */
@@ -1275,7 +1416,7 @@ input:focus-visible {
   outline: none;
   background: transparent;
   color: inherit;
-  font-size: .85rem;
+  font-size: 1rem;
   font-family: inherit;
   opacity: 0;
   transition: width .25s ease, opacity .2s ease;
@@ -1423,7 +1564,7 @@ input:focus-visible {
   <!-- Slides -->
   <div id="heroSlides" class="absolute inset-0">
     <div class="hero-slide absolute inset-0 opacity-100" data-cat="remolques">
-      <img src="img/header3.jpg" alt="Semi Remolques" class="hero-slide-img w-full h-full object-cover">
+      <img src="img/header3.jpg" alt="Semirremolques" class="hero-slide-img w-full h-full object-cover">
     </div>
     <div class="hero-slide absolute inset-0 opacity-0" data-cat="carrocerias">
       <img src="img/header8.jpg" alt="Carrocerías" class="hero-slide-img w-full h-full object-cover">
@@ -1459,8 +1600,8 @@ input:focus-visible {
     <div class="w-16 h-[3px] bg-white mt-5"></div>
 
     <!-- Tarjeta de categoría: ícono + barra de progreso, clickeable a productos -->
-    <a id="heroBadge" href="productos.html?cat=remolques" class="hero-card mt-16">
-      <span id="heroBadgeText" class="hero-card-text">Semi Remolques</span>
+    <a id="heroBadge" href="/productos/remolques" class="hero-card mt-16">
+      <span id="heroBadgeText" class="hero-card-text">Semirremolques</span>
       <span class="hero-card-cta">
         Ver productos
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -1469,10 +1610,10 @@ input:focus-visible {
   </div>
 
   <!-- Flechas -->
-  <button id="prevSlide" aria-label="Anterior" class="flex absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-10 h-11 w-11 items-center justify-center rounded-full text-white/70 hover:text-white transition">
+  <button id="prevSlide" aria-label="Anterior" class="hidden md:flex absolute md:left-6 md:top-1/2 md:-translate-y-1/2 z-10 h-11 w-11 items-center justify-center rounded-full text-white/70 hover:text-white transition">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
   </button>
-  <button id="nextSlide" aria-label="Siguiente" class="flex absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-10 h-11 w-11 items-center justify-center rounded-full text-white/70 hover:text-white transition">
+  <button id="nextSlide" aria-label="Siguiente" class="hidden md:flex absolute md:right-6 md:top-1/2 md:-translate-y-1/2 z-10 h-11 w-11 items-center justify-center rounded-full text-white/70 hover:text-white transition">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
   </button>
 
@@ -1480,15 +1621,21 @@ input:focus-visible {
   <div class="absolute bottom-0 left-0 right-0 z-10">
 
     <!-- Versión mobile: anterior / actual / siguiente, se corren solas -->
-    <div id="heroMobileCatStrip" class="flex lg:hidden items-center justify-between px-5 pb-5 text-white">
-      <span id="heroMobilePrev" class="hero-mobile-cat-side"></span>
-      <span id="heroMobileCurrent" class="hero-mobile-cat-current"></span>
-      <span id="heroMobileNext" class="hero-mobile-cat-side"></span>
+    <div id="heroMobileCatStrip" class="hero-mobile-strip lg:hidden px-5 pb-5 text-white">
+      <span id="heroMobilePrev" class="hero-mobile-cat-side" style="justify-self:start">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        <span class="hero-mobile-cat-side-text"></span>
+      </span>
+      <span id="heroMobileCurrent" class="hero-mobile-cat-current" style="justify-self:center"></span>
+      <span id="heroMobileNext" class="hero-mobile-cat-side" style="justify-self:end">
+        <span class="hero-mobile-cat-side-text"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </span>
     </div>
 
     <div id="heroTabs" class="relative max-w-[1600px] mx-auto hidden lg:flex flex-wrap justify-center">
       <button class="hero-tab tab-divider px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="0">
-        Semi Remolques
+        Semirremolques
       </button>
       <button class="hero-tab tab-divider px-[34px] py-[22px] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-wide" data-index="1">
         Carrocerías
@@ -1651,10 +1798,12 @@ input:focus-visible {
   <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-stretch">
 
     <!-- Columna de texto -->
-    <div class="reveal">
-      <p class="text-red-600 font-bold text-sm tracking-widest uppercase mb-3">Nuestra presencia</p>
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-3" style="font-family:'Archivo',sans-serif;">Desde 1990 desarrollando confianza</h2>
-      <p class="text-neutral-500 mb-10">Origen argentino, alcance global.</p>
+    <div class="reveal presencia-text-col">
+      <span class="presencia-glow"></span>
+      <p class="presencia-eyebrow"><span class="presencia-eyebrow-dot"></span>Nuestra presencia</p>
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-2 leading-tight" style="font-family:'Archivo',sans-serif;">Concesionario líder en la comercialización de <span class="presencia-accent-text">línea pesada y agrícola</span></h2>
+      <span class="presencia-underline"></span>
+      <p class="text-neutral-500 mb-10 mt-5 text-lg">Concesionario oficial <strong class="text-red-600 font-bold">OMBU y Traxor</strong> en Tapiales, Buenos Aires. Más de 35 años acompañando al campo y al transporte argentino.</p>
 
       <div class="space-y-4">
         <button type="button" class="presencia-contact-row reveal presencia-copy-btn" data-copy="gzzombu@gmail.com" style="--reveal-delay:0s">
@@ -1677,6 +1826,21 @@ input:focus-visible {
           </div>
           <span class="presencia-copy-hint">Copiar</span>
         </button>
+
+        <div class="social-follow-row reveal" style="--reveal-delay:0.2s">
+          <p class="social-follow-label">Seguinos en redes</p>
+          <div class="social-follow-icons">
+            <a href="https://www.facebook.com/grupozzetto/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook" class="social-follow-icon" style="--social-color:#1877F2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/javier_frazzetto_grupozzetto/" target="_blank" rel="noopener" aria-label="Instagram" class="social-follow-icon" style="--social-color:#E1306C">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a href="https://ar.linkedin.com/company/grupozzetto" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-follow-icon" style="--social-color:#0A66C2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1720,7 +1884,7 @@ input:focus-visible {
       <p class="text-neutral-400 text-sm mt-1">Las últimas novedades directo a tu correo</p>
     </div>
     <form class="flex w-full md:w-auto gap-3">
-      <input type="email" required placeholder="Tu email" class="flex-1 md:w-72 px-4 py-3 rounded-md text-neutral-900 text-sm">
+      <input type="email" required placeholder="Tu email" class="flex-1 md:w-72 px-4 py-3 rounded-md text-neutral-900 text-base">
       <button type="submit" class="bg-red-600 hover:bg-red-700 font-bold px-6 py-3 rounded-md text-sm transition">Suscribirse</button>
     </form>
   </div>
@@ -1760,14 +1924,14 @@ input:focus-visible {
       <div class="pt-3">
         <h4 class="font-bold text-sm mb-3 text-white tracking-wide uppercase">Categorías</h4>
         <div class="footer-cat-grid">
-          <a href="productos.html?cat=remolques" class="footer-cat-chip" style="--chip-color:#f97316">Semi Remolques</a>
-          <a href="productos.html?cat=carrocerias" class="footer-cat-chip" style="--chip-color:#9333ea">Carrocerías</a>
-          <a href="productos.html?cat=camiones" class="footer-cat-chip" style="--chip-color:#2563eb">Camiones</a>
-          <a href="productos.html?cat=agro" class="footer-cat-chip" style="--chip-color:#3daa35">Agro</a>
-          <a href="productos.html?cat=tractores" class="footer-cat-chip" style="--chip-color:#78350f">Tractores</a>
-          <a href="productos.html?cat=autopropulsadas" class="footer-cat-chip" style="--chip-color:#14b8bd">Autopropulsadas</a>
-          <a href="productos.html?cat=higiene-urbana" class="footer-cat-chip" style="--chip-color:#38bdf8">Higiene urbana</a>
-          <a href="productos.html?cat=neumaticos-y-llantas" class="footer-cat-chip" style="--chip-color:#eab308">Neumáticos</a>
+          <a href="/productos/remolques" class="footer-cat-chip" style="--chip-color:#eab308">Semirremolques</a>
+          <a href="/productos/carrocerias" class="footer-cat-chip" style="--chip-color:#9333ea">Carrocerías</a>
+          <a href="/productos/camiones" class="footer-cat-chip" style="--chip-color:#6b7280">Camiones</a>
+          <a href="/productos/agro" class="footer-cat-chip" style="--chip-color:#3daa35">Agro</a>
+          <a href="/productos/tractores" class="footer-cat-chip" style="--chip-color:#78350f">Tractores</a>
+          <a href="/productos/autopropulsadas" class="footer-cat-chip" style="--chip-color:#2563eb">Autopropulsadas</a>
+          <a href="/productos/higiene-urbana" class="footer-cat-chip" style="--chip-color:#38bdf8">Higiene urbana</a>
+          <a href="/productos/neumaticos-y-llantas" class="footer-cat-chip" style="--chip-color:#171717">Neumáticos</a>
         </div>
 
         <div class="footer-extra-links">
@@ -1794,35 +1958,26 @@ input:focus-visible {
 
     </div>
 
+    <div class="footer-bottom-dark">
+      <div class="footer-bottom-social">
+        <p class="footer-bottom-social-label">Seguinos en redes</p>
+        <div class="footer-bottom-social-icons">
+          <a href="https://www.facebook.com/grupozzetto/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook" class="footer-bottom-social-icon" style="--social-color:#1877F2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/javier_frazzetto_grupozzetto/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-bottom-social-icon" style="--social-color:#E1306C">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://ar.linkedin.com/company/grupozzetto" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-bottom-social-icon" style="--social-color:#0A66C2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </footer>
-
-<!-- Barra final: copyright + legales + redes -->
-<div class="footer-bottom-bar">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-    <p class="text-neutral-500">© 2026 OMBU Tapiales. Todos los derechos reservados.</p>
-
-    <div class="flex items-center gap-5 text-neutral-500">
-      <a href="#" class="hover:text-red-600 transition">Política de privacidad</a>
-      <span class="text-neutral-300">|</span>
-      <a href="#" class="hover:text-red-600 transition">Términos y condiciones</a>
-      <span class="text-neutral-300">|</span>
-      <a href="#" class="hover:text-red-600 transition">Política de cookies</a>
-    </div>
-
-    <div class="flex items-center gap-3">
-      <a href="#" aria-label="Facebook" class="footer-social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-      </a>
-      <a href="#" aria-label="Instagram" class="footer-social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-      </a>
-      <a href="#" aria-label="YouTube" class="footer-social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.5-5.3c-.3-1-1-1.7-2-2C18.9 4.2 12 4.2 12 4.2s-6.9 0-8.5.5c-1 .3-1.7 1-2 2C1 8.4 1 12 1 12s0 3.6.5 5.3c.3 1 1 1.7 2 2 1.6.5 8.5.5 8.5.5s6.9 0 8.5-.5c1-.3 1.7-1 2-2 .5-1.7.5-5.3.5-5.3zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
-      </a>
-    </div>
-  </div>
-</div>
 
 <script src="js/main.js"></script>
 <script src="js/search.js"></script>

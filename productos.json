@@ -6777,89 +6777,280 @@
     "destacado": false
   },
   {
-    "id": "volvo-fh-420",
+    "id": "camion-volvo-vm-260-2012",
     "category": "camiones",
     "categoryLabel": "Camiones",
     "modelo": "Volvo",
-    "name": "Volvo FH 420",
-    "description": "Camión robusto para transporte de media y larga distancia.",
-    "descripcionLarga": "Volvo FH 420 modelo 2006, una unidad robusta y confiable, ideal para transporte de media y larga distancia. Equipado con motor D12 de 420 HP.",
-    "image": "img/camiones/volvo-fh420-1.jpg",
-    "images": [
-      "img/camiones/volvo-fh420-1.jpg"
-    ],
-    "especificaciones": [
-      "Marca: Volvo",
-      "Modelo: FH 420",
-      "Año: 2006",
-      "Motor: D12",
-      "Potencia: 420 HP",
-      "Combustible: Diésel"
-    ],
-    "caracteristicas": [
-      "Cabina FH de gran confort",
-      "Excelente estado general",
-      "Mantenimientos al día",
-      "Unidad lista para trabajar",
-      "Configuración apta para transporte pesado"
-    ],
-    "destacado": false
-  },
-  {
-    "id": "volvo-vm-260",
-    "category": "camiones",
-    "categoryLabel": "Camiones",
-    "modelo": "Volvo",
-    "name": "Volvo VM 260",
-    "description": "Camión versátil, ideal para distribución y transporte de cargas.",
-    "descripcionLarga": "Volvo VM 260 modelo 2012, unidad versátil y confiable, ideal para trabajos de distribución y transporte de cargas. Chasis largo y motor de 260 HP.",
-    "image": "img/camiones/volvo-vm260-1.jpg",
-    "images": [
-      "img/camiones/volvo-vm260-1.jpg"
-    ],
+    "name": "Volvo VM 260 — Modelo 2012",
+    "description": "Camión Volvo VM 260, motor de 260 HP y chasis largo. 513.000 km, excelente estado general.",
+    "descripcionLarga": "Volvo VM 260 modelo 2012, equipado con motor de 260 HP y configuración de chasis largo. La unidad cuenta con 513.000 kilómetros y se encuentra, según la publicación, en excelente estado general y lista para trabajar. Incluye además garantía por 3 meses.",
+    "image": "img/camiones/camion-volvo-vm-260-2012.jpeg",
+    "images": ["img/camiones/camion-volvo-vm-260-2012.jpeg"],
     "especificaciones": [
       "Marca: Volvo",
       "Modelo: VM 260",
       "Año: 2012",
+      "Kilometraje: 513.000 km",
       "Potencia: 260 HP",
       "Configuración: Chasis largo",
-      "Combustible: Diésel"
+      "Tipo: Camión",
+      "Estado: Excelente estado general",
+      "Garantía: 3 meses"
     ],
     "caracteristicas": [
-      "Chasis largo",
-      "Excelente estado general",
-      "Unidad lista para trabajar",
-      "Ideal para múltiples configuraciones de carrocería",
-      "Apto para transporte y distribución"
+      "Chasis largo, adecuado para distintas configuraciones de carrocería y aplicaciones de transporte",
+      "Motor de 260 HP orientado al trabajo comercial y de carga"
     ],
     "destacado": false
   },
   {
-    "id": "volvo-vm-310",
+    "id": "camion-volvo-fh-420-2006",
     "category": "camiones",
     "categoryLabel": "Camiones",
     "modelo": "Volvo",
-    "name": "Volvo VM 310",
-    "description": "Camión robusto y versátil para transporte de media y larga distancia.",
-    "descripcionLarga": "Volvo VM 310 modelo 2010, unidad robusta y versátil, ideal para transporte de media y larga distancia. Equipado con motor de 310 HP y configuración 4x2.",
-    "image": "img/camiones/volvo-vm310-1.jpg",
-    "images": [
-      "img/camiones/volvo-vm310-1.jpg"
+    "name": "Volvo FH 420 — Modelo 2006",
+    "description": "Camión Volvo FH 420, motor D12 de 420 HP, chasis tractor. 800.000 km originales, mantenimientos al día.",
+    "descripcionLarga": "Volvo FH 420 modelo 2006, equipado con motor D12 de 420 HP y configuración de chasis tractor. La unidad cuenta con 800.000 km originales y, según la publicación, se encuentra en excelente estado general, lista para trabajar y con los mantenimientos al día. Incluye además garantía por 3 meses.",
+    "image": "img/camiones/camion-volvo-fh-420-2006.jpeg",
+    "images": ["img/camiones/camion-volvo-fh-420-2006.jpeg"],
+    "especificaciones": [
+      "Marca: Volvo",
+      "Modelo: FH 420",
+      "Año: 2006",
+      "Kilometraje: 800.000 km originales",
+      "Motor: D12",
+      "Potencia: 420 HP",
+      "Configuración: Chasis tractor",
+      "Estado: Excelente estado general",
+      "Mantenimiento: Al día",
+      "Garantía: 3 meses"
     ],
+    "caracteristicas": [
+      "Configurado como tractor, preparado para trabajar con semirremolque",
+      "Motor Volvo D12 de 420 HP, ideal para transporte pesado y larga distancia"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "camion-mercedes-benz-ls-1634-2007",
+    "category": "camiones",
+    "categoryLabel": "Camiones",
+    "modelo": "Mercedes-Benz",
+    "name": "Mercedes-Benz LS 1634 — Modelo 2007",
+    "description": "Camión tractor Mercedes-Benz LS 1634, motor de 340 HP. 575.000 km, excelente estado general.",
+    "descripcionLarga": "Mercedes-Benz LS 1634 modelo 2007, configurado como chasis tractor y equipado con motor de 340 HP. La unidad cuenta con 575.000 kilómetros y, según la publicación, se encuentra en excelente estado general y lista para trabajar. Incluye además garantía por 3 meses.",
+    "image": "img/camiones/camion-mercedes-benz-ls-1634-2007.jpeg",
+    "images": ["img/camiones/camion-mercedes-benz-ls-1634-2007.jpeg"],
+    "especificaciones": [
+      "Marca: Mercedes-Benz",
+      "Modelo: LS 1634",
+      "Año: 2007",
+      "Kilometraje: 575.000 km",
+      "Potencia: 340 HP",
+      "Configuración: Chasis tractor",
+      "Tipo: Camión tractor",
+      "Estado: Excelente estado general",
+      "Condición: Listo para trabajar",
+      "Garantía: 3 meses"
+    ],
+    "caracteristicas": [
+      "Configuración tractora, preparada para trabajar con semirremolque",
+      "340 HP orientados al trabajo de transporte comercial y de carga"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "camion-mercedes-benz-l-710-2015",
+    "category": "camiones",
+    "categoryLabel": "Camiones",
+    "modelo": "Mercedes-Benz",
+    "name": "Mercedes-Benz L 710 — Modelo 2015",
+    "description": "Camión de carga Mercedes-Benz L 710, motor de 115 HP, caja abierta con barandas. 226.000 km.",
+    "descripcionLarga": "Mercedes-Benz L 710 modelo 2015, equipado con motor de 115 HP y con 226.000 kilómetros. La unidad se presenta con carrocería de carga y, según la publicación, se encuentra en excelente estado general y lista para trabajar. Cuenta además con garantía por 3 meses.",
+    "image": "img/camiones/camion-mercedes-benz-l-710-2015.jpeg",
+    "images": ["img/camiones/camion-mercedes-benz-l-710-2015.jpeg"],
+    "especificaciones": [
+      "Marca: Mercedes-Benz",
+      "Modelo: L 710",
+      "Año: 2015",
+      "Kilometraje: 226.000 km",
+      "Potencia: 115 HP",
+      "Tipo: Camión de carga",
+      "Carrocería: Caja abierta con barandas",
+      "Estado: Excelente estado general",
+      "Condición: Listo para trabajar",
+      "Garantía: 3 meses"
+    ],
+    "caracteristicas": [
+      "Camión compacto orientado al transporte y distribución de cargas",
+      "Carrocería abierta con barandas, práctica para reparto, logística y transporte comercial"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "camion-mercedes-benz-actros-2636-2014",
+    "category": "camiones",
+    "categoryLabel": "Camiones",
+    "modelo": "Mercedes-Benz",
+    "name": "Mercedes-Benz Actros 2636 — Modelo 2014",
+    "description": "Camión tractor Mercedes-Benz Actros 2636, motor de 360 HP. 874.000 km, excelente estado general.",
+    "descripcionLarga": "Mercedes-Benz Actros 2636 modelo 2014, configurado como chasis tractor y equipado con motor de 360 HP. La unidad cuenta con 874.000 kilómetros y, según la publicación, se encuentra en excelente estado general y lista para trabajar. Incluye además garantía por 3 meses.",
+    "image": "img/camiones/camion-mercedes-benz-actros-2636-2014.jpeg",
+    "images": ["img/camiones/camion-mercedes-benz-actros-2636-2014.jpeg"],
+    "especificaciones": [
+      "Marca: Mercedes-Benz",
+      "Modelo: Actros 2636",
+      "Año: 2014",
+      "Kilometraje: 874.000 km",
+      "Potencia: 360 HP",
+      "Configuración: Chasis tractor",
+      "Tipo: Camión tractor",
+      "Estado: Excelente estado general",
+      "Condición: Listo para trabajar",
+      "Garantía: 3 meses"
+    ],
+    "caracteristicas": [
+      "Configuración tractora, preparada para trabajar con semirremolque",
+      "Motor de 360 HP orientado al transporte comercial y pesado"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "camion-iveco-stralis-560-2016",
+    "category": "camiones",
+    "categoryLabel": "Camiones",
+    "modelo": "Iveco",
+    "name": "Iveco Stralis 560 — Modelo 2016",
+    "description": "Camión de transporte pesado Iveco Stralis 560, motor de 360 HP. 1.210.000 km, excelente estado general.",
+    "descripcionLarga": "Iveco Stralis 560 modelo 2016, equipado con motor de 360 HP y con 1.210.000 kilómetros. La unidad, según la publicación, se encuentra en excelente estado general y lista para trabajar, e incluye garantía por 3 meses.",
+    "image": "img/camiones/camion-iveco-stralis-560-2016.jpeg",
+    "images": ["img/camiones/camion-iveco-stralis-560-2016.jpeg"],
+    "especificaciones": [
+      "Marca: Iveco",
+      "Modelo: Stralis 560",
+      "Año: 2016",
+      "Kilometraje: 1.210.000 km",
+      "Potencia: 360 HP",
+      "Tipo: Camión de transporte pesado",
+      "Estado: Excelente estado general",
+      "Condición: Listo para trabajar",
+      "Garantía: 3 meses"
+    ],
+    "caracteristicas": [
+      "Cabina de gran porte, orientada al transporte de cargas y trabajo pesado",
+      "360 HP adecuados para trabajos exigentes y recorridos de transporte comercial"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "camion-mercedes-benz-axor-2040-2011",
+    "category": "camiones",
+    "categoryLabel": "Camiones",
+    "modelo": "Mercedes-Benz",
+    "name": "Mercedes-Benz Axor 2040 — Modelo 2011",
+    "description": "Camión tractor Mercedes-Benz Axor 2040, motor de 400 HP. 1.680.000 km, excelente estado general.",
+    "descripcionLarga": "Mercedes-Benz Axor 2040 modelo 2011, configurado como chasis tractor y equipado con motor de 400 HP. La unidad cuenta con 1.680.000 kilómetros y, según la publicación, se encuentra en excelente estado general y lista para trabajar. Cuenta además con garantía por 3 meses.",
+    "image": "img/camiones/camion-mercedes-benz-axor-2040-2011.jpeg",
+    "images": ["img/camiones/camion-mercedes-benz-axor-2040-2011.jpeg"],
+    "especificaciones": [
+      "Marca: Mercedes-Benz",
+      "Modelo: Axor 2040",
+      "Año: 2011",
+      "Kilometraje: 1.680.000 km",
+      "Potencia: 400 HP",
+      "Configuración: Chasis tractor",
+      "Tipo: Camión tractor",
+      "Estado: Excelente estado general",
+      "Condición: Listo para trabajar",
+      "Garantía: 3 meses"
+    ],
+    "caracteristicas": [
+      "Configuración tractora, preparada para trabajar con semirremolque",
+      "Motor de 400 HP, adecuado para transporte pesado y recorridos de media y larga distancia"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "camion-mercedes-benz-actros-2041-2013",
+    "category": "camiones",
+    "categoryLabel": "Camiones",
+    "modelo": "Mercedes-Benz",
+    "name": "Mercedes-Benz Actros 2041 — Modelo 2013",
+    "description": "Camión tractor Mercedes-Benz Actros 2041, motor de 410 HP. 1.400.000 km, excelente estado general.",
+    "descripcionLarga": "Mercedes-Benz Actros 2041 modelo 2013, configurado como chasis tractor y equipado con motor de 410 HP. La unidad cuenta con 1.400.000 kilómetros y, según la publicación, se encuentra en excelente estado general y lista para trabajar. Cuenta además con garantía por 3 meses.",
+    "image": "img/camiones/camion-mercedes-benz-actros-2041-2013.jpeg",
+    "images": ["img/camiones/camion-mercedes-benz-actros-2041-2013.jpeg"],
+    "especificaciones": [
+      "Marca: Mercedes-Benz",
+      "Modelo: Actros 2041",
+      "Año: 2013",
+      "Kilometraje: 1.400.000 km",
+      "Potencia: 410 HP",
+      "Configuración: Chasis tractor",
+      "Tipo: Camión tractor",
+      "Estado: Excelente estado general",
+      "Condición: Listo para trabajar",
+      "Garantía: 3 meses"
+    ],
+    "caracteristicas": [
+      "Configuración tractora, preparada para trabajar con semirremolque",
+      "Motor de 410 HP, adecuado para transporte pesado y recorridos de media y larga distancia"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "camion-mercedes-benz-actros-2048-2020",
+    "category": "camiones",
+    "categoryLabel": "Camiones",
+    "modelo": "Mercedes-Benz",
+    "name": "Mercedes-Benz Actros 2048 — Modelo 2020",
+    "description": "Camión tractor Mercedes-Benz Actros 2048, motor de 480 HP. 952.000 km, excelente estado general.",
+    "descripcionLarga": "Mercedes-Benz Actros 2048 modelo 2020, configurado como chasis tractor y equipado con motor de 480 HP. La unidad cuenta con 952.000 kilómetros y, según la publicación, se encuentra en excelente estado general y lista para trabajar. Incluye además garantía por 3 meses.",
+    "image": "img/camiones/camion-mercedes-benz-actros-2048-2020.jpeg",
+    "images": ["img/camiones/camion-mercedes-benz-actros-2048-2020.jpeg"],
+    "especificaciones": [
+      "Marca: Mercedes-Benz",
+      "Modelo: Actros 2048",
+      "Año: 2020",
+      "Kilometraje: 952.000 km",
+      "Potencia: 480 HP",
+      "Configuración: Chasis tractor",
+      "Tipo: Camión tractor",
+      "Estado: Excelente estado general",
+      "Condición: Listo para trabajar",
+      "Garantía: 3 meses"
+    ],
+    "caracteristicas": [
+      "Configuración tractora, preparada para trabajar con semirremolque",
+      "Motor de 480 HP, potencia elevada para transporte pesado y larga distancia"
+    ],
+    "destacado": false
+  },
+  {
+    "id": "camion-volvo-vm-310-2010",
+    "category": "camiones",
+    "categoryLabel": "Camiones",
+    "modelo": "Volvo",
+    "name": "Volvo VM 310 — Modelo 2010",
+    "description": "Camión Volvo VM 310, motor de 310 HP, configuración 4x2. 613.000 km, listo para producir.",
+    "descripcionLarga": "Volvo VM 310 modelo 2010, equipado con motor de 310 HP y configuración 4x2. La unidad cuenta con 613.000 kilómetros y, según la publicación, se encuentra en excelente estado general y lista para producir. Está orientada al transporte de cargas de media y larga distancia.",
+    "image": "img/camiones/camion-volvo-vm-310-2010.jpeg",
+    "images": ["img/camiones/camion-volvo-vm-310-2010.jpeg"],
     "especificaciones": [
       "Marca: Volvo",
       "Modelo: VM 310",
       "Año: 2010",
+      "Kilometraje: 613.000 km",
       "Potencia: 310 HP",
       "Configuración: 4x2",
-      "Combustible: Diésel"
+      "Tipo: Camión",
+      "Estado: Excelente estado general",
+      "Condición: Unidad lista para producir",
+      "Aplicación indicada: Transporte de media y larga distancia"
     ],
     "caracteristicas": [
-      "Configuración 4x2",
-      "Excelente estado general",
-      "Unidad lista para trabajar",
-      "Ideal para transporte de media y larga distancia",
-      "Chasis apto para diferentes aplicaciones"
+      "Configuración 4x2, preparada para aplicaciones de transporte y trabajo comercial",
+      "Buen estado general, especialmente indicada para operaciones de media y larga distancia"
     ],
     "destacado": false
   },

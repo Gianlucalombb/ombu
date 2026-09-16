@@ -1,0 +1,5 @@
+# Categorías: /productos/remolques en vez de /productos.html?cat=remolques
+/productos/*  /productos.html  200
+
+# Fichas de producto: /producto/nombre-id en vez de /productos.html?producto=nombre-id
+/producto/*  /productos.html  200
