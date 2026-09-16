@@ -861,6 +861,13 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 }
 
 .prod-detail-wrap { position: relative; overflow-x: hidden; }
+/* Sin esto, si algo adentro de cualquiera de las 2 columnas es ancho
+   (una tabla, una fila de pestañas, lo que sea), el grid entero se
+   estira para acompañarlo en vez de achicarse y dejar que esa cosa
+   puntual scrollee sola por dentro. */
+.prod-detail-grid, .prod-detail-grid > * { min-width: 0; }
+.cat-products-row, .cat-products-row > * { min-width: 0; }
+
 
 .prod-detail-main-img {
   position: relative;
@@ -1632,7 +1639,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
       <span id="catBreadcrumbUnderline" class="cat-breadcrumb-underline"></span>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 mt-6 relative">
+    <div class="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10 mt-6 relative cat-products-row">
 
       <!-- Sidebar de filtros (en mobile se convierte en panel que sube desde abajo) -->
       <aside id="filtrosAside">
