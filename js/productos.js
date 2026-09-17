@@ -800,7 +800,7 @@
 
       prodDetailCatLink.textContent = cat.label;
       prodDetailCatLink.href = `/productos/${cat.slug}`;
-      prodDetailBudgetBtn.href = `https://wa.me/541140447563?text=${encodeURIComponent('Hola! Quiero solicitar un presupuesto para: ' + p.name)}`;
+      prodDetailBudgetBtn.href = `https://wa.me/541127870031?text=${encodeURIComponent('Hola! Quiero solicitar un presupuesto para: ' + p.name)}`;
       prodDetailBudgetBtn.target = '_blank';
 
       // Subcategoría / modelo

@@ -89,7 +89,7 @@
       <div class="usado-card-body">
         <h3 class="usado-card-name">${u.name}</h3>
         ${u.description ? `<p class="usado-card-desc">${u.description}</p>` : ''}
-        <a href="https://wa.me/541140447563?text=${waText}" target="_blank" class="usado-card-cta">
+        <a href="https://wa.me/541127870031?text=${waText}" target="_blank" class="usado-card-cta">
           Consultar
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
