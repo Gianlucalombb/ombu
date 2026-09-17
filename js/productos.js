@@ -206,14 +206,14 @@
       "@type": "Product",
       "name": p.name,
       "description": p.description || p.descripcionLarga || '',
-      "image": p.images && p.images.length ? p.images.map((img) => `https://grupozzettoombu.com/${img}`) : [`https://grupozzettoombu.com/${p.image}`],
+      "image": p.images && p.images.length ? p.images.map((img) => `https://ombugrupozzetto.com/${img}`) : [`https://ombugrupozzetto.com/${p.image}`],
       "category": cat ? cat.label : p.categoryLabel,
       "brand": { "@type": "Brand", "name": brandName },
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
         "priceCurrency": "ARS",
-        "url": `https://grupozzettoombu.com/producto/${encodeURIComponent(p.id)}`
+        "url": `https://ombugrupozzetto.com/producto/${encodeURIComponent(p.id)}`
       }
     });
   }
@@ -230,7 +230,7 @@
     updateSEO({
       title: 'Productos — Maquinaria Agrícola, Camiones y Semirremolques | OMBU Tapiales',
       description: 'Catálogo completo OMBU y Traxor: maquinaria agrícola, tractores, camiones, semirremolques, carrocerías, equipos de higiene urbana y neumáticos. Concesionario oficial en Tapiales, Buenos Aires.',
-      url: 'https://grupozzettoombu.com/productos.html'
+      url: 'https://ombugrupozzetto.com/productos.html'
     });
 
     catLandingGrid.innerHTML = '';
@@ -275,8 +275,8 @@
     updateSEO({
       title: `${cat.label} — OMBU Tapiales | Maquinaria y Equipos`,
       description: `${cat.heroDesc || `Conocé nuestra línea de ${cat.label} OMBU y Traxor.`} Concesionario oficial en Tapiales, Buenos Aires.`,
-      url: `https://grupozzettoombu.com/productos/${cat.slug}`,
-      image: `https://grupozzettoombu.com${cat.image}`
+      url: `https://ombugrupozzetto.com/productos/${cat.slug}`,
+      image: `https://ombugrupozzetto.com${cat.image}`
     });
 
     // Hero
@@ -630,8 +630,8 @@
     updateSEO({
       title: `${p.name} — ${cat ? cat.label : p.categoryLabel} OMBU | OMBU Tapiales`,
       description: (p.description || `${p.name}, ${cat ? cat.label.toLowerCase() : ''} OMBU disponible en OMBU Tapiales, Buenos Aires. Consultá precio y disponibilidad.`).slice(0, 160),
-      url: `https://grupozzettoombu.com/producto/${encodeURIComponent(p.id)}`,
-      image: `https://grupozzettoombu.com/${p.image}`
+      url: `https://ombugrupozzetto.com/producto/${encodeURIComponent(p.id)}`,
+      image: `https://ombugrupozzetto.com/${p.image}`
     });
     setProductJsonLd(p, cat);
 
