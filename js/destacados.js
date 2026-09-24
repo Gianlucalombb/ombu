@@ -3,14 +3,14 @@
   if (!track) return;
 
   const catStyles = {
-    'agro': { color: '#3daa35', tag: 'Agro' },
-    'camiones': { color: '#6b7280', tag: 'Camiones' },
-    'remolques': { color: '#eab308', tag: 'Semirremolques' },
-    'carrocerias': { color: '#9333ea', tag: 'Carrocerías' },
-    'tractores': { color: '#78350f', tag: 'Tractores' },
-    'autopropulsadas': { color: '#2563eb', tag: 'Autopropulsadas' },
-    'higiene-urbana': { color: '#38bdf8', tag: 'Higiene urbana' },
-    'neumaticos-y-llantas': { color: '#171717', tag: 'Neumáticos' }
+    'agro': { color: '#19DA00', tag: 'Agro' },
+    'camiones': { color: '#B4B9BE', tag: 'Camiones' },
+    'remolques': { color: '#FFB800', tag: 'Semirremolques' },
+    'carrocerias': { color: '#F50808', tag: 'Carrocerías' },
+    'tractores': { color: '#00570A', tag: 'Tractores' },
+    'autopropulsadas': { color: '#004AA2', tag: 'Autopropulsadas' },
+    'higiene-urbana': { color: '#00D3EE', tag: 'Higiene urbana' },
+    'neumaticos-y-llantas': { color: '#72777B', tag: 'Neumáticos' }
   };
 
   function buildCard(p) {

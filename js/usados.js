@@ -3,14 +3,14 @@
   // Mismas categorías y colores que productos.js, para que los filtros
   // y las tarjetas usen siempre la misma paleta en todo el sitio.
   const CATEGORIES = [
-    { slug: 'remolques', label: 'Semirremolques', color: '#eab308' },
-    { slug: 'carrocerias', label: 'Carrocerías', color: '#9333ea' },
-    { slug: 'camiones', label: 'Camiones', color: '#6b7280' },
-    { slug: 'agro', label: 'Agro', color: '#3daa35' },
-    { slug: 'tractores', label: 'Tractores', color: '#78350f' },
-    { slug: 'autopropulsadas', label: 'Autopropulsadas', color: '#2563eb' },
-    { slug: 'higiene-urbana', label: 'Higiene urbana', color: '#38bdf8' },
-    { slug: 'neumaticos-y-llantas', label: 'Neumáticos', color: '#171717' }
+    { slug: 'remolques', label: 'Semirremolques', color: '#FFB800' },
+    { slug: 'carrocerias', label: 'Carrocerías', color: '#F50808' },
+    { slug: 'camiones', label: 'Camiones', color: '#B4B9BE' },
+    { slug: 'agro', label: 'Agro', color: '#19DA00' },
+    { slug: 'tractores', label: 'Tractores', color: '#00570A' },
+    { slug: 'autopropulsadas', label: 'Autopropulsadas', color: '#004AA2' },
+    { slug: 'higiene-urbana', label: 'Higiene urbana', color: '#00D3EE' },
+    { slug: 'neumaticos-y-llantas', label: 'Neumáticos', color: '#72777B' }
   ];
 
   const grid = document.getElementById('usadosGrid');
@@ -89,7 +89,7 @@
       <div class="usado-card-body">
         <h3 class="usado-card-name">${u.name}</h3>
         ${u.description ? `<p class="usado-card-desc">${u.description}</p>` : ''}
-        <a href="https://wa.me/541127870031?text=${waText}" target="_blank" class="usado-card-cta">
+        <a href="https://wa.me/541140447563?text=${waText}" target="_blank" class="usado-card-cta">
           Consultar
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>

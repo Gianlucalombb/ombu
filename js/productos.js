@@ -4,7 +4,7 @@
     {
       slug: 'remolques',
       label: 'Semirremolques',
-      color: '#eab308',
+      color: '#FFB800',
       tag: 'RMQ',
       image: '/img/header3.jpg',
       desc: 'Un verdadero ícono de la marca.',
@@ -14,7 +14,7 @@
     {
       slug: 'carrocerias',
       label: 'Carrocerías',
-      color: '#9333ea',
+      color: '#F50808',
       tag: 'CAR',
       image: '/img/header8.jpg',
       desc: 'Carrocerías a medida para cada aplicación.',
@@ -24,7 +24,7 @@
     {
       slug: 'camiones',
       label: 'Camiones',
-      color: '#6b7280',
+      color: '#B4B9BE',
       tag: 'CAM',
       image: '/img/header2.jpg',
       desc: 'Robustez y confiabilidad para trabajo pesado.',
@@ -34,7 +34,7 @@
     {
       slug: 'agro',
       label: 'Agro',
-      color: '#3daa35',
+      color: '#19DA00',
       tag: 'AGR',
       image: '/img/header1.jpg',
       desc: 'Soluciones confiables para cada campaña.',
@@ -44,7 +44,7 @@
     {
       slug: 'tractores',
       label: 'Tractores',
-      color: '#78350f',
+      color: '#00570A',
       tag: 'TRAC',
       image: '/img/header5.jpg',
       desc: 'Potencia y versatilidad para el día a día.',
@@ -54,7 +54,7 @@
     {
       slug: 'autopropulsadas',
       label: 'Autopropulsadas',
-      color: '#2563eb',
+      color: '#004AA2',
       tag: 'AP',
       image: '/img/header6.jpg',
       desc: 'Pulverizadoras de alta tecnología.',
@@ -64,7 +64,7 @@
     {
       slug: 'higiene-urbana',
       label: 'Higiene urbana',
-      color: '#38bdf8',
+      color: '#00D3EE',
       tag: 'URB',
       image: '/img/header7.jpg',
       desc: 'Equipos confiables y duraderos.',
@@ -74,7 +74,7 @@
     {
       slug: 'neumaticos-y-llantas',
       label: 'Neumáticos',
-      color: '#171717',
+      color: '#72777B',
       tag: 'NEU',
       image: '/img/header4.jpg',
       desc: 'Amplia gama de medidas disponibles.',
@@ -800,7 +800,7 @@
 
       prodDetailCatLink.textContent = cat.label;
       prodDetailCatLink.href = `/productos/${cat.slug}`;
-      prodDetailBudgetBtn.href = `https://wa.me/541127870031?text=${encodeURIComponent('Hola! Quiero solicitar un presupuesto para: ' + p.name)}`;
+      prodDetailBudgetBtn.href = `https://wa.me/541140447563?text=${encodeURIComponent('Hola! Quiero solicitar un presupuesto para: ' + p.name)}`;
       prodDetailBudgetBtn.target = '_blank';
 
       // Subcategoría / modelo

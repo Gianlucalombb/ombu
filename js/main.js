@@ -169,7 +169,7 @@ if (menuBtn && mobileMenu) {
   const slides = document.querySelectorAll('.hero-slide');
   const tabs = document.querySelectorAll('.hero-tab');
   const badge = document.getElementById('heroBadge');
-  const badgeText = document.getElementById('heroBadgeText');
+  const badgeImg = document.getElementById('heroBadgeImg');
   const heroTitle = document.getElementById('heroTitle');
   const prevBtn = document.getElementById('prevSlide');
   const nextBtn = document.getElementById('nextSlide');
@@ -189,7 +189,17 @@ if (menuBtn && mobileMenu) {
   const names = ['Semirremolques', 'Carrocerías', 'Camiones', 'Agro', 'Tractores', 'Autopropulsadas', 'Higiene urbana', 'Neumáticos'];
   const slugs = ['remolques', 'carrocerias', 'camiones', 'agro', 'tractores', 'autopropulsadas', 'higiene-urbana', 'neumaticos-y-llantas'];
   const catClasses = ['cat-remolques', 'cat-carrocerias', 'cat-camiones', 'cat-agro', 'cat-tractores', 'cat-autopropulsadas', 'cat-higiene-urbana', 'cat-neumaticos-llantas'];
-  const colors = ['#eab308', '#9333ea', '#6b7280', '#3daa35', '#78350f', '#2563eb', '#38bdf8', '#171717'];
+  const colors = ['#FFB800', '#F50808', '#B4B9BE', '#19DA00', '#00570A', '#004AA2', '#00D3EE', '#72777B'];
+  const wordImages = [
+    'img/hero-word-remolques.png',
+    'img/hero-word-carrocerias.png',
+    'img/hero-word-camiones.png',
+    'img/hero-word-agro.png',
+    'img/hero-word-tractores.png',
+    'img/hero-word-autopropulsadas.png',
+    'img/hero-word-higiene-urbana.png',
+    'img/hero-word-neumaticos.png'
+  ];
 
   let current = 0;
   let timer = null;
@@ -251,8 +261,8 @@ if (menuBtn && mobileMenu) {
     // Forzamos reflow para que el navegador "vea" el estado inicial antes de animar
     void badge.offsetWidth;
 
-    badgeText.textContent = names[current];
-    badgeText.classList.toggle('is-long', names[current].length > 12);
+    badgeImg.src = wordImages[current];
+    badgeImg.alt = names[current];
     badge.href = '/productos/' + slugs[current];
     badge.classList.add(catClasses[current]);
     badge.classList.add('is-visible');
