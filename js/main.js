@@ -201,6 +201,11 @@ if (menuBtn && mobileMenu) {
     'img/hero-word-neumaticos.png'
   ];
 
+  // Precargamos las 8 de una, así al cambiar de categoría la imagen ya
+  // está en caché y aparece al instante, sin el salto tosco de esperar
+  // a que se descargue recién en ese momento.
+  wordImages.forEach((src) => { const preload = new Image(); preload.src = src; });
+
   let current = 0;
   let timer = null;
   let badgeTimer = null;
